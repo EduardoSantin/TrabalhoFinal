@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="-32.0" layoutY="-4.0" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <TextField layoutX="243.0" layoutY="97.0" />
+            <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
+            <Label layoutX="272.0" layoutY="20.0" text="Login">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="79.0" layoutY="140.0" text="Nome" />
+            <Label layoutX="79.0" layoutY="180.0" text="Senha" />
+            <TextField layoutX="243.0" layoutY="137.0" />
+            <TextField layoutX="243.0" layoutY="176.0" />
+            <Button layoutX="468.0" layoutY="260.0" mnemonicParsing="false" text="Conectar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

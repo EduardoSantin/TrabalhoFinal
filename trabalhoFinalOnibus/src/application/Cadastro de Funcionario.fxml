@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="-14.0" layoutY="6.0" prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <TextField layoutX="243.0" layoutY="97.0" />
+            <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
+            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Funcionario">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="79.0" layoutY="140.0" text="Nome" />
+            <Label layoutX="79.0" layoutY="180.0" text="CPF" />
+            <Label layoutX="79.0" layoutY="220.0" text="RG" />
+            <Label layoutX="79.0" layoutY="300.0" text="Data Nascimento" />
+            <Label layoutX="79.0" layoutY="340.0" text="Endereço" />
+            <Label layoutX="515.0" layoutY="140.0" text="Bairro" />
+            <Label layoutX="79.0" layoutY="260.0" text="CTPS" />
+            <Label layoutX="515.0" layoutY="101.0" text="CEP" />
+            <TextField layoutX="243.0" layoutY="137.0" />
+            <TextField layoutX="243.0" layoutY="176.0" />
+            <TextField layoutX="243.0" layoutY="216.0" />
+            <TextField layoutX="243.0" layoutY="256.0" />
+            <TextField layoutX="243.0" layoutY="296.0" />
+            <TextField layoutX="243.0" layoutY="336.0" />
+            <TextField layoutX="587.0" layoutY="97.0" />
+            <TextField layoutX="587.0" layoutY="136.0" />
+            <TableView layoutX="12.0" layoutY="388.0" prefHeight="312.0" prefWidth="986.0">
+              <columns>
+                <TableColumn minWidth="88.0" prefWidth="75.0" text="Codigo" />
+                <TableColumn minWidth="88.0" prefWidth="75.0" text="Nome" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="CPF" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="RG" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="CTPS" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Data Nascimento" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Endereço" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="CEP" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Bairro" />
+                  <TableColumn prefWidth="75.0" text="Cargo" />
+                  <TableColumn prefWidth="75.0" text="Salario" />
+                  <TableColumn prefWidth="75.0" text="Banco" />
+              </columns>
+            </TableView>
+            <Button layoutX="470.0" layoutY="345.0" mnemonicParsing="false" text="Salvar" />
+            <Button layoutX="565.0" layoutY="345.0" mnemonicParsing="false" text="Novo" />
+            <Button layoutX="661.0" layoutY="345.0" mnemonicParsing="false" text="Deletar" />
+            <Label layoutX="517.0" layoutY="220.0" text="Salario" />
+            <Label layoutX="517.0" layoutY="300.0" text="Carga Horaria" />
+            <Label layoutX="517.0" layoutY="260.0" text="Data Admissao" />
+            <Label layoutX="517.0" layoutY="180.0" text="Cargo" />
+            <Label layoutX="789.0" layoutY="101.0" text="Banco" />
+            <Label layoutX="791.0" layoutY="141.0" text="Agencia" />
+            <Label layoutX="791.0" layoutY="180.0" text="Conta" />
+            <Label layoutX="791.0" layoutY="220.0" text="Data " />
+            <TextField layoutX="587.0" layoutY="176.0" />
+            <TextField layoutX="587.0" layoutY="216.0" />
+            <TextField layoutX="614.0" layoutY="296.0" />
+            <TextField layoutX="837.0" layoutY="96.0" />
+            <TextField layoutX="837.0" layoutY="137.0" />
+            <TextField layoutX="837.0" layoutY="176.0" />
+            <DatePicker layoutX="825.0" layoutY="216.0" />
+            <DatePicker layoutX="610.0" layoutY="256.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

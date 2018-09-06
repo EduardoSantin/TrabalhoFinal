@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <TextField layoutX="243.0" layoutY="97.0" />
+            <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
+            <Label layoutX="272.0" layoutY="20.0" text="Movimentos">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="79.0" layoutY="140.0" text="Numero Nota" />
+            <Label layoutX="79.0" layoutY="180.0" text="Data Emissão" />
+            <Label layoutX="79.0" layoutY="220.0" text="Codigo Veiculo" />
+            <Label layoutX="79.0" layoutY="300.0" text="Codigo Manutenção" />
+            <Label layoutX="79.0" layoutY="340.0" text="Quantidade" />
+            <Label layoutX="515.0" layoutY="140.0" text="Observação" />
+            <Label layoutX="79.0" layoutY="260.0" text="KM Veiculo" />
+            <Label layoutX="515.0" layoutY="101.0" text="Valor" />
+            <TextField layoutX="243.0" layoutY="137.0" />
+            <TextField layoutX="243.0" layoutY="256.0" />
+            <TextField layoutX="243.0" layoutY="336.0" />
+            <TextField layoutX="587.0" layoutY="97.0" />
+            <TextField layoutX="587.0" layoutY="136.0" />
+            <TableView layoutX="12.0" layoutY="388.0" prefHeight="212.0" prefWidth="786.0">
+              <columns>
+                <TableColumn minWidth="88.0" prefWidth="75.0" text="Codigo" />
+                <TableColumn minWidth="88.0" prefWidth="75.0" text="N° Nota" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Data Emissão" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Codigo Veiculo" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="KM" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Cod Manutençao" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Quantidade" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Valor" />
+                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Observação" />
+              </columns>
+            </TableView>
+            <Button layoutX="470.0" layoutY="345.0" mnemonicParsing="false" text="Salvar" />
+            <Button layoutX="565.0" layoutY="345.0" mnemonicParsing="false" text="Novo" />
+            <Button layoutX="661.0" layoutY="345.0" mnemonicParsing="false" text="Deletar" />
+            <DatePicker layoutX="243.0" layoutY="176.0" />
+            <ComboBox layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
+            <ComboBox layoutX="242.0" layoutY="296.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

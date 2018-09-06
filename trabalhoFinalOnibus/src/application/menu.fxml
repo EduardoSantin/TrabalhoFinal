@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MenuController">
+<BorderPane fx:id="bpPrincipal" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MenuController">
    <center>
       <Pane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
    </center>
@@ -15,17 +15,20 @@
         <menus>
           <Menu mnemonicParsing="false" text="Cadastro">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="mmiEmpresa" mnemonicParsing="false" onAction="#MenuEmpresa" text="Cadastro de Empresa" />
+                  <MenuItem fx:id="mmiVeiculo" mnemonicParsing="false" onAction="#MenuVeiculo" text="Cadastro de Veiculo" />
+                  <MenuItem fx:id="mmiFuncionario" mnemonicParsing="false" onAction="#MenuFuncionario" text="Cadastro de Funcionario" />
+                  <MenuItem fx:id="mmiManutencao" mnemonicParsing="false" onAction="#MenuManutencao" text="Cadastro de Manutenção" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Movimentação">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="mmiControleFinanceiro" mnemonicParsing="false" onAction="#MenuControleFinanceiro" text="Controle Financeiro" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Manutenção">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="mmiDespesas" mnemonicParsing="false" onAction="#MenuDespesas" text="Despesas" />
             </items>
           </Menu>
         </menus>
