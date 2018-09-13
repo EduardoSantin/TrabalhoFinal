@@ -34,7 +34,14 @@ public class MenuController {
 
     @FXML
     void MenuEmpresa(ActionEvent event) {
-    	
+    	FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadastroEmpresa.fxml"));
+		try {
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
     }
 
     @FXML

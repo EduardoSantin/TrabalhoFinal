@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane fx:id="bpPrincipal" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MenuController">
+<BorderPane fx:id="bpPrincipal" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
    <center>
-      <Pane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="213.0" layoutY="185.0" text="Bus System" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="90.0" />
+               </font>
+            </Label>
+         </children></Pane>
    </center>
    <top>
       <MenuBar BorderPane.alignment="CENTER">

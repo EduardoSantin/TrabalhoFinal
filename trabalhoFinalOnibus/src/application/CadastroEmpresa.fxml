@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmpresaController">
    <children>
-      <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
+      <Pane fx:id="apEmpresa" layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TextField layoutX="243.0" layoutY="97.0" />
+            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
             <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
             <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Empresa">
                <font>
@@ -36,30 +35,30 @@
             <Label layoutX="515.0" layoutY="140.0" text="UF" />
             <Label layoutX="79.0" layoutY="260.0" text="Endereço" />
             <Label layoutX="515.0" layoutY="101.0" text="CEP" />
-            <TextField layoutX="243.0" layoutY="137.0" />
-            <TextField layoutX="243.0" layoutY="176.0" />
-            <TextField layoutX="243.0" layoutY="216.0" />
-            <TextField layoutX="243.0" layoutY="256.0" />
-            <TextField layoutX="243.0" layoutY="296.0" />
-            <TextField layoutX="243.0" layoutY="336.0" />
-            <TextField layoutX="587.0" layoutY="97.0" />
-            <TextField layoutX="587.0" layoutY="136.0" />
-            <TableView layoutX="12.0" layoutY="388.0" prefHeight="212.0" prefWidth="786.0">
+            <TextField fx:id="tfRazaoSocial" layoutX="243.0" layoutY="137.0" />
+            <TextField fx:id="tfNomeFantasia" layoutX="243.0" layoutY="176.0" />
+            <TextField fx:id="tfCnpj" layoutX="243.0" layoutY="216.0" />
+            <TextField fx:id="tfEndereco" layoutX="243.0" layoutY="256.0" />
+            <TextField fx:id="tfNumero" layoutX="243.0" layoutY="296.0" />
+            <TextField fx:id="tfBairro" layoutX="243.0" layoutY="336.0" />
+            <TextField fx:id="tfCep" layoutX="587.0" layoutY="97.0" />
+            <TextField fx:id="tfUf" layoutX="587.0" layoutY="136.0" />
+            <TableView fx:id="tblEmpresa" layoutX="14.0" layoutY="388.0" prefHeight="212.0" prefWidth="786.0">
               <columns>
-                <TableColumn minWidth="88.0" prefWidth="75.0" text="Codigo" />
-                <TableColumn minWidth="88.0" prefWidth="75.0" text="Razao Social" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Nome Fantasia" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="CNPJ" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Endereço" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Numero" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Bairro" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="CEP" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="UF" />
+                <TableColumn fx:id="tbcCodigo" minWidth="88.0" prefWidth="75.0" text="Codigo" />
+                <TableColumn fx:id="tbcRazaoSocial" minWidth="88.0" prefWidth="75.0" text="Razao Social" />
+                  <TableColumn fx:id="tbcNomeFantasia" minWidth="88.0" prefWidth="75.0" text="Nome Fantasia" />
+                  <TableColumn fx:id="tbcCnpj" minWidth="88.0" prefWidth="75.0" text="CNPJ" />
+                  <TableColumn fx:id="tbcEndereco" minWidth="88.0" prefWidth="75.0" text="Endereço" />
+                  <TableColumn fx:id="tbcNumero" minWidth="88.0" prefWidth="75.0" text="Numero" />
+                  <TableColumn fx:id="tbcBairro" minWidth="88.0" prefWidth="75.0" text="Bairro" />
+                  <TableColumn fx:id="tbcCep" minWidth="88.0" prefWidth="75.0" text="CEP" />
+                  <TableColumn fx:id="tbcUf" minWidth="88.0" prefWidth="75.0" text="UF" />
               </columns>
             </TableView>
-            <Button layoutX="470.0" layoutY="345.0" mnemonicParsing="false" text="Salvar" />
-            <Button layoutX="565.0" layoutY="345.0" mnemonicParsing="false" text="Novo" />
-            <Button layoutX="661.0" layoutY="345.0" mnemonicParsing="false" text="Deletar" />
+            <Button fx:id="btnSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
+            <Button fx:id="btnNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#Novo" text="Novo" />
+            <Button fx:id="btnDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#Deletar" text="Deletar" />
          </children>
       </Pane>
    </children>
