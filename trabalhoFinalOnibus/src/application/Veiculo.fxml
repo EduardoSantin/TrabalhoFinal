@@ -13,7 +13,6 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VeiculoController">
-   <children>
       <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
@@ -68,5 +67,4 @@
             <DatePicker fx:id="dtpDataCadastro" layoutX="570.0" layoutY="176.0" />
          </children>
       </Pane>
-   </children>
 </AnchorPane>
