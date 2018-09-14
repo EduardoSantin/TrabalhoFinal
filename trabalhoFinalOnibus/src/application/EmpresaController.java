@@ -28,8 +28,24 @@ public class EmpresaController {
 	@FXML
 	private TextField tfEndereco;
 
+
 	@FXML
-	private Button btnDeletar;
+	private TextField tfCep;
+
+	@FXML
+	private TextField tfUf;
+
+	@FXML
+	private TextField tfNumero;
+
+	@FXML
+	private TextField tfCnpj;
+
+	@FXML
+	private TextField tfBairro;
+
+	@FXML
+	private TextField tfRazaoSocial;
 
 	@FXML
 	private TableView<Empresa> tblEmpresa;
@@ -38,49 +54,34 @@ public class EmpresaController {
 	private TableColumn<Empresa, Integer> tbcNumero;
 
 	@FXML
-	private TextField tfCep;
-
-	@FXML
 	private TableColumn<Empresa, String> tbcRazaoSocial;
-
-	@FXML
-	private TextField tfNumero;
 
 	@FXML
 	private TableColumn<Empresa, Integer> tbcCodigo;
 
 	@FXML
-	private Button btnSalvar;
-
-	@FXML
-	private TextField tfUf;
-
-	@FXML
 	private TableColumn<Empresa, String> tbcUf;
 
 	@FXML
-	private TextField tfCnpj;
-
-	@FXML
 	private TableColumn<Empresa, String> tbcNomeFantasia;
-
+	
 	@FXML
 	private TableColumn<Empresa, Integer> tbcCnpj;
 
 	@FXML
-	private TextField tfBairro;
-
-	@FXML
 	private TableColumn<Empresa, String> tbcBairro;
-
+	
 	@FXML
 	private TableColumn<Empresa, Integer> tbcCep;
-
+	
 	@FXML
 	private TableColumn<Empresa, String> tbcEndereco;
 
 	@FXML
-	private TextField tfRazaoSocial;
+	private Button btnSalvar;
+
+	@FXML
+	private Button btnDeletar;
 
 	@FXML
 	private Button btnNovo;

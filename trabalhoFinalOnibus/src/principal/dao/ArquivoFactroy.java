@@ -6,6 +6,11 @@ public class ArquivoFactroy implements DaoFactory {
 	public EmpresaDAO empresaDAO() {
 		return new EmpresaArquivo();
 	}
+
+	@Override
+	public VeiculoDAO veiculoDAO() {
+		return null;
+	}
 	
 	
 }

@@ -7,5 +7,10 @@ public class JDBCFactory implements DaoFactory {
 		return new EmpresaJDBC();
 	}
 
+	@Override
+	public VeiculoDAO veiculoDAO() {
+		return null;
+	}
+
 	
 }

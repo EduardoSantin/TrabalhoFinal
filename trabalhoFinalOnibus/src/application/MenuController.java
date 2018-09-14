@@ -37,8 +37,8 @@ public class MenuController {
     	FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("CadastroEmpresa.fxml"));
 		try {
-			AnchorPane cursoView = (AnchorPane) loader.load();
-			bpPrincipal.setCenter(cursoView);
+			AnchorPane menuView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(menuView);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -46,6 +46,14 @@ public class MenuController {
 
     @FXML
     void MenuVeiculo(ActionEvent event) {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("Veiculo.fxml"));
+    	try {
+    		AnchorPane menuView = (AnchorPane) loader.load();
+    		bpPrincipal.setCenter(menuView);
+    	} catch (IOException e1) {
+    		e1.printStackTrace();
+    	}
 
     }
 
