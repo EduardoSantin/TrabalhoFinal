@@ -4,7 +4,7 @@ public class AbstractFactory {
 
 	private static DaoFactory factory;
 
-	// Inicializa uma única copica da fabrica
+	// Inicializa uma ?nica copica da fabrica
 
 	static {
 	String tipoPersistencia =

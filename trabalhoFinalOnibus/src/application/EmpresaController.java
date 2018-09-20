@@ -28,7 +28,6 @@ public class EmpresaController {
 	@FXML
 	private TextField tfEndereco;
 
-
 	@FXML
 	private TextField tfCep;
 
@@ -64,16 +63,16 @@ public class EmpresaController {
 
 	@FXML
 	private TableColumn<Empresa, String> tbcNomeFantasia;
-	
+
 	@FXML
 	private TableColumn<Empresa, Integer> tbcCnpj;
 
 	@FXML
 	private TableColumn<Empresa, String> tbcBairro;
-	
+
 	@FXML
 	private TableColumn<Empresa, Integer> tbcCep;
-	
+
 	@FXML
 	private TableColumn<Empresa, String> tbcEndereco;
 
@@ -86,12 +85,12 @@ public class EmpresaController {
 	@FXML
 	private Button btnNovo;
 
-	private Empresa empresa;	
-	
+	private Empresa empresa;
+
 	private boolean editando;
-	
+
 	private EmpresaDAO empresadao = AbstractFactory.get().empresaDAO();
-	
+
 	@FXML
 	private void initialize() {
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -103,7 +102,7 @@ public class EmpresaController {
 		tbcBairro.setCellValueFactory(new PropertyValueFactory<>("bairro"));
 		tbcCep.setCellValueFactory(new PropertyValueFactory<>("cep"));
 		tbcUf.setCellValueFactory(new PropertyValueFactory<>("uf"));
-		
+
 		novoEmpresa();
 	}
 
@@ -115,12 +114,12 @@ public class EmpresaController {
 		if (editando) {
 			empresadao.alterar(empresa);
 		} else {
-			empresadao.inserir(empresa);				
+			empresadao.inserir(empresa);
 		}
 		novoEmpresa();
 		tblEmpresa.refresh();
 	}
-	
+
 	public void populaEmpresa() {
 		empresa.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		empresa.setRazaoSocial(tfRazaoSocial.getText());
@@ -132,6 +131,7 @@ public class EmpresaController {
 		empresa.setCep(Integer.valueOf(tfCep.getText()));
 		empresa.setUf(tfUf.getText());
 	}
+
 	public void populaTela(Empresa area) {
 		tfCodigo.setText(empresa.getCodigo().toString());
 		tfRazaoSocial.setText(empresa.getRazaoSocial());
@@ -142,7 +142,7 @@ public class EmpresaController {
 		tfBairro.setText(empresa.getBairro());
 		tfCep.setText(empresa.getCep().toString());
 		tfUf.setText(empresa.getUf());
-		
+
 	}
 
 	@FXML
@@ -153,7 +153,6 @@ public class EmpresaController {
 			editando = true;
 		}
 	}
-
 
 	@FXML
 	void Novo(ActionEvent event) {

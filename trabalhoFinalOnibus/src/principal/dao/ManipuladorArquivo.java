@@ -18,7 +18,7 @@ public class ManipuladorArquivo<T> {
 
 	
 	public void gravar(List<T> dados){
-		// Cria o arquivo que ser√° utilizado
+		// Cria o arquivo que ser· utilizado
 		try (
 				FileOutputStream file = new FileOutputStream(this.path); 
 				ObjectOutputStream out = new ObjectOutputStream(file)
@@ -31,7 +31,7 @@ public class ManipuladorArquivo<T> {
 	}
 	
 	public List<T> recuperar(){
-		// Cria o arquivo que ser√° utilizado
+		// Cria o arquivo que ser· utilizado
 		try (FileInputStream file = new FileInputStream(this.path);
 				ObjectInputStream in = new ObjectInputStream(file)) {
 			return (List<T>) in.readObject();
