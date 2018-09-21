@@ -24,7 +24,7 @@ public class Veiculo implements Serializable {
 	private String marca;
 	private String modelo;
 	private String placa;
-	private Integer motor;
+	private String motor;
 	private Integer chassi;
 	private String categoria;
 	private String combustivel;

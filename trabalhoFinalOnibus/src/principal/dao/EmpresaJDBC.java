@@ -15,12 +15,19 @@ public class EmpresaJDBC implements EmpresaDAO {
 	public void inserir(Empresa dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into empresa values (?, ?)";
+			String sql = "insert into empresa values (?, ?, ?, ?, ? ,?, ?, ?, ?)";
 
 			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setString(2, dado.getRazaoSocial());
+			statement.setString(3, dado.getNomeFantasia());
+			statement.setInt(4, dado.getCnpj());
+			statement.setString(5, dado.getEndereco());
+			statement.setInt(6, dado.getNumero());
+			statement.setString(7, dado.getBairro());
+			statement.setInt(8, dado.getCep());
+			statement.setString(9, dado.getUf());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -35,8 +42,16 @@ public class EmpresaJDBC implements EmpresaDAO {
 			String sql = "update empresa set empresa = ?" + "where codigo= ?";
 
 			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
-			statement.setString(1, dado.getRazaoSocial());
-			statement.setInt(2, dado.getCodigo());
+
+			statement.setInt(1, dado.getCodigo());
+			statement.setString(2, dado.getRazaoSocial());
+			statement.setString(3, dado.getNomeFantasia());
+			statement.setInt(4, dado.getCnpj());
+			statement.setString(5, dado.getEndereco());
+			statement.setInt(6, dado.getNumero());
+			statement.setString(7, dado.getBairro());
+			statement.setInt(8, dado.getCep());
+			statement.setString(9, dado.getUf());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -48,7 +63,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 	@Override
 	public void excluir(Empresa dado) {
 		try {
-			String sql = "delete from empresa codigo = ?";
+			String sql = "delete from empresa where codigo = ?";
 
 			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
@@ -65,12 +80,19 @@ public class EmpresaJDBC implements EmpresaDAO {
 
 		try {
 			Statement statement = application.Conexao.getConn().createStatement();
-			ResultSet rs = statement.executeQuery("select * from cidade");
+			ResultSet rs = statement.executeQuery("select * from empresa");
 
 			while (rs.next()) {
 				Empresa empresa = new Empresa();
-				empresa.setRazaoSocial(rs.getString("razaoSocial"));
 				empresa.setCodigo(rs.getInt("codigo"));
+				empresa.setRazaoSocial(rs.getString("razaoSocial"));
+				empresa.setNomeFantasia(rs.getString("nomeFantasia"));
+				empresa.setCnpj(rs.getInt("cnpj"));
+				empresa.setEndereco(rs.getString("endereco"));
+				empresa.setNumero(rs.getInt("numero"));
+				empresa.setBairro(rs.getString("bairro"));
+				empresa.setCep(rs.getInt("cep"));
+				empresa.setUf(rs.getString("uf"));
 				empresas.add(empresa);
 
 			}
@@ -79,7 +101,5 @@ public class EmpresaJDBC implements EmpresaDAO {
 		}
 
 		return empresas;
-		}
+	}
 }
-	
-	

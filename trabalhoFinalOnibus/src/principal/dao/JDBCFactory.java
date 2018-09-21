@@ -9,8 +9,7 @@ public class JDBCFactory implements DaoFactory {
 
 	@Override
 	public VeiculoDAO veiculoDAO() {
-		return null;
+		return new VeiculoJDBC();
 	}
 
-	
 }
