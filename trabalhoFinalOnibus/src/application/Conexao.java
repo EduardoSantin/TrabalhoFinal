@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class Conexao {
 
 	private final static String USER  = "root";
-	private final static String PASS = "redlabel17";
-	private final static String URL = "jdbc:mysql://localhost/primeirosistema" + "?useSSL=false&useTimezone=true&serverTimezone=UTC";
+	private final static String PASS = "91602097";
+	private final static String URL = "jdbc:mysql://localhost/frotaOnibus" + "?useSSL=false&useTimezone=true&serverTimezone=UTC";
 
 //	private static Connection connection;
 //	

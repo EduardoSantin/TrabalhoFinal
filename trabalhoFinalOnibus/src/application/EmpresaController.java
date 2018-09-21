@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import principal.dao.AbstractFactory;
 import principal.dao.EmpresaDAO;
+import principal.dao.EmpresaJDBC;
 import principal.model.Empresa;
 
 public class EmpresaController {
@@ -89,7 +90,7 @@ public class EmpresaController {
 
 	private boolean editando;
 
-	private EmpresaDAO empresadao = AbstractFactory.get().empresaDAO();
+	private EmpresaDAO empresadao = new EmpresaJDBC();
 
 	@FXML
 	private void initialize() {
