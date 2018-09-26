@@ -13,12 +13,13 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of="codigo")
-@ToString(of= {"codigo","renavan","marca","modelo","placa","motor","chassi","categoria","combustivel","dataCadastro"})
+@EqualsAndHashCode(of = "codigo")
+@ToString(of = { "codigo", "renavan", "marca", "modelo", "placa", "motor", "chassi", "categoria", "combustivel",
+		"dataCadastro" })
 public class Veiculo implements Serializable {
-	
+
 	private static final long serialVersionUID = 6250886177011909620L;
-	
+
 	private Integer codigo;
 	private Integer renavan;
 	private String marca;
@@ -29,7 +30,5 @@ public class Veiculo implements Serializable {
 	private String categoria;
 	private String combustivel;
 	private String dataCadastro;
-	
 
-	
 }

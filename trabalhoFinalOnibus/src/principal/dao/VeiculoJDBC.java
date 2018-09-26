@@ -15,7 +15,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 	public void inserir(Veiculo dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into empresa values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)";
+			String sql = "insert into veiculo(codigo, renavan, marca, modelo, placa, motor, chassi, categoria, combustivel, dataCadastro) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)";
 
 			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
 
