@@ -12,7 +12,7 @@ public class AbstractFactory {
 	
 		//E apartir daqui q vai inicializar em banco ou em arquivoo
 		if(tipoPersistencia.equals("arquivo")) {
-		factory = new ArquivoFactroy();
+		factory = new ArquivoFactory();
 	}
 		if(tipoPersistencia.equals("banco")) {
 			factory = (DaoFactory) new JDBCFactory();

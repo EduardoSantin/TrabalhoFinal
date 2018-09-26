@@ -161,7 +161,9 @@ public class EmpresaController {
 
 	@FXML
 	void Deletar(ActionEvent event) {
-		novoEmpresa();
+		if ( new  AlertaFactory () . confirmaExclusao ()) {
+			empresadao . excluir (empresa);
+		}
 	}
 
 	void novoEmpresa() {

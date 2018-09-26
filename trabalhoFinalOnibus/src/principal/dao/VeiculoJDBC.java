@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import principal.conexao.ConexaoUtil;
 import principal.model.Veiculo;
 
 public class VeiculoJDBC implements VeiculoDAO {
@@ -17,7 +18,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 			// Executa esse comando no BD
 			String sql = "insert into veiculo(codigo, renavan, marca, modelo, placa, motor, chassi, categoria, combustivel, dataCadastro) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)";
 
-			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
+			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setInt(2, dado.getRenavan());
@@ -41,7 +42,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 		try {
 			String sql = "update veiculo set veiculo = ?" + "where codigo= ?";
 
-			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
+			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setInt(2, dado.getRenavan());
@@ -66,7 +67,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 		try {
 			String sql = "delete from veiculo where codigo = ?";
 
-			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
+			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 
@@ -80,7 +81,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 		List<Veiculo> veiculos = new ArrayList<>();
 
 		try {
-			Statement statement = application.Conexao.getConn().createStatement();
+			Statement statement = ConexaoUtil.getConn().createStatement();
 			ResultSet rs = statement.executeQuery("select * from veiculos");
 
 			while (rs.next()) {

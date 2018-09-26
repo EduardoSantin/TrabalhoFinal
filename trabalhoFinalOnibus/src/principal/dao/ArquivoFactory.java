@@ -1,6 +1,6 @@
 package principal.dao;
 
-public class ArquivoFactroy implements DaoFactory {
+public class ArquivoFactory implements DaoFactory {
 
 	@Override
 	public EmpresaDAO empresaDAO() {
