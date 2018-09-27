@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import principal.dao.AbstractFactory;
 import principal.dao.EmpresaDAO;
 import principal.dao.EmpresaJDBC;
 import principal.model.Empresa;
@@ -162,7 +161,9 @@ public class EmpresaController {
 
 	@FXML
 	void Deletar(ActionEvent event) {
-		novoEmpresa();
+		if ( new  AlertaFactory () . confirmaExclusao ()) {
+			empresadao . excluir (empresa);
+		}
 	}
 
 	void novoEmpresa() {

@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import principal.dao.TipoPersistencia;
 
 
 public class Main extends Application {
@@ -25,6 +24,9 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		System.setProperty("tipoPersistencia", 
 				TipoPersistencia.BANCO.name());
+		if(args.length>0) {			
+			System.setProperty("tipoConexao", args[0]);
+		}
 		launch(args);
 	}
 }

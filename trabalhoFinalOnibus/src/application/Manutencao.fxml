@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManutencaoController">
    <children>
       <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TextField layoutX="243.0" layoutY="97.0" />
+            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
             <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
             <Label layoutX="272.0" layoutY="20.0" text="Manutenção">
                <font>
@@ -32,24 +36,24 @@
             <Label layoutX="79.0" layoutY="220.0" text="Marca" />
             <Label layoutX="79.0" layoutY="300.0" text="Data Cadastro" />
             <Label layoutX="79.0" layoutY="260.0" text="Aplicação" />
-            <TextField layoutX="243.0" layoutY="137.0" />
-            <TextField layoutX="243.0" layoutY="176.0" />
-            <TextField layoutX="243.0" layoutY="216.0" />
-            <TextField layoutX="243.0" layoutY="256.0" />
-            <TableView layoutX="12.0" layoutY="388.0" prefHeight="212.0" prefWidth="786.0">
+            <TextField fx:id="tfDescricao" layoutX="243.0" layoutY="137.0" />
+            <TextField fx:id="tfTipo" layoutX="243.0" layoutY="176.0" />
+            <TextField fx:id="tfMarca" layoutX="243.0" layoutY="216.0" />
+            <TextField fx:id="tfAplicacao" layoutX="243.0" layoutY="256.0" />
+            <TableView fx:id="tblManutencao" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaManutencao" prefHeight="212.0" prefWidth="786.0">
               <columns>
-                <TableColumn minWidth="133.0" prefWidth="75.0" text="Codigo" />
-                <TableColumn minWidth="133.0" prefWidth="75.0" text="Descricao" />
-                  <TableColumn minWidth="133.0" prefWidth="75.0" text="Tipo" />
-                  <TableColumn minWidth="133.0" prefWidth="75.0" text="Marca" />
-                  <TableColumn minWidth="133.0" prefWidth="75.0" text="Aplicação" />
-                  <TableColumn minWidth="133.0" prefWidth="75.0" text="Data Cadastro" />
+                <TableColumn fx:id="tbcCodigo" minWidth="133.0" prefWidth="75.0" text="Codigo" />
+                <TableColumn fx:id="tbcDescricao" minWidth="133.0" prefWidth="75.0" text="Descricao" />
+                  <TableColumn fx:id="tbcTipo" minWidth="133.0" prefWidth="75.0" text="Tipo" />
+                  <TableColumn fx:id="tbcMarca" minWidth="133.0" prefWidth="75.0" text="Marca" />
+                  <TableColumn fx:id="tbcAplicacao" minWidth="133.0" prefWidth="75.0" text="Aplicação" />
+                  <TableColumn fx:id="tbcDataCadastro" minWidth="133.0" prefWidth="75.0" text="Data Cadastro" />
               </columns>
             </TableView>
-            <Button layoutX="470.0" layoutY="345.0" mnemonicParsing="false" text="Salvar" />
-            <Button layoutX="565.0" layoutY="345.0" mnemonicParsing="false" text="Novo" />
-            <Button layoutX="661.0" layoutY="345.0" mnemonicParsing="false" text="Deletar" />
-            <DatePicker layoutX="243.0" layoutY="296.0" />
+            <Button fx:id="btnSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+            <Button fx:id="btnNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
+            <Button fx:id="btnDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
+            <DatePicker fx:id="dtpDataCadastro" layoutX="243.0" layoutY="296.0" />
          </children>
       </Pane>
    </children>

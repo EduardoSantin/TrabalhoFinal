@@ -8,8 +8,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import principal.dao.AbstractFactory;
 import principal.dao.VeiculoDAO;
+import principal.dao.VeiculoJDBC;
 import principal.model.Veiculo;
 
 public class VeiculoController {
@@ -90,20 +90,30 @@ public class VeiculoController {
    
    private boolean editando;
 
-   private VeiculoDAO veiculodao = AbstractFactory.get().veiculoDAO();
+   private VeiculoDAO veiculodao = new VeiculoJDBC(); 
+   
     @FXML
     void deletar(ActionEvent event) {
-
+    	veiculodao.excluir(veiculo);
+    	novoVeiculo();
     }
 
     @FXML
     void novo(ActionEvent event) {
-
+    	novoVeiculo();
     }
 
     @FXML
     void salvar(ActionEvent event) {
-
+    	
+    	
+    	if(editando) {
+    		veiculodao.alterar(veiculo);
+    	} else {
+			veiculodao.inserir(veiculo);
+		}
+    	novoVeiculo();
+    	tblVeiculo.refresh();
     }
     
     void novoVeiculo() {

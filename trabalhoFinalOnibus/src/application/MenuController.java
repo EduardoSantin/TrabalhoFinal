@@ -70,8 +70,14 @@ public class MenuController {
 
 	@FXML
 	void MenuManutencao(ActionEvent event) {
-
-
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("Manutencao.fxml"));
+		try {
+			AnchorPane menuView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(menuView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -83,7 +89,6 @@ public class MenuController {
 	void MenuDespesas(ActionEvent event) {
 
 	}
-	
 
 	@FXML
 	void entrar(ActionEvent event) {

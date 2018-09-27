@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import principal.conexao.ConexaoUtil;
 import principal.model.Empresa;
 
 public class EmpresaJDBC implements EmpresaDAO {
@@ -15,9 +16,9 @@ public class EmpresaJDBC implements EmpresaDAO {
 	public void inserir(Empresa dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into empresa values (?, ?, ?, ?, ? ,?, ?, ?, ?)";
+			String sql = "insert into empresa (codigo, razaoSocial, nomeFantasia, cnpj, endereco, numero, bairro, cep, uf) values (?, ?, ?, ?, ? ,?, ?, ?, ?)";
 
-			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
+			PreparedStatement statement =ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setString(2, dado.getRazaoSocial());
@@ -41,7 +42,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 		try {
 			String sql = "update empresa set empresa = ?" + "where codigo= ?";
 
-			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
+			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setString(2, dado.getRazaoSocial());
@@ -65,7 +66,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 		try {
 			String sql = "delete from empresa where codigo = ?";
 
-			PreparedStatement statement = application.Conexao.getConn().prepareStatement(sql);
+			PreparedStatement statement =ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 
@@ -79,7 +80,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 		List<Empresa> empresas = new ArrayList<>();
 
 		try {
-			Statement statement = application.Conexao.getConn().createStatement();
+			Statement statement = ConexaoUtil.getConn().createStatement();
 			ResultSet rs = statement.executeQuery("select * from empresa");
 
 			while (rs.next()) {
