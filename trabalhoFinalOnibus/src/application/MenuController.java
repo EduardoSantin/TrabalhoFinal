@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import principal.model.Login;
 
 public class MenuController {
 
@@ -69,6 +71,7 @@ public class MenuController {
 	@FXML
 	void MenuManutencao(ActionEvent event) {
 
+
 	}
 
 	@FXML
@@ -85,6 +88,9 @@ public class MenuController {
 	@FXML
 	void entrar(ActionEvent event) {
 		// fazer dialog de login
+		Stage stageDono = (Stage) btnEntrar.getScene().getWindow();
+		LoginDialogFabrica loginDialog = new LoginDialogFabrica(stageDono);
+		Login loginSelecionado = loginDialog.showDialog();
+		}
 	}
 
-}
