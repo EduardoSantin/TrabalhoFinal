@@ -92,10 +92,8 @@ public class MenuController {
 
 	@FXML
 	void entrar(ActionEvent event) {
-		// fazer dialog de login
-		Stage stageDono = (Stage) btnEntrar.getScene().getWindow();
+		Stage stageDono = (Stage)btnEntrar.getScene().getWindow();
 		LoginDialogFabrica loginDialog = new LoginDialogFabrica(stageDono);
-		Login loginSelecionado = loginDialog.showDialog();
-		}
-	}
-
+		Login loginSelecionada = loginDialog.showDialog();
+}
+}

@@ -9,7 +9,6 @@ import principal.model.Login;
 
 public class LoginController {
 
-	
 	@FXML
 	private TextField tfCodigo;
 
@@ -23,18 +22,20 @@ public class LoginController {
 	private Button btnConectar;
 
 	private Stage dialogStage;
-	
+
 	private Login login;
+
 	
 	@FXML
 	void conectar(ActionEvent event) {
-
+		
 	}
 
 	public void setStageDialog(Stage dialogStage) {
 		this.dialogStage = dialogStage;
 	}
-	public Login getLogin(){
+
+	public Login getLogin() {
 		return login;
 	}
 }

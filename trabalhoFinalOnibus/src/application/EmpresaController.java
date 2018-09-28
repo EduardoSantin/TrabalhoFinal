@@ -121,6 +121,7 @@ public class EmpresaController {
 	}
 
 	public void populaEmpresa() {
+		empresa = new Empresa();
 		empresa.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		empresa.setRazaoSocial(tfRazaoSocial.getText());
 		empresa.setNomeFantasia(tfNomeFantasia.getText());
