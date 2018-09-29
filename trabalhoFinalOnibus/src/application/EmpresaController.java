@@ -121,7 +121,6 @@ public class EmpresaController {
 	}
 
 	public void populaEmpresa() {
-		empresa = new Empresa();
 		empresa.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		empresa.setRazaoSocial(tfRazaoSocial.getText());
 		empresa.setNomeFantasia(tfNomeFantasia.getText());
@@ -149,7 +148,7 @@ public class EmpresaController {
 	@FXML
 	void selecionaEmpresa(MouseEvent event) {
 		if (tblEmpresa.getSelectionModel().getSelectedItem() != null) {
-			empresa = (Empresa) tblEmpresa.getSelectionModel().getSelectedItem();
+			empresa = tblEmpresa.getSelectionModel().getSelectedItem();
 			populaTela(empresa);
 			editando = true;
 		}
@@ -164,6 +163,7 @@ public class EmpresaController {
 	void Deletar(ActionEvent event) {
 		if ( new  AlertaFactory () . confirmaExclusao ()) {
 			empresadao . excluir (empresa);
+			novoEmpresa();
 		}
 	}
 
@@ -178,6 +178,7 @@ public class EmpresaController {
 		tfCep.clear();
 		tfUf.clear();
 		editando = false;
+		empresa = new Empresa();
 		tblEmpresa.setItems(FXCollections.observableArrayList(empresadao.listar()));
 	}
 }
