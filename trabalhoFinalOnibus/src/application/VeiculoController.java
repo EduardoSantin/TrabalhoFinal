@@ -8,6 +8,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import principal.dao.VeiculoDAO;
 import principal.dao.VeiculoJDBC;
 import principal.model.Veiculo;
@@ -90,7 +92,52 @@ public class VeiculoController {
    
    private boolean editando;
 
-   private VeiculoDAO veiculodao = new VeiculoJDBC(); 
+   private VeiculoDAO veiculodao = new VeiculoJDBC();
+   
+   @FXML
+   private void initialize() {
+	   tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+	   tbcRenavan.setCellValueFactory(new PropertyValueFactory<>("renavan"));
+	   tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+	   tbcModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+	   tbcPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
+	   tbcMotor.setCellValueFactory(new PropertyValueFactory<>("motor"));
+	   tbcChassi.setCellValueFactory(new PropertyValueFactory<>("chassi"));
+	   tbcCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+	   tbcCombustivel.setCellValueFactory(new PropertyValueFactory<>("combustivel"));
+	   tbcDataCadastrada.setCellValueFactory(new PropertyValueFactory<>("dataCadastro"));
+	   
+	   novoVeiculo();
+   }
+   
+   public void populaVeiculo() {
+	   veiculo = new Veiculo();
+	   veiculo.setCodigo(Integer.valueOf(tfCodigo.getText()));
+	   veiculo.setRenavan(Integer.valueOf(tfRenavan.getText()));
+	   veiculo.setMarca(tfMarca.getText());
+	   veiculo.setModelo(tfModelo.getText());
+	   veiculo.setPlaca(tfPlaca.getText());
+	   veiculo.setMotor(tfMotor.getText());
+	   veiculo.setChassi(Integer.valueOf(tfChassi.getText()));
+	   veiculo.setCategoria(tfCategoria.getText());
+	   veiculo.setCombustivel(tfCombustivel.getText());
+	   veiculo.setDataCadastro(dtpDataCadastro.getAccessibleText());
+	   
+	   novoVeiculo();
+   }
+   
+   public void populaTela(Veiculo veiculo) {
+	   tfCodigo.setText(veiculo.getCodigo().toString());
+	   tfRenavan.setText(veiculo.getRenavan().toString());
+	   tfMarca.setText(veiculo.getMarca());
+	   tfModelo.setText(veiculo.getModelo());
+	   tfPlaca.setText(veiculo.getPlaca());
+	   tfMotor.setText(veiculo.getMotor());
+	   tfChassi.setText(veiculo.getChassi().toString());
+	   tfCategoria.setText(veiculo.getCategoria());
+	   tfCombustivel.setText(veiculo.getCombustivel());
+	   dtpDataCadastro.setAccessibleText(veiculo.getDataCadastro());
+   }
    
     @FXML
     void deletar(ActionEvent event) {
@@ -106,7 +153,7 @@ public class VeiculoController {
     @FXML
     void salvar(ActionEvent event) {
     	
-    	
+    	populaVeiculo();
     	if(editando) {
     		veiculodao.alterar(veiculo);
     	} else {
@@ -114,6 +161,14 @@ public class VeiculoController {
 		}
     	novoVeiculo();
     	tblVeiculo.refresh();
+    }
+    @FXML
+    void selecionaVeiculo(MouseEvent event) {
+    	if(tblVeiculo.getSelectionModel().getSelectedItem() != null) {
+    		veiculo = tblVeiculo.getSelectionModel().getSelectedItem();
+    		populaTela(veiculo);
+    		editando = true;
+    	}
     }
     
     void novoVeiculo() {

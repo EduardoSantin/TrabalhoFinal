@@ -46,7 +46,7 @@
             <TextField fx:id="tfEndereco" layoutX="243.0" layoutY="336.0" />
             <TextField fx:id="tfCep" layoutX="587.0" layoutY="97.0" />
             <TextField fx:id="tfBairro" layoutX="587.0" layoutY="136.0" />
-            <TableView fx:id="tblFuncionario" layoutX="12.0" layoutY="388.0" prefHeight="312.0" prefWidth="986.0">
+            <TableView fx:id="tblFuncionario" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaFuncionario" prefHeight="312.0" prefWidth="986.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="88.0" prefWidth="75.0" text="Codigo" />
                 <TableColumn fx:id="tbcnome" minWidth="88.0" prefWidth="75.0" text="Nome" />

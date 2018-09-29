@@ -1,5 +1,6 @@
 package application;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -76,7 +77,7 @@ public class ManutencaoController {
 		tbcTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 		tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
 		tbcAplicacao.setCellValueFactory(new PropertyValueFactory<>("aplicacao"));
-		tbcDataCadastro.setCellValueFactory(new PropertyValueFactory<>("dataCadastro"));
+		//tbcDataCadastro.setCellValueFactory(new PropertyValueFactory<>("dataCadastro"));
 
 		novoManutencao();
 	}
@@ -139,7 +140,10 @@ public class ManutencaoController {
 		tfTipo.clear();
 		tfMarca.clear();
 		tfAplicacao.clear();
+		manutencao = new Manutencao();
 		dtpDataCadastro.setValue(null);
+		editando = false;
+		tblManutencao.setItems(FXCollections.observableArrayList(manutencaoDao.listar()));
 	}
 
 }
