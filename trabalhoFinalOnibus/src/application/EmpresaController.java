@@ -163,7 +163,7 @@ public class EmpresaController {
 	@FXML
 	void Deletar(ActionEvent event) {
 		if ( new  AlertaFactory () . confirmaExclusao ()) {
-			empresadao . excluir (empresa);
+			empresadao.excluir(empresa);
 		}
 	}
 
