@@ -130,9 +130,11 @@ public class EmpresaController {
 		empresa.setBairro(tfBairro.getText());
 		empresa.setCep(Integer.valueOf(tfCep.getText()));
 		empresa.setUf(tfUf.getText());
+		
+		novoEmpresa();
 	}
 
-	public void populaTela(Empresa area) {
+	public void populaTela(Empresa empresa) {
 		tfCodigo.setText(empresa.getCodigo().toString());
 		tfRazaoSocial.setText(empresa.getRazaoSocial());
 		tfNomeFantasia.setText(empresa.getNomeFantasia());

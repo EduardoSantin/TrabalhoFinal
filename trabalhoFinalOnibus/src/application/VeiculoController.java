@@ -126,7 +126,7 @@ public class VeiculoController {
 	   novoVeiculo();
    }
    
-   public void populaTela() {
+   public void populaTela(Veiculo veiculo) {
 	   tfCodigo.setText(veiculo.getCodigo().toString());
 	   tfRenavan.setText(veiculo.getRenavan().toString());
 	   tfMarca.setText(veiculo.getMarca());
@@ -166,7 +166,7 @@ public class VeiculoController {
     void selecionaVeiculo(MouseEvent event) {
     	if(tblVeiculo.getSelectionModel().getSelectedItem() != null) {
     		veiculo = tblVeiculo.getSelectionModel().getSelectedItem();
-    		populaTela();
+    		populaTela(veiculo);
     		editando = true;
     	}
     }

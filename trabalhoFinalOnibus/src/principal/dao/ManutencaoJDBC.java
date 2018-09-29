@@ -34,7 +34,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 	@Override
 	public void alterar(Manutencao dado) {
 		try {
-			String sql = "update manutencao set descricao = ? where id = ?";
+			String sql = "update manutencao set descricao = ?" +  "where id = ?";
 			PreparedStatement stmt = ConexaoUtil.getConn().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigo());
 			stmt.setString(2, dado.getDescricao());

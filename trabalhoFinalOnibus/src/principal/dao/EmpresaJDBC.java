@@ -18,7 +18,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 			// Executa esse comando no BD
 			String sql = "insert into empresa (codigo, razaoSocial, nomeFantasia, cnpj, endereco, numero, bairro, cep, uf) values (?, ?, ?, ?, ? ,?, ?, ?, ?)";
 
-			PreparedStatement statement =ConexaoUtil.getConn().prepareStatement(sql);
+			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setString(2, dado.getRazaoSocial());
