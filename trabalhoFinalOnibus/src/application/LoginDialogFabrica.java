@@ -20,7 +20,7 @@ public class LoginDialogFabrica {
 	public Login showDialog() {
 		Login loginSelecionado = null;
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("Login.fxml"));
+		loader.setLocation(getClass().getResource("login.fxml"));
 		try {
 			AnchorPane loginDialog = (AnchorPane) loader.load();
 			

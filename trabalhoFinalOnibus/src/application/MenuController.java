@@ -101,6 +101,6 @@ public class MenuController {
 	void entrar(ActionEvent event) {
 		Stage stageDono = (Stage)btnEntrar.getScene().getWindow();
 		LoginDialogFabrica loginDialog = new LoginDialogFabrica(stageDono);
-		Login loginSelecionada = loginDialog.showDialog();
+		Login loginSelecionado = loginDialog.showDialog();
 }
 }
