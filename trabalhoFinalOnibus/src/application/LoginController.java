@@ -19,16 +19,23 @@ public class LoginController {
 	private TextField tfSenha;
 
 	@FXML
-	private Button btnConectar;
+	private Button btLogar;
+
+	@FXML
+	private Button btEsqueceu;
 
 	private Stage dialogStage;
 
 	private Login login;
 
-	
 	@FXML
-	void conectar(ActionEvent event) {
+	void Esqueceu(ActionEvent event) {
 		
+	}
+
+	@FXML
+	void Logar(ActionEvent event) {
+
 	}
 
 	public void setStageDialog(Stage dialogStage) {

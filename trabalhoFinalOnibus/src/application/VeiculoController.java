@@ -181,6 +181,7 @@ public class VeiculoController {
     	tfChassi.clear();
     	tfCategoria.clear();
     	tfCombustivel.clear();
+    	dtpDataCadastro.setValue(null);
     	editando = false;
     	tblVeiculo.setItems(FXCollections.observableArrayList(veiculodao.listar()));
     }
