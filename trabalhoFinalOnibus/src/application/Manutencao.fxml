@@ -17,7 +17,7 @@
       <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
+            <Label layoutX="79.0" layoutY="100.0" text="Código" />
             <Label layoutX="272.0" layoutY="20.0" text="Manutenção">
                <font>
                   <Font size="37.0" />
@@ -31,7 +31,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="79.0" layoutY="140.0" text="Descriçao" />
+            <Label layoutX="79.0" layoutY="140.0" text="Descrição" />
             <Label layoutX="79.0" layoutY="180.0" text="Tipo" />
             <Label layoutX="79.0" layoutY="220.0" text="Marca" />
             <Label layoutX="79.0" layoutY="300.0" text="Data Cadastro" />
@@ -42,8 +42,8 @@
             <TextField fx:id="tfAplicacao" layoutX="243.0" layoutY="256.0" />
             <TableView fx:id="tblManutencao" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaManutencao" prefHeight="212.0" prefWidth="786.0">
               <columns>
-                <TableColumn fx:id="tbcCodigo" minWidth="133.0" prefWidth="75.0" text="Codigo" />
-                <TableColumn fx:id="tbcDescricao" minWidth="133.0" prefWidth="75.0" text="Descricao" />
+                <TableColumn fx:id="tbcCodigo" minWidth="133.0" prefWidth="75.0" text="Código" />
+                <TableColumn fx:id="tbcDescricao" minWidth="133.0" prefWidth="75.0" text="Descricão" />
                   <TableColumn fx:id="tbcTipo" minWidth="133.0" prefWidth="75.0" text="Tipo" />
                   <TableColumn fx:id="tbcMarca" minWidth="133.0" prefWidth="75.0" text="Marca" />
                   <TableColumn fx:id="tbcAplicacao" minWidth="133.0" prefWidth="75.0" text="Aplicação" />

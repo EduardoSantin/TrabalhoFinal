@@ -35,6 +35,7 @@ public class LoginController {
 
 	@FXML
 	void Logar(ActionEvent event) {
+		
 
 	}
 

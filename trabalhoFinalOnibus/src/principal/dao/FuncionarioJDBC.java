@@ -16,26 +16,23 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	public void inserir(Funcionario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into veiculo(codigo, nome, cpf, rg, clps, dtnasc, endereco, bairro, cep, cargo, salario, dtaAdmisssao, cargaHraria, banco, agencia, conta) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into veiculo(codigo, nome, cpf, rg, clps, dtnasc, endereco, bairro, cep, cargo, salario, dtaAdmisssao, cargaHraria) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
-			statement.setString(3, dado.getNome());
-			statement.setInt(2, dado.getCpf());
-			statement.setInt(3, dado.getRg());
-			statement.setInt(4, dado.getClps());
-			statement.setString(5, dado.getDtNasc());
-			statement.setString(6, dado.getEndereco());
-			statement.setString(7, dado.getBairro());
-			statement.setInt(8, dado.getCep());
-			statement.setString(9, dado.getCargo());
-			statement.setFloat(10, dado.getSalario());
-			statement.setString(11, dado.getDtaAdmissao());
-			statement.setFloat(12, dado.getCargaHoraria());
-			statement.setString(13, dado.getBanco());
-			statement.setInt(14, dado.getAgencia());
-			statement.setInt(15, dado.getConta());
+			statement.setString(2, dado.getNome());
+			statement.setInt(3, dado.getCpf());
+			statement.setInt(4, dado.getRg());
+			statement.setInt(5, dado.getClps());
+			statement.setString(6, dado.getDtNasc());
+			statement.setString(7, dado.getEndereco());
+			statement.setString(8, dado.getBairro());
+			statement.setInt(9, dado.getCep());
+			statement.setString(10, dado.getCargo());
+			statement.setFloat(11, dado.getSalario());
+			statement.setString(12, dado.getDtaAdmissao());
+			statement.setFloat(13, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -51,21 +48,18 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
-			statement.setString(3, dado.getNome());
-			statement.setInt(2, dado.getCpf());
-			statement.setInt(3, dado.getRg());
-			statement.setInt(4, dado.getClps());
-			statement.setString(5, dado.getDtNasc());
-			statement.setString(6, dado.getEndereco());
-			statement.setString(7, dado.getBairro());
-			statement.setInt(8, dado.getCep());
-			statement.setString(9, dado.getCargo());
-			statement.setFloat(10, dado.getSalario());
-			statement.setString(11, dado.getDtaAdmissao());
-			statement.setFloat(12, dado.getCargaHoraria());
-			statement.setString(13, dado.getBanco());
-			statement.setInt(14, dado.getAgencia());
-			statement.setInt(15, dado.getConta());
+			statement.setString(2, dado.getNome());
+			statement.setInt(3, dado.getCpf());
+			statement.setInt(4, dado.getRg());
+			statement.setInt(5, dado.getClps());
+			statement.setString(6, dado.getDtNasc());
+			statement.setString(7, dado.getEndereco());
+			statement.setString(8, dado.getBairro());
+			statement.setInt(9, dado.getCep());
+			statement.setString(10, dado.getCargo());
+			statement.setFloat(11, dado.getSalario());
+			statement.setString(12, dado.getDtaAdmissao());
+			statement.setFloat(13, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 
@@ -111,9 +105,6 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setSalario(rs.getFloat("salario"));
 				funcionario.setDtaAdmissao(rs.getString("dtaAdmissao"));
 				funcionario.setCargaHoraria(rs.getFloat("cargaHoraria"));
-				funcionario.setBanco(rs.getString("banco"));
-				funcionario.setAgencia(rs.getInt("agencia"));
-				funcionario.setConta(rs.getInt("conta"));
 				funcionarios.add(funcionario);
 
 			}

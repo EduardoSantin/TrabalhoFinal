@@ -71,9 +71,6 @@ public class FuncionarioController {
     private TableColumn<Funcionario, String> tbcBairo;
 
     @FXML
-    private TableColumn<Funcionario, String> tbcBanco;
-
-    @FXML
     private TableColumn<Funcionario, Float> tbcSalario;
 
     @FXML
@@ -98,18 +95,6 @@ public class FuncionarioController {
     private TextField tfCargaHoraria;
 
     @FXML
-    private TextField tfBanco;
-
-    @FXML
-    private TextField tfAgencia;
-
-    @FXML
-    private TextField tfConta;
-
-    @FXML
-    private DatePicker dpData;
-
-    @FXML
     private DatePicker dpDataAdmissao;
 
     @FXML
@@ -132,7 +117,6 @@ public class FuncionarioController {
     	tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
     	tbcCep.setCellValueFactory(new PropertyValueFactory<>("cep"));
     	tbcBairo.setCellValueFactory(new PropertyValueFactory<>("bairro"));
-    	tbcBanco.setCellValueFactory(new PropertyValueFactory<>("banco"));
     	tbcSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
     	tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
     	
@@ -146,11 +130,9 @@ public class FuncionarioController {
     	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
     	funcionario.setRg(Integer.valueOf(tfRg.getText()));
     	funcionario.setClps(Integer.valueOf(tfCtps.getText()));
-    	funcionario.setDtNasc(dpData.getAccessibleText());
     	funcionario.setEndereco(tbcEndereco.getText());
     	funcionario.setCep(Integer.valueOf(tfCep.getText()));
     	funcionario.setBairro(tfBairro.getText());
-    	funcionario.setBanco(tfBanco.getText());
     	funcionario.setSalario(Float.valueOf(tfSalario.getText()));
     	funcionario.setCargo(tfCargo.getText());
     	
@@ -163,11 +145,9 @@ public class FuncionarioController {
     	tfCPF.setText(funcionario.getCpf().toString());
     	tfRg.setText(funcionario.getRg().toString());
     	tfCtps.setText(funcionario.getClps().toString());
-    	dpData.setAccessibleText(funcionario.getDtNasc());
     	tfEndereco.setText(funcionario.getEndereco());
     	tfCep.setText(funcionario.getCep().toString());
     	tfBairro.setText(funcionario.getBairro());
-    	tfBanco.setText(funcionario.getBanco());
     	//tfSalario.setText(funcionario.getSalario());
     	tfCargo.setText(funcionario.getCargo());
     }
@@ -218,9 +198,6 @@ public class FuncionarioController {
     	tfSalario.clear();
     	dpDataAdmissao.setValue(null);
     	tfCargaHoraria.clear();
-    	tfBanco.clear();
-    	tfAgencia.clear();
-    	tfConta.clear();
     	editando = false;
     	tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
     }

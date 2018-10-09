@@ -14,11 +14,11 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FuncionarioController">
    <children>
-      <Pane layoutX="-14.0" layoutY="6.0" prefHeight="700.0" prefWidth="1000.0">
+      <Pane layoutX="-14.0" layoutY="2.0" prefHeight="700.0" prefWidth="1000.0">
          <children>
-            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <Label layoutX="79.0" layoutY="100.0" text="Codigo" />
-            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Funcionario">
+            <TextField fx:id="tfCodigo" layoutX="210.0" layoutY="97.0" />
+            <Label layoutX="79.0" layoutY="100.0" text="Código" />
+            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Funcionário">
                <font>
                   <Font size="37.0" />
                </font>
@@ -36,53 +36,43 @@
             <Label layoutX="79.0" layoutY="220.0" text="RG" />
             <Label layoutX="79.0" layoutY="300.0" text="Data Nascimento" />
             <Label layoutX="79.0" layoutY="340.0" text="Endereço" />
-            <Label layoutX="515.0" layoutY="140.0" text="Bairro" />
+            <Label layoutX="447.0" layoutY="141.0" text="Bairro" />
             <Label layoutX="79.0" layoutY="260.0" text="CTPS" />
-            <Label layoutX="515.0" layoutY="101.0" text="CEP" />
-            <TextField fx:id="tfNome" layoutX="243.0" layoutY="137.0" />
-            <TextField fx:id="tfCPF" layoutX="243.0" layoutY="176.0" />
-            <TextField fx:id="tfRg" layoutX="243.0" layoutY="216.0" />
-            <TextField fx:id="tfCtps" layoutX="243.0" layoutY="256.0" />
-            <TextField fx:id="tfEndereco" layoutX="243.0" layoutY="336.0" />
-            <TextField fx:id="tfCep" layoutX="587.0" layoutY="97.0" />
-            <TextField fx:id="tfBairro" layoutX="587.0" layoutY="136.0" />
+            <Label layoutX="449.0" layoutY="100.0" text="CEP" />
+            <TextField fx:id="tfNome" layoutX="210.0" layoutY="137.0" />
+            <TextField fx:id="tfCPF" layoutX="210.0" layoutY="176.0" />
+            <TextField fx:id="tfRg" layoutX="210.0" layoutY="216.0" />
+            <TextField fx:id="tfCtps" layoutX="210.0" layoutY="256.0" />
+            <TextField fx:id="tfEndereco" layoutX="210.0" layoutY="338.0" />
+            <TextField fx:id="tfCep" layoutX="565.0" layoutY="96.0" />
+            <TextField fx:id="tfBairro" layoutX="565.0" layoutY="137.0" />
             <TableView fx:id="tblFuncionario" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaFuncionario" prefHeight="312.0" prefWidth="986.0">
               <columns>
-                <TableColumn fx:id="tbcCodigo" minWidth="88.0" prefWidth="75.0" text="Codigo" />
+                <TableColumn fx:id="tbcCodigo" minWidth="88.0" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="tbcnome" minWidth="88.0" prefWidth="75.0" text="Nome" />
                   <TableColumn fx:id="tbcCpf" minWidth="88.0" prefWidth="75.0" text="CPF" />
                   <TableColumn fx:id="tbcRg" minWidth="88.0" prefWidth="75.0" text="RG" />
                   <TableColumn fx:id="tbcCtps" minWidth="88.0" prefWidth="75.0" text="CTPS" />
-                  <TableColumn fx:id="tbcDataNascimento" minWidth="88.0" prefWidth="75.0" text="Data Nascimento" />
-                  <TableColumn fx:id="tbcEndereco" minWidth="88.0" prefWidth="75.0" text="Endereço" />
-                  <TableColumn fx:id="tbcCep" minWidth="88.0" prefWidth="75.0" text="CEP" />
-                  <TableColumn fx:id="tbcBairo" minWidth="88.0" prefWidth="75.0" text="Bairro" />
-                  <TableColumn fx:id="tbcBanco" prefWidth="75.0" text="Banco" />
-                  <TableColumn fx:id="tbcSalario" prefWidth="75.0" text="Salario" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
-                  <TableColumn fx:id="tbcCargo" prefWidth="75.0" text="Cargo" />
+                  <TableColumn fx:id="tbcDataNascimento" minWidth="88.0" prefWidth="121.0" text="Data Nascimento" />
+                  <TableColumn fx:id="tbcEndereco" minWidth="88.0" prefWidth="101.0" text="Endereço" />
+                  <TableColumn fx:id="tbcCep" minWidth="77.0" prefWidth="101.0" text="CEP" />
+                  <TableColumn fx:id="tbcBairo" minWidth="60.0" prefWidth="60.0" text="Bairro" />
+                  <TableColumn fx:id="tbcSalario" prefWidth="74.0" text="Salário" />
+                  <TableColumn fx:id="tbcCargo" prefWidth="88.0" text="Cargo" />
               </columns>
             </TableView>
-            <Button fx:id="btnSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-            <Button fx:id="btnNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
-            <Button fx:id="btnDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
-            <Label layoutX="517.0" layoutY="220.0" text="Salario" />
-            <Label layoutX="517.0" layoutY="300.0" text="Carga Horaria" />
-            <Label layoutX="517.0" layoutY="260.0" text="Data Admissao" />
-            <Label layoutX="517.0" layoutY="180.0" text="Cargo" />
-            <Label layoutX="789.0" layoutY="101.0" text="Banco" />
-            <Label layoutX="791.0" layoutY="141.0" text="Agencia" />
-            <Label layoutX="791.0" layoutY="180.0" text="Conta" />
-            <Label layoutX="791.0" layoutY="220.0" text="Data " />
-            <TextField fx:id="tfCargo" layoutX="587.0" layoutY="176.0" />
-            <TextField fx:id="tfSalario" layoutX="587.0" layoutY="216.0" />
-            <TextField fx:id="tfCargaHoraria" layoutX="614.0" layoutY="296.0" />
-            <TextField fx:id="tfBanco" layoutX="837.0" layoutY="96.0" />
-            <TextField fx:id="tfAgencia" layoutX="837.0" layoutY="137.0" />
-            <TextField fx:id="tfConta" layoutX="837.0" layoutY="176.0" />
-            <DatePicker fx:id="dpData" layoutX="825.0" layoutY="216.0" />
-            <DatePicker fx:id="dpDataAdmissao" layoutX="610.0" layoutY="256.0" />
-            <DatePicker fx:id="dpDataNascimento" layoutX="236.0" layoutY="296.0" />
+            <Button fx:id="btnSalvar" layoutX="393.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+            <Button fx:id="btnNovo" layoutX="478.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
+            <Button fx:id="btnDeletar" layoutX="553.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
+            <Label layoutX="445.0" layoutY="220.0" text="Salário" />
+            <Label layoutX="444.0" layoutY="300.0" text="Carga Horária" />
+            <Label layoutX="441.0" layoutY="260.0" text="Data Admissão" />
+            <Label layoutX="447.0" layoutY="180.0" text="Cargo" />
+            <TextField fx:id="tfCargo" layoutX="565.0" layoutY="176.0" />
+            <TextField fx:id="tfSalario" layoutX="565.0" layoutY="216.0" />
+            <TextField fx:id="tfCargaHoraria" layoutX="565.0" layoutY="296.0" />
+            <DatePicker fx:id="dpDataAdmissao" layoutX="565.0" layoutY="256.0" />
+            <DatePicker fx:id="dpDataNascimento" layoutX="210.0" layoutY="296.0" />
          </children>
       </Pane>
    </children>
