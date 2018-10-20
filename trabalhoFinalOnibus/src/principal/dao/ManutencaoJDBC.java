@@ -34,7 +34,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 	@Override
 	public void alterar(Manutencao dado) {
 		try {
-			String sql = "update manutencao set descricao = ?" +  "where id = ?";
+			String sql = "update manutencao set descricao = ?" +  "where codigo = ?";
 			PreparedStatement stmt = ConexaoUtil.getConn().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigo());
 			stmt.setString(2, dado.getDescricao());
@@ -52,10 +52,10 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 	@Override
 	public void excluir(Manutencao dado) {
 		try {
-			String sql = "delete from manutencao where id = ?";
+			String sql = "delete from manutencao where codigo = ?";
+			
 			PreparedStatement stmt = ConexaoUtil.getConn().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigo());
-			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,6 +72,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 				Manutencao manutencao = new Manutencao();
 				manutencao.setCodigo(rs.getInt("codigo"));
 				manutencao.setDescricao(rs.getString("descricao"));
+				manutencao.setTipo(rs.getString("tipo"));
 				manutencao.setMarca(rs.getString("marca"));
 				manutencao.setAplicacao(rs.getString("aplicacao"));
 				manutencao.setDataCadastro(rs.getString("dataCadastro"));

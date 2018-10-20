@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -37,6 +36,9 @@ public class VeiculoController {
 	@FXML
 	private TextField tfChassi;
 
+    @FXML
+    private TextField tfDataCadastro;
+    
 	@FXML
 	private TableView<Veiculo> tblVeiculo;
 
