@@ -154,8 +154,10 @@ public class FuncionarioController {
     
     @FXML
     void deletar(ActionEvent event) {
+    	if ( new  AlertaFactory () . confirmaExclusao ()) {
     	funcionarioDao.excluir(funcionario);
     	novoFuncionario();
+    	}
     }
 
     @FXML
