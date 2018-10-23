@@ -124,7 +124,6 @@ public class FuncionarioController {
     }
     
     public void populaFuncionario() {
-    	funcionario = new Funcionario();
     	funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	funcionario.setNome(tfNome.getText());
     	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
@@ -135,8 +134,7 @@ public class FuncionarioController {
     	funcionario.setBairro(tfBairro.getText());
     	funcionario.setSalario(Float.valueOf(tfSalario.getText()));
     	funcionario.setCargo(tfCargo.getText());
-    	
-    	novoFuncionario();
+    
     }
     
     public void populaTela(Funcionario funcionario) {
@@ -154,9 +152,13 @@ public class FuncionarioController {
     
     @FXML
     void deletar(ActionEvent event) {
+    	if(tblFuncionario.getSelectionModel().getSelectedItem() != null) {
+    		funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
+    		populaTela(funcionario);
     	if ( new  AlertaFactory () . confirmaExclusao ()) {
     	funcionarioDao.excluir(funcionario);
     	novoFuncionario();
+    	}
     	}
     }
 
