@@ -31,6 +31,7 @@
                   <MenuItem fx:id="mmiVeiculo" mnemonicParsing="false" onAction="#MenuVeiculo" text="Cadastro de Veiculo" />
                   <MenuItem fx:id="mmiFuncionario" mnemonicParsing="false" onAction="#MenuFuncionario" text="Cadastro de Funcionario" />
                   <MenuItem fx:id="mmiManutencao" mnemonicParsing="false" onAction="#MenuManutencao" text="Cadastro de Manutenção" />
+                  <MenuItem fx:id="mniUsuario" mnemonicParsing="false" onAction="#MenuUsuario" text="Cadastro De Usuario" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Movimentação">

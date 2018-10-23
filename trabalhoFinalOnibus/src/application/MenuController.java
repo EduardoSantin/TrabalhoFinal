@@ -10,7 +10,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import principal.model.Login;
+import principal.model.Usuario;
 
 public class MenuController {
 
@@ -37,6 +37,9 @@ public class MenuController {
 
 	@FXML
 	private Button btnEntrar;
+	
+	@FXML
+	private MenuItem mniUsuario;
 
 	@FXML
 	void MenuEmpresa(ActionEvent event) {
@@ -96,11 +99,24 @@ public class MenuController {
 	void MenuDespesas(ActionEvent event) {
 
 	}
+	
+	@FXML
+    void MenuUsuario(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadastroUsuario.fxml"));
+		try {
+			AnchorPane menuView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(menuView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+    }
 
 	@FXML
 	void entrar(ActionEvent event) {
 		Stage stageDono = (Stage)btnEntrar.getScene().getWindow();
 		LoginDialogFabrica loginDialog = new LoginDialogFabrica(stageDono);
-		Login loginSelecionado = loginDialog.showDialog();
+		Usuario loginSelecionado = loginDialog.showDialog();
 }
 }

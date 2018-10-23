@@ -16,7 +16,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	public void inserir(Funcionario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into veiculo(codigo, nome, cpf, rg, clps, dtnasc, endereco, bairro, cep, cargo, salario, dtaAdmisssao, cargaHraria) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into Funcionario(codigo, nome, cpf, rg, clps, dtnasc, endereco, bairro, cep, cargo, salario, dtaAdmisssao, cargaHraria) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 

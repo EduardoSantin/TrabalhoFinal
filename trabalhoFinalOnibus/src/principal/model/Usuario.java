@@ -12,12 +12,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-@ToString(of={"nome","senha"})
+@ToString(of={"login","senha"})
 	
-	public class Login {
+	public class Usuario {
 	
-	
-	private String nome;
+	private int codigo;
+	private String login;
 	private String senha;
 	
 

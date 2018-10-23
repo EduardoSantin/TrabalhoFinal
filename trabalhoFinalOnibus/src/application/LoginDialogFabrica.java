@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import principal.model.Login;
+import principal.model.Usuario;
 
 public class LoginDialogFabrica {
 
@@ -17,8 +17,8 @@ public class LoginDialogFabrica {
 		this.stageDono = stageDono;
 	}
 
-	public Login showDialog() {
-		Login loginSelecionado = null;
+	public Usuario showDialog() {
+		Usuario loginSelecionado = null;
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("login.fxml"));
 		try {
