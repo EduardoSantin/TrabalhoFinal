@@ -9,6 +9,7 @@ import principal.model.Usuario;
 
 public class UsuarioJDBC implements UsuarioDAO{
 		
+	@Override
 	public void inserir(Usuario dado) {
 		try {
 			// Executa esse comando no BD

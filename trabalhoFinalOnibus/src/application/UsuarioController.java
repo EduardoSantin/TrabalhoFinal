@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import principal.dao.UsuarioDAO;
 import principal.dao.UsuarioJDBC;
 import principal.model.Usuario;
@@ -25,14 +26,16 @@ public class UsuarioController {
     private Usuario usuario;
     
     private UsuarioDAO usuarioDao = new UsuarioJDBC();
-
+    
+    
     @FXML
-    void Salvar(ActionEvent event) {
-    	usuarioDao.inserir(usuario);
+    void Salvar(ActionEvent event) { 
+       	usuarioDao.inserir(usuario);
     	novoUsuario();
     }
     
     public void populaUsuario() {
+    	usuario = new Usuario();
     	usuario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	usuario.setLogin(tfLogin.getText());
     	usuario.setSenha(tfSenha.getText());
