@@ -38,7 +38,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 	@Override
 	public void alterar(Veiculo dado) {
 		try {
-			String sql = "update veiculo set veiculo = ?" + "where codigo= ?";
+			String sql = "update 'veiculo' set 'Codigo' = ?, 'renavan' = ?, 'marca' = ?, 'modelo' = ?, 'placa' = ?, 'Motor' = ?, 'chassi' = ?, 'dataCadastro' = ? where 'codigo' = ?;";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
@@ -58,6 +58,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 
 	}
 
+	// "UPDATE `veterinaria`.`funcionario` SET `Nome` = ?,`CPF` = ?,`Data_Nascimento` = ?,`id_Cliente` = ?,`idFilial` = ? WHERE `idFuncionario` = ?;";
 	@Override
 	public void excluir(Veiculo dado) {
 		try {
