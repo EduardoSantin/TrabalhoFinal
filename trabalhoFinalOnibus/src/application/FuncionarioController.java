@@ -75,6 +75,9 @@ public class FuncionarioController {
 
     @FXML
     private TableColumn<Funcionario, String> tbcCargo;
+    
+    @FXML
+    private TableColumn<Funcionario, Float> tbcCargaHoraria;
 
     @FXML
     private Button btnSalvar;
@@ -124,6 +127,7 @@ public class FuncionarioController {
     }
     
     public void populaFuncionario() {
+    
     	funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	funcionario.setNome(tfNome.getText());
     	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
@@ -169,12 +173,15 @@ public class FuncionarioController {
 
     @FXML
     void salvar(ActionEvent event) {
+    	
     	populaFuncionario();
+    	
     	if(editando) {
     		funcionarioDao.alterar(funcionario);
     	} else {
     		funcionarioDao.inserir(funcionario);
     	}
+    	
     	novoFuncionario();
     	tblFuncionario.refresh();
     }
@@ -201,8 +208,8 @@ public class FuncionarioController {
     	tfCargo.clear();
     	tfSalario.clear();
     	dpDataAdmissao.setValue(null);
-    	tfCargaHoraria.clear();
     	editando = false;
+    	funcionario = new Funcionario();
     	tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
     }
 }

@@ -12,4 +12,9 @@ public class JDBCFactory implements DaoFactory {
 		return new VeiculoJDBC();
 	}
 
+	@Override
+	public FuncionarioDAO funcionarioDAO() {
+		return new FuncionarioJDBC();
+	}
+
 }

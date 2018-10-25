@@ -16,7 +16,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	public void inserir(Funcionario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into Funcionario(codigo, nome, cpf, rg, clps, dtnasc, endereco, bairro, cep, cargo, salario, dtaAdmisssao, cargaHraria) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into Funcionario(codigo, nome, cpf, rg, clps, dataNascimento, endereco, bairro, cep, cargo, salario, dataadmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
@@ -32,7 +32,6 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(10, dado.getCargo());
 			statement.setFloat(11, dado.getSalario());
 			statement.setString(12, dado.getDtaAdmissao());
-			statement.setFloat(13, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -59,7 +58,6 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(10, dado.getCargo());
 			statement.setFloat(11, dado.getSalario());
 			statement.setString(12, dado.getDtaAdmissao());
-			statement.setFloat(13, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 
@@ -97,14 +95,13 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setCpf(rs.getInt("cpf"));
 				funcionario.setRg(rs.getInt("rg"));
 				funcionario.setClps(rs.getInt("clps"));
-				funcionario.setDtNasc(rs.getString("dtNasc"));
+				funcionario.setDtNasc(rs.getString("dataNascimento"));
 				funcionario.setEndereco(rs.getString("endereco"));
 				funcionario.setBairro(rs.getString("bairro"));
 				funcionario.setCep(rs.getInt("cep"));
 				funcionario.setCargo(rs.getString("cargo"));
 				funcionario.setSalario(rs.getFloat("salario"));
-				funcionario.setDtaAdmissao(rs.getString("dtaAdmissao"));
-				funcionario.setCargaHoraria(rs.getFloat("cargaHoraria"));
+				funcionario.setDtaAdmissao(rs.getString("dataadmisao"));
 				funcionarios.add(funcionario);
 
 			}
