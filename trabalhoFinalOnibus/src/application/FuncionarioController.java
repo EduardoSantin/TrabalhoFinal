@@ -156,6 +156,7 @@ public class FuncionarioController {
     
     @FXML
     void deletar(ActionEvent event) {
+    	
     	if(tblFuncionario.getSelectionModel().getSelectedItem() != null) {
     		funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
     		populaTela(funcionario);
