@@ -13,11 +13,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MovimentosController">
    <children>
-      <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
+      <Pane layoutX="-7.0" layoutY="3.0" prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <TextField layoutX="243.0" layoutY="97.0" />
+            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
             <Label layoutX="80.0" layoutY="100.0" text="Código" />
             <Label layoutX="272.0" layoutY="20.0" text="Movimentos">
                <font>
@@ -35,35 +35,38 @@
             <Label layoutX="79.0" layoutY="140.0" text="Número Nota" />
             <Label layoutX="79.0" layoutY="180.0" text="Data Emissão" />
             <Label layoutX="79.0" layoutY="220.0" text="Placa Veículo" />
-            <Label layoutX="79.0" layoutY="300.0" text="Código Manutenção" />
-            <Label layoutX="79.0" layoutY="340.0" text="Quantidade" />
-            <Label layoutX="515.0" layoutY="140.0" text="Observação" />
-            <Label layoutX="79.0" layoutY="260.0" text="KM Veículo" />
-            <Label layoutX="515.0" layoutY="101.0" text="Valor" />
-            <TextField layoutX="243.0" layoutY="137.0" />
-            <TextField layoutX="243.0" layoutY="256.0" />
-            <TextField layoutX="243.0" layoutY="336.0" />
-            <TextField layoutX="587.0" layoutY="97.0" />
-            <TextField layoutX="587.0" layoutY="136.0" />
-            <TableView layoutX="12.0" layoutY="388.0" prefHeight="212.0" prefWidth="786.0">
+            <Label layoutX="79.0" layoutY="340.0" text="Quantidade Passageiros" />
+            <Label layoutX="455.0" layoutY="180.0" text="Nome Motorista" />
+            <Label layoutX="79.0" layoutY="260.0" text="KM  Inicial " />
+            <Label layoutX="455.0" layoutY="101.0" text="Origem" />
+            <TextField fx:id="tfNumeroNota" layoutX="243.0" layoutY="137.0" />
+            <TextField fx:id="tfKmInicial" layoutX="243.0" layoutY="256.0" />
+            <TextField fx:id="tfQtdPassageiros" layoutX="243.0" layoutY="336.0" />
+            <TextField fx:id="tfOrigem" layoutX="553.0" layoutY="97.0" />
+            <TextField fx:id="tfNomeMotorista" layoutX="553.0" layoutY="176.0" />
+            <TableView fx:id="tblMovimentos" layoutX="12.0" layoutY="388.0" prefHeight="212.0" prefWidth="822.0">
               <columns>
-                <TableColumn minWidth="88.0" prefWidth="75.0" text="Código" />
-                <TableColumn minWidth="88.0" prefWidth="75.0" text="N° Nota" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Data Emissão" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Codigo Veiculo" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="KM" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Cod Manutençao" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Quantidade" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Valor" />
-                  <TableColumn minWidth="88.0" prefWidth="75.0" text="Observação" />
+                <TableColumn fx:id="tbcCodigo" minWidth="43.0" prefWidth="49.0" text="Código" />
+                <TableColumn fx:id="tbcNota" minWidth="59.0" prefWidth="61.0" text="N° Nota" />
+                  <TableColumn fx:id="tbcDataEmissao" minWidth="84.0" prefWidth="102.0" text="Data Emissão" />
+                  <TableColumn fx:id="tbcPlaca" minWidth="56.0" prefWidth="75.0" text="Placa" />
+                  <TableColumn fx:id="tbcKmInicial" minWidth="31.0" prefWidth="69.0" text="KM Inicial" />
+                  <TableColumn fx:id="tbcKmFinal" minWidth="73.0" text="KM Final" />
+                  <TableColumn fx:id="tbcQtdPassageiros" minWidth="28.0" prefWidth="111.0" text="QTD Passageiros" />
+                  <TableColumn fx:id="tbcOrigem" minWidth="28.0" prefWidth="74.0" text="Origem" />
+                  <TableColumn fx:id="tbcDestino" minWidth="0.0" prefWidth="93.0" text="Destino" />
+                  <TableColumn fx:id="tbcMotorista" prefWidth="107.0" text="Motorista" />
               </columns>
             </TableView>
-            <Button layoutX="470.0" layoutY="345.0" mnemonicParsing="false" text="Salvar" />
-            <Button layoutX="565.0" layoutY="345.0" mnemonicParsing="false" text="Novo" />
-            <Button layoutX="661.0" layoutY="345.0" mnemonicParsing="false" text="Deletar" />
-            <DatePicker layoutX="243.0" layoutY="176.0" />
+            <Button fx:id="btnSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
+            <Button fx:id="btnNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#Novo" text="Novo" />
+            <Button fx:id="btnDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#Deletar" text="Deletar" />
+            <DatePicker fx:id="dtpDataEmissao" layoutX="243.0" layoutY="176.0" />
             <ComboBox fx:id="cbxPlacaVeiculo" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
-            <ComboBox layoutX="242.0" layoutY="296.0" prefWidth="150.0" />
+            <Label layoutX="85.0" layoutY="300.0" text="KM Final" />
+            <TextField fx:id="tfKmFinal" layoutX="243.0" layoutY="296.0" />
+            <Label layoutX="456.0" layoutY="140.0" text="Destino" />
+            <TextField fx:id="tfDestino" layoutX="553.0" layoutY="137.0" />
          </children>
       </Pane>
    </children>
