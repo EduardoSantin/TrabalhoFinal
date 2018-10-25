@@ -38,7 +38,7 @@ public class VeiculoController {
 
     @FXML
     private TextField tfDataCadastro;
-    
+
 	@FXML
 	private TableView<Veiculo> tblVeiculo;
 
@@ -104,6 +104,7 @@ public class VeiculoController {
 		veiculo.setPlaca(tfPlaca.getText());
 		veiculo.setMotor(tfMotor.getText());
 		veiculo.setChassi(Integer.valueOf(tfChassi.getText()));
+		veiculo.setDataCadastro(tfDataCadastro.getText());
 
 		novoVeiculo();
 	}
@@ -116,6 +117,7 @@ public class VeiculoController {
 		tfPlaca.setText(veiculo.getPlaca());
 		tfMotor.setText(veiculo.getMotor());
 		tfChassi.setText(veiculo.getChassi().toString());
+		tfDataCadastro.setText(veiculo.getDataCadastro());
 	}
 
 	@FXML
@@ -127,6 +129,15 @@ public class VeiculoController {
 	@FXML
 	void novo(ActionEvent event) {
 		novoVeiculo();
+	}
+
+	@FXML
+	void selecionaVeiculo(MouseEvent event) {
+		if (tblVeiculo.getSelectionModel().getSelectedItem() != null) {
+			veiculo = tblVeiculo.getSelectionModel().getSelectedItem();
+			populaTela(veiculo);
+			editando = true;
+		}
 	}
 
 	@FXML
@@ -142,14 +153,6 @@ public class VeiculoController {
 		tblVeiculo.refresh();
 	}
 
-	@FXML
-	void selecionaVeiculo(MouseEvent event) {
-		if (tblVeiculo.getSelectionModel().getSelectedItem() != null) {
-			veiculo = tblVeiculo.getSelectionModel().getSelectedItem();
-			populaTela(veiculo);
-			editando = true;
-		}
-	}
 
 	void novoVeiculo() {
 		tfCodigo.clear();
@@ -159,6 +162,7 @@ public class VeiculoController {
 		tfPlaca.clear();
 		tfMotor.clear();
 		tfChassi.clear();
+		tfDataCadastro.clear();
 		editando = false;
 		tblVeiculo.setItems(FXCollections.observableArrayList(veiculodao.listar()));
 	}
