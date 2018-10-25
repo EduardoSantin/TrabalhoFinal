@@ -11,6 +11,12 @@ public class ArquivoFactory implements DaoFactory {
 	public VeiculoDAO veiculoDAO() {
 		return null;
 	}
+
+	@Override
+	public FuncionarioDAO funcionarioDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
