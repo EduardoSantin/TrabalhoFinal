@@ -92,7 +92,14 @@ public class MenuController {
 
 	@FXML
 	void MenuControleFinanceiro(ActionEvent event) {
-
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("Movimentos.fxml"));
+		try {
+			AnchorPane menuView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(menuView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	@FXML
