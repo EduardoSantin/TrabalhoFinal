@@ -131,11 +131,14 @@ public class MovimentosController {
 	
 	
 	private void populaMoviemntos() {	
+		//falta fazer
 	}
 	private void populaTela(Movimentos movimento) {
+		//falta fazer
 		
 	}
 	private void novoMovimento() {
+		//falta fazer
 	}
 	
 
