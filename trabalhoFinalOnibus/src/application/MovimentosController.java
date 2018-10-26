@@ -1,5 +1,6 @@
 package application;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -130,15 +131,41 @@ public class MovimentosController {
 
 	
 	
-	private void populaMoviemntos() {	
-		//falta fazer
+	private void populaMoviemntos() {
+		movimento.setCodigo(Integer.valueOf(tfCodigo.getText()));
+		movimento.setNumeroNota(Integer.valueOf(tfNumeroNota.getText()));
+		movimento.setKmInicial(Double.valueOf(tfKmInicial.getText()));
+		movimento.setKmFinal(Double.valueOf(tfKmFinal.getText()));
+		movimento.setQtdPassageiros(Integer.valueOf(tfQtdPassageiros.getText()));
+		movimento.setOrigem(tfOrigem.getText());
+		movimento.setDestino(tfDestino.getText());
+		movimento.setMotorista(tfNomeMotorista.getText());
 	}
 	private void populaTela(Movimentos movimento) {
-		//falta fazer
-		
+		tfCodigo.setText(movimento.getCodigo().toString());
+		tfNumeroNota.setText(movimento.getNumeroNota().toString());
+		tfKmInicial.setText(movimento.getKmInicial().toString());
+		tfKmFinal.setText(movimento.getKmFinal().toString());
+		tfQtdPassageiros.setText(movimento.getQtdPassageiros().toString());
+		tfOrigem.setText(movimento.getOrigem());
+		tfDestino.setText(movimento.getDestino());
+		tfNomeMotorista.setText(movimento.getMotorista());
+		cbxPlacaVeiculo.getSelectionModel().select(movimento.getVeiculo());
+		//falta fazer o pupula do data emissao
+
 	}
 	private void novoMovimento() {
-		//falta fazer
+		tfCodigo.clear();
+		tfNumeroNota.clear();
+		tfKmInicial.clear();
+		tfKmFinal.clear();
+		tfQtdPassageiros.clear();
+		tfOrigem.clear();
+		tfDestino.clear();
+		tfNomeMotorista.clear();
+		editando = false;
+		movimento = new Movimentos();
+		tblMovimentos.setItems(FXCollections.observableArrayList(movimentoDao.listar()));
 	}
 	
 
