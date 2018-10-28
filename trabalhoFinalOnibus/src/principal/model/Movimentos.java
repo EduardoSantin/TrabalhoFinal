@@ -21,7 +21,7 @@ public class Movimentos {
 	private Double kmInicial;
 	private Double kmFinal;
 	private Integer qtdPassageiros;
-	private String origem;
+	private String origen;
 	private String destino;
 	private String motorista;
 	private Veiculo veiculo;

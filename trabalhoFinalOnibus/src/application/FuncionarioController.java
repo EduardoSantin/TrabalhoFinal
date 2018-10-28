@@ -133,7 +133,7 @@ public class FuncionarioController {
     	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
     	funcionario.setRg(Integer.valueOf(tfRg.getText()));
     	funcionario.setClps(Integer.valueOf(tfCtps.getText()));
-    	funcionario.setEndereco(tbcEndereco.getText());
+    	funcionario.setEndereco(tfEndereco.getText());
     	funcionario.setCep(Integer.valueOf(tfCep.getText()));
     	funcionario.setBairro(tfBairro.getText());
     	funcionario.setSalario(Float.valueOf(tfSalario.getText()));
