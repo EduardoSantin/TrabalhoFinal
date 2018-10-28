@@ -12,6 +12,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import principal.dao.MovimentosDAO;
 import principal.dao.MovimentosJDBC;
+import principal.dao.VeiculoDAO;
+import principal.dao.VeiculoJDBC;
 import principal.model.Movimentos;
 import principal.model.Veiculo;
 
@@ -95,6 +97,8 @@ public class MovimentosController {
     
     private MovimentosDAO movimentoDao = new MovimentosJDBC();
     
+    private VeiculoDAO veiculoDao = new VeiculoJDBC();
+    
     @FXML
     private void initialize() {
     	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -107,7 +111,7 @@ public class MovimentosController {
     	tbcOrigem.setCellValueFactory(new PropertyValueFactory<>("origen"));
     	tbcDestino.setCellValueFactory(new PropertyValueFactory<>("destino"));
     	tbcMotorista.setCellValueFactory(new PropertyValueFactory<>("nomeMotorista"));
-    	
+    	populaCombo();
     	novoMovimento();
     }
 
@@ -135,6 +139,13 @@ public class MovimentosController {
 		cbxPlacaVeiculo.getSelectionModel().select(movimento.getVeiculo());
 		tfDataEmissao.setText(movimento.getDtaEmissao());
 
+	}
+	
+	private void populaCombo(){
+		cbxPlacaVeiculo.getItems().clear();
+		for(Veiculo veiculo: veiculoDao.listar()){
+			cbxPlacaVeiculo.getItems().add(veiculo);
+		}
 	}
 	@FXML
     void Salvar(ActionEvent event) {

@@ -14,7 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "codigo")
-@ToString(of = { "codigo", "renavan", "marca", "modelo", "placa", "motor", "chassi", "categoria", "combustivel",
+@ToString(of = { "codigo", "renavan", "marca", "modelo", "motor", "chassi", "categoria", "combustivel",
 		"dataCadastro" })
 public class Veiculo implements Serializable {
 
@@ -30,5 +30,11 @@ public class Veiculo implements Serializable {
 	private String categoria;
 	private String combustivel;
 	private String dataCadastro;
+	
+	@Override
+	public String toString() {
+		return  placa;
+	}
 
+	
 }
