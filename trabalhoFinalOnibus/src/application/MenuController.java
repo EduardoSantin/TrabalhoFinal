@@ -81,7 +81,7 @@ public class MenuController {
 	@FXML
 	void MenuManutencao(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("Manutencao.fxml"));
+		loader.setLocation(getClass().getResource("CadastroManutencao.fxml"));
 		try {
 			AnchorPane menuView = (AnchorPane) loader.load();
 			bpPrincipal.setCenter(menuView);
@@ -104,9 +104,15 @@ public class MenuController {
 
 	@FXML
 	void MenuDespesas(ActionEvent event) {
-
-	}
-	
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadastroManutencao.fxml"));
+		try {
+			AnchorPane menuView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(menuView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}	
 	@FXML
     void MenuUsuario(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();

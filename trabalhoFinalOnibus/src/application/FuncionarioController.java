@@ -115,7 +115,7 @@ public class FuncionarioController {
     	tbcnome.setCellValueFactory(new PropertyValueFactory<>("nome"));
     	tbcCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
     	tbcRg.setCellValueFactory(new PropertyValueFactory<>("rg"));
-    	tbcCtps.setCellValueFactory(new PropertyValueFactory<>("ctps"));
+    	tbcCtps.setCellValueFactory(new PropertyValueFactory<>("clps"));
     	tbcDataNascimento.setCellValueFactory(new PropertyValueFactory<>("dtnasc"));
     	tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
     	tbcCep.setCellValueFactory(new PropertyValueFactory<>("cep"));
@@ -136,7 +136,7 @@ public class FuncionarioController {
     	funcionario.setEndereco(tfEndereco.getText());
     	funcionario.setCep(Integer.valueOf(tfCep.getText()));
     	funcionario.setBairro(tfBairro.getText());
-    	funcionario.setSalario(Float.valueOf(tfSalario.getText()));
+    	funcionario.setSalario(Integer.valueOf(tfSalario.getText()));
     	funcionario.setCargo(tfCargo.getText());
     
     }

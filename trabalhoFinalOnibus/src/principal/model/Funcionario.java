@@ -24,11 +24,9 @@ public class Funcionario {
 	private String bairro;
 	private Integer cep;
 	private String cargo;
-	private float salario;
+	private Integer salario;
 	private String dtaAdmissao;
-	private Float cargaHoraria;
-	private String banco;
-	private Integer agencia;
-	private Integer conta;
+	//Tem que arrumae aq a DATA Admissao
+
 
 }

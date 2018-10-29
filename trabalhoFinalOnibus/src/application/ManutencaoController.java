@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -12,138 +13,151 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import principal.dao.ManutencaoDAO;
 import principal.dao.ManutencaoJDBC;
+import principal.dao.VeiculoDAO;
+import principal.dao.VeiculoJDBC;
 import principal.model.Manutencao;
+import principal.model.Veiculo;
 
 public class ManutencaoController {
 
-	@FXML
-	private TextField tfCodigo;
+    @FXML
+    private TableColumn<Manutencao, String> tbcTipo;
 
-	@FXML
-	private TextField tfDescricao;
+    @FXML
+    private TableColumn<Manutencao, String> tbcMarca;
 
-	@FXML
-	private TextField tfTipo;
+    @FXML
+    private DatePicker dtCadastro;
 
-	@FXML
-	private TextField tfMarca;
+    @FXML
+    private TextField tfCodigo;
 
-	@FXML
-	private TextField tfAplicacao;
+    @FXML
+    private TextField tfDescricao;
 
-	@FXML
-	private TableView<Manutencao> tblManutencao;
+    @FXML
+    private Button btnDeletar;
 
-	@FXML
-	private TableColumn<Manutencao, Integer> tbcCodigo;
+    @FXML
+    private TableColumn<Manutencao, Integer> tbcCodigo;
 
-	@FXML
-	private TableColumn<Manutencao, String> tbcDescricao;
+    @FXML
+    private TableColumn<Manutencao, DatePicker> tbcDataCadastro;
 
-	@FXML
-	private TableColumn<Manutencao, String> tbcTipo;
+    @FXML
+    private TextField tfTipo;
 
-	@FXML
-	private TableColumn<Manutencao, String> tbcMarca;
+    @FXML
+    private Button btnSalvar;
 
-	@FXML
-	private TableColumn<Manutencao, String> tbcAplicacao;
+    @FXML
+    private ComboBox<Veiculo> cmbPlaca;
 
-	@FXML
-	private TableColumn<Manutencao, String> tbcDataCadastro;
+    @FXML
+    private TableView<Manutencao> tblManutencao;
 
-	@FXML
-	private Button btnSalvar;
+    @FXML
+    private TableColumn<Manutencao, String> tbcDescricao;
 
-	@FXML
-	private Button btnNovo;
-
-	@FXML
-	private Button btnDeletar;
-
-	@FXML
-	private DatePicker dtpDataCadastro;
-
-	private boolean editando;
-
-	private ManutencaoDAO manutencaoDao = new ManutencaoJDBC();
-
-	private Manutencao manutencao;
-
-	@FXML
+    @FXML
+    private Button btnNovo;
+    
+    @FXML
+    private Button btnBuscar;
+    
+    private Manutencao manutencao;
+    
+    private boolean editando;
+    
+    private ManutencaoDAO manutencaoDao = new ManutencaoJDBC();
+    
+    private VeiculoDAO veiculoDao = new VeiculoJDBC();
+    
+    @FXML
 	private void initialize() {
-		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-		tbcDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-		tbcTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-		tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
-		tbcAplicacao.setCellValueFactory(new PropertyValueFactory<>("aplicacao"));
-		//tbcDataCadastro.setCellValueFactory(new PropertyValueFactory<>("dataCadastro"));
+    	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+    	tbcDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+    	tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+    	tbcTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+    	tbcDataCadastro.setCellValueFactory(new PropertyValueFactory<>("dataCadastro"));
+    	populaCombo();
+    	NovoManutencao();
+    }
+    
+    public void populaManutencao() {
+    	manutencao.setCodigo(Integer.valueOf(tfCodigo.getText()));
+    	manutencao.setDataCadastro(dtCadastro.getValue());
+    	manutencao.setDescricao(tfDescricao.getText());
+    	manutencao.setTipo(tfTipo.getText());
+    	manutencao.setVeiculo(cmbPlaca.getValue());
+    	
+    }
+    
+    public void populaTela(Manutencao manutencao) {
+    	tfCodigo.setText(manutencao.getCodigo().toString());
+    	tfDescricao.setText(manutencao.getDescricao());
+    	tfTipo.setText(manutencao.getTipo());
+    	dtCadastro.setValue(manutencao.getDataCadastro());
+    	cmbPlaca.getSelectionModel().select(manutencao.getVeiculo());
+  
+    }
+   
+    
+    @FXML
+    void selecionaManutencao(MouseEvent event) {
+    	if (tblManutencao.getSelectionModel().getSelectedItem() != null) {
+    		manutencao = tblManutencao.getSelectionModel().getSelectedItem();
+    		populaTela(manutencao);
+    		editando = true;
+    	}
+    }
 
-		novoManutencao();
-	}
+    private void populaCombo() {
+    	for(Veiculo veiculo : veiculoDao.listar()) {
+    		cmbPlaca.getItems().add(veiculo);
+    	}
+    }
+    
+    @FXML
+    void salvar(ActionEvent event) {
+    	populaManutencao();
+    	
+    	if(editando) {
+    		manutencaoDao.alterar(manutencao);
+    	}else {
+    		manutencaoDao.inserir(manutencao);
+    	}
+    	NovoManutencao();
+    	tblManutencao.refresh();
+    	
+    	
+    }
 
-	@FXML
-	void salvar(ActionEvent event) {
+    @FXML
+    void novo(ActionEvent event) {
+    	NovoManutencao();
+    }
 
-		populaManutencao();
+    @FXML
+    void deletar(ActionEvent event) {
+    	manutencaoDao.excluir(manutencao);
+    	NovoManutencao();
+    }
+    
+    void NovoManutencao() {
+    	tfCodigo.clear();
+    	tfDescricao.clear();
+    	tfTipo.clear();
+    	dtCadastro.setValue(null);
+    	manutencao = new Manutencao();
+    	editando = false;
+    	cmbPlaca.getSelectionModel().clearSelection();
+    	tblManutencao.setItems(FXCollections.observableArrayList(manutencaoDao.listar()));
+    }
+    
 
-		if (editando) {
-			manutencaoDao.alterar(manutencao);
-		} else {
-			manutencaoDao.inserir(manutencao);
-		}
-		novoManutencao();
-		tblManutencao.refresh();
-	}
-
-	public void populaManutencao() {
-		manutencao.setCodigo(Integer.valueOf(tfCodigo.getText()));
-		manutencao.setDescricao(tfDescricao.getText());
-		manutencao.setTipo(tfTipo.getText());
-		manutencao.setMarca(tfMarca.getText());
-		manutencao.setAplicacao(tfAplicacao.getText());
-		manutencao.setDataCadastro(dtpDataCadastro.getPromptText());
-	}
-
-	public void populaTela(Manutencao manutencao) {
-		tfCodigo.setText(manutencao.getCodigo().toString());
-		tfDescricao.setText(manutencao.getDescricao());
-		tfTipo.setText(manutencao.getTipo());
-		tfMarca.setText(manutencao.getMarca());
-		tfAplicacao.setText(manutencao.getAplicacao());
-		dtpDataCadastro.setAccessibleText(manutencao.getDataCadastro());
-	}
-
-	@FXML
-	void deletar(ActionEvent event) {
-		manutencaoDao.excluir(manutencao);
-		novoManutencao();
-	}
-
-	@FXML
-	void novo(ActionEvent event) {
-		novoManutencao();
-	}
-
-	@FXML
-	void selecionaManutencao(MouseEvent event) {
-		if (tblManutencao.getSelectionModel().getSelectedItem() != null) {
-			manutencao = tblManutencao.getSelectionModel().getSelectedItem();
-			populaTela(manutencao);
-			editando = true;
-		}
-	}
-
-	void novoManutencao() {
-		tfCodigo.clear();
-		tfDescricao.clear();
-		tfTipo.clear();
-		tfMarca.clear();
-		tfAplicacao.clear();
-		manutencao = new Manutencao();
-		dtpDataCadastro.setValue(null);
-		editando = false;
-		tblManutencao.setItems(FXCollections.observableArrayList(manutencaoDao.listar()));
-	}
-
+    @FXML
+    void Buscar(ActionEvent event) {
+    }
+    
 }

@@ -100,7 +100,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setBairro(rs.getString("bairro"));
 				funcionario.setCep(rs.getInt("cep"));
 				funcionario.setCargo(rs.getString("cargo"));
-				funcionario.setSalario(rs.getFloat("salario"));
+				funcionario.setSalario(rs.getInt("salario"));
 				funcionario.setDtaAdmissao(rs.getString("dataadmisao"));
 				funcionarios.add(funcionario);
 
