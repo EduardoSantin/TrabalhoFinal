@@ -167,4 +167,9 @@ public class VeiculoController {
 		tblVeiculo.setItems(FXCollections.observableArrayList(veiculodao.listar()));
 	}
 
+	@Override
+	public String toString() {
+		return  " tfPlaca ";
+	}
+	
 }
