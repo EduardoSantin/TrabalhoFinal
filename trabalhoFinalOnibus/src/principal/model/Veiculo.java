@@ -34,7 +34,5 @@ public class Veiculo implements Serializable {
 	@Override
 	public String toString() {
 		return  placa;
-	}
-
-	
+	}	
 }

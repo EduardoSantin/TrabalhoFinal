@@ -34,7 +34,6 @@
             <Label layoutX="79.0" layoutY="140.0" text="Descrição" />
             <Label layoutX="79.0" layoutY="180.0" text="Tipo" />
             <Label layoutX="79.0" layoutY="220.0" text="Placa" />
-            <Label layoutX="80.0" layoutY="266.0" text="Data Cadastro" />
             <TextField fx:id="tfDescricao" layoutX="243.0" layoutY="137.0" />
             <TextField fx:id="tfTipo" layoutX="243.0" layoutY="176.0" />
             <TableView fx:id="tblManutencao" layoutX="14.0" layoutY="381.0" onMouseClicked="#selecionaManutencao" prefHeight="212.0" prefWidth="786.0">
@@ -42,7 +41,7 @@
                 <TableColumn fx:id="tbcCodigo" minWidth="133.0" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="tbcDescricao" minWidth="133.0" prefWidth="196.0" text="Descricão" />
                   <TableColumn fx:id="tbcTipo" minWidth="98.0" prefWidth="187.0" text="Tipo" />
-                  <TableColumn fx:id="tbcMarca" minWidth="61.0" prefWidth="114.0" text="Placa" />
+                  <TableColumn fx:id="tbcPlaca" minWidth="61.0" prefWidth="114.0" text="Placa" />
                   <TableColumn fx:id="tbcDataCadastro" minWidth="60.0" prefWidth="155.0" text="Data Cadastro" />
               </columns>
             </TableView>
@@ -51,7 +50,6 @@
             <Button fx:id="btnDeletar" layoutX="567.0" layoutY="105.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
             <ComboBox fx:id="cmbPlaca" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
             <Button fx:id="btnBuscar" layoutX="693.0" layoutY="332.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar" />
-            <TextField fx:id="tfDataCadastro" layoutX="243.0" layoutY="262.0" />
          </children>
       </Pane>
    </children>
