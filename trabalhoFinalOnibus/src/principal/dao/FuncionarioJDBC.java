@@ -16,7 +16,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	public void inserir(Funcionario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into Funcionario(codigo, nome, cpf, rg, clps, dataNascimento, endereco, bairro, cep, cargo, salario, dataadmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into Funcionario(codigo, nome, cpf, rg, ctps, dataNascimento, endereco, bairro, cep, cargo, salario, dataadmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
@@ -24,7 +24,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(2, dado.getNome());
 			statement.setInt(3, dado.getCpf());
 			statement.setInt(4, dado.getRg());
-			statement.setInt(5, dado.getClps());
+			statement.setString(5, dado.getCtps());
 			statement.setString(6, dado.getDtNasc());
 			statement.setString(7, dado.getEndereco());
 			statement.setString(8, dado.getBairro());
@@ -50,7 +50,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(2, dado.getNome());
 			statement.setInt(3, dado.getCpf());
 			statement.setInt(4, dado.getRg());
-			statement.setInt(5, dado.getClps());
+			statement.setString(5, dado.getCtps());
 			statement.setString(6, dado.getDtNasc());
 			statement.setString(7, dado.getEndereco());
 			statement.setString(8, dado.getBairro());
@@ -94,7 +94,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setNome(rs.getString("nome"));
 				funcionario.setCpf(rs.getInt("cpf"));
 				funcionario.setRg(rs.getInt("rg"));
-				funcionario.setClps(rs.getInt("clps"));
+				funcionario.setCtps(rs.getString("ctps"));
 				funcionario.setDtNasc(rs.getString("dataNascimento"));
 				funcionario.setEndereco(rs.getString("endereco"));
 				funcionario.setBairro(rs.getString("bairro"));

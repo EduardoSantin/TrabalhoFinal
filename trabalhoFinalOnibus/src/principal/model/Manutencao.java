@@ -22,6 +22,6 @@ public class Manutencao implements Serializable {
 	private Integer codigo;
 	private String descricao;
 	private String tipo;
-	private LocalDate dataCadastro;
+	private String dataCadastro;
 	private Veiculo veiculo;
 }

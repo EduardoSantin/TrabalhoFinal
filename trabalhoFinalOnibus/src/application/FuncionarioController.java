@@ -98,10 +98,10 @@ public class FuncionarioController {
     private TextField tfCargaHoraria;
 
     @FXML
-    private DatePicker dpDataAdmissao;
+    private TextField tfDataAdmissao;
 
     @FXML
-    private DatePicker dpDataNascimento;
+    private TextField tfDataNascimento;
 
     private Funcionario funcionario;
     
@@ -132,7 +132,7 @@ public class FuncionarioController {
     	funcionario.setNome(tfNome.getText());
     	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
     	funcionario.setRg(Integer.valueOf(tfRg.getText()));
-    	funcionario.setClps(Integer.valueOf(tfCtps.getText()));
+    	funcionario.setCtps(tfCtps.getText());
     	funcionario.setEndereco(tfEndereco.getText());
     	funcionario.setCep(Integer.valueOf(tfCep.getText()));
     	funcionario.setBairro(tfBairro.getText());
@@ -146,7 +146,7 @@ public class FuncionarioController {
     	tfNome.setText(funcionario.getNome());
     	tfCPF.setText(funcionario.getCpf().toString());
     	tfRg.setText(funcionario.getRg().toString());
-    	tfCtps.setText(funcionario.getClps().toString());
+    	tfCtps.setText(funcionario.getCtps().toString());
     	tfEndereco.setText(funcionario.getEndereco());
     	tfCep.setText(funcionario.getCep().toString());
     	tfBairro.setText(funcionario.getBairro());
@@ -202,13 +202,13 @@ public class FuncionarioController {
     	tfCPF.clear();
     	tfRg.clear();
     	tfCtps.clear();
-    	dpDataNascimento.setValue(null);
+    	tfDataNascimento.clear();
     	tfEndereco.clear();
     	tfBairro.clear();
     	tfCep.clear();
     	tfCargo.clear();
     	tfSalario.clear();
-    	dpDataAdmissao.setValue(null);
+    	tfDataAdmissao.clear();
     	editando = false;
     	funcionario = new Funcionario();
     	tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));

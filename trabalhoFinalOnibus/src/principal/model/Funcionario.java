@@ -1,5 +1,7 @@
 package principal.model;
 
+import javax.swing.tree.VariableHeightLayoutCache;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,7 +20,7 @@ public class Funcionario {
 	private String nome;
 	private Integer cpf;
 	private Integer rg;
-	private Integer clps;
+	private String ctps;
 	private String dtNasc;
 	private String endereco;
 	private String bairro;

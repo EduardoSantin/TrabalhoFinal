@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -27,7 +26,7 @@ public class ManutencaoController {
     private TableColumn<Manutencao, String> tbcMarca;
 
     @FXML
-    private DatePicker dtCadastro;
+    private TextField tfDataCadastro;
 
     @FXML
     private TextField tfCodigo;
@@ -42,7 +41,7 @@ public class ManutencaoController {
     private TableColumn<Manutencao, Integer> tbcCodigo;
 
     @FXML
-    private TableColumn<Manutencao, DatePicker> tbcDataCadastro;
+    private TableColumn<Manutencao, String> tbcDataCadastro;
 
     @FXML
     private TextField tfTipo;
@@ -86,7 +85,7 @@ public class ManutencaoController {
     
     public void populaManutencao() {
     	manutencao.setCodigo(Integer.valueOf(tfCodigo.getText()));
-    	manutencao.setDataCadastro(dtCadastro.getValue());
+    	manutencao.setDataCadastro(tfDataCadastro.getText());
     	manutencao.setDescricao(tfDescricao.getText());
     	manutencao.setTipo(tfTipo.getText());
     	manutencao.setVeiculo(cmbPlaca.getValue());
@@ -97,7 +96,7 @@ public class ManutencaoController {
     	tfCodigo.setText(manutencao.getCodigo().toString());
     	tfDescricao.setText(manutencao.getDescricao());
     	tfTipo.setText(manutencao.getTipo());
-    	dtCadastro.setValue(manutencao.getDataCadastro());
+    	tfDataCadastro.setText(manutencao.getDataCadastro());
     	cmbPlaca.getSelectionModel().select(manutencao.getVeiculo());
   
     }
@@ -148,7 +147,7 @@ public class ManutencaoController {
     	tfCodigo.clear();
     	tfDescricao.clear();
     	tfTipo.clear();
-    	dtCadastro.setValue(null);
+    	tfDataCadastro.clear();
     	manutencao = new Manutencao();
     	editando = false;
     	cmbPlaca.getSelectionModel().clearSelection();
