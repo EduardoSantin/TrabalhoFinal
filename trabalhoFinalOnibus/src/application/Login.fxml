@@ -4,19 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
-   <children>
-      <Label layoutX="245.0" layoutY="24.0" text="Login">
-         <font>
-            <Font name="AR CENA" size="39.0" />
-         </font></Label>
-      <Label layoutX="98.0" layoutY="130.0" text="Nome:" />
-      <Label layoutX="97.0" layoutY="167.0" text="Senha:" />
-      <TextField fx:id="tfNome" layoutX="151.0" layoutY="125.0" />
-      <TextField fx:id="tfSenha" layoutX="151.0" layoutY="163.0" />
-      <Button fx:id="btLogar" layoutX="326.0" layoutY="222.0" mnemonicParsing="false" onAction="#Logar" text="Logar" />
-      <Button fx:id="btEsqueceu" layoutX="410.0" layoutY="222.0" mnemonicParsing="false" onAction="#Esqueceu" text="Esqueceu a senha" />
-   </children>
-</AnchorPane>
+<BorderPane fx:id="bpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <top>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="286.0" layoutY="47.0" text="LOGIN" />
+            <Label layoutX="79.0" layoutY="121.0" text="Nome:" />
+            <Label layoutX="79.0" layoutY="183.0" text="Senha" />
+            <Button fx:id="btnLogar" layoutX="274.0" layoutY="242.0" mnemonicParsing="false" text="Logar" />
+            <TextField fx:id="tfNome" layoutX="165.0" layoutY="117.0" />
+            <TextField fx:id="tfSenha" layoutX="165.0" layoutY="179.0" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

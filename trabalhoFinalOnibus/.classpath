@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Estaladores/Conectores/lombok.jar"/>
-	<classpathentry kind="lib" path="C:/Estaladores/Conectores/scenebuilder-8.4.1-all.jar" sourcepath="/var/folders/x4/zk0nl4xj077czmhyvmg9fnbh0000gp/T/.org.sf.feeling.decompiler1519682802030/source/lombok-1.16.20-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Programas/Conectores eclipse/lombok (1).jar"/>
+	<classpathentry kind="lib" path="E:/Programas/Conectores eclipse/scenebuilder-8.4.1-all.jar" sourcepath="/var/folders/x4/zk0nl4xj077czmhyvmg9fnbh0000gp/T/.org.sf.feeling.decompiler1519682802030/source/lombok-1.16.20-sources.jar"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Estaladores/Conectores/mysql-connector-java-8.0.11.jar"/>
+	<classpathentry kind="lib" path="E:/Programas/Conectores eclipse/mysql-connector-java-8.0.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
