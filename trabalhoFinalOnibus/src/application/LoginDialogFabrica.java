@@ -33,7 +33,7 @@ public class LoginDialogFabrica {
 			dialogStage.setScene(scene);
 			
 			LoginController controller = loader.getController();
-			controller.setStageDialog(dialogStage);
+			//controller.setStageDialog(dialogStage);
 			
 			dialogStage.showAndWait();
 			
