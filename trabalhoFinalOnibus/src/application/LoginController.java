@@ -55,7 +55,7 @@ public class LoginController {
 					
 					btnLogar.getScene().getWindow().hide();
 				}
-	
+				// por enquanto ta logando com adm e senha padrao
 			}
 		});
 	}
