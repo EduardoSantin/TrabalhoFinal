@@ -2,14 +2,18 @@ package application;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import principal.dao.FuncionarioDAO;
 import principal.dao.FuncionarioJDBC;
 import principal.model.Funcionario;
@@ -89,6 +93,9 @@ public class FuncionarioController {
     private Button btnDeletar;
 
     @FXML
+   	private Button btnVoltarMenu;
+    
+    @FXML
     private TextField tfCargo;
 
     @FXML
@@ -106,7 +113,7 @@ public class FuncionarioController {
     private Funcionario funcionario;
     
     private boolean editando;
-    
+       
     private FuncionarioDAO funcionarioDao = new FuncionarioJDBC();
   
     @FXML
@@ -122,12 +129,10 @@ public class FuncionarioController {
     	tbcBairo.setCellValueFactory(new PropertyValueFactory<>("bairro"));
     	tbcSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
     	tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
-    	
     	novoFuncionario();
     }
     
     public void populaFuncionario() {
-    
     	funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	funcionario.setNome(tfNome.getText());
     	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
@@ -138,7 +143,6 @@ public class FuncionarioController {
     	funcionario.setBairro(tfBairro.getText());
     	funcionario.setSalario(Integer.valueOf(tfSalario.getText()));
     	funcionario.setCargo(tfCargo.getText());
-    
     }
     
     public void populaTela(Funcionario funcionario) {
@@ -156,7 +160,6 @@ public class FuncionarioController {
     
     @FXML
     void deletar(ActionEvent event) {
-    	
     	if(tblFuncionario.getSelectionModel().getSelectedItem() != null) {
     		funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
     		populaTela(funcionario);
@@ -174,15 +177,12 @@ public class FuncionarioController {
 
     @FXML
     void salvar(ActionEvent event) {
-    	
     	populaFuncionario();
-    	
     	if(editando) {
     		funcionarioDao.alterar(funcionario);
     	} else {
     		funcionarioDao.inserir(funcionario);
     	}
-    	
     	novoFuncionario();
     	tblFuncionario.refresh();
     }
@@ -213,4 +213,28 @@ public class FuncionarioController {
     	funcionario = new Funcionario();
     	tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
     }
+    
+    @FXML
+	void Voltar(ActionEvent event) {
+		btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				Stage stage = new Stage();
+				Parent root = null;
+				try {
+					root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				Scene scene = new Scene(root);	
+				stage.setScene(scene);
+				stage.show();
+				btnVoltarMenu.getScene().getWindow().hide();
+			}
+		});
+		
+
+		
+	}
 }

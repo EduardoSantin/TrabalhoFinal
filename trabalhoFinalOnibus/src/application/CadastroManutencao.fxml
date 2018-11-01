@@ -50,6 +50,7 @@
             <Button fx:id="btnDeletar" layoutX="567.0" layoutY="105.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
             <ComboBox fx:id="cmbPlaca" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
             <Button fx:id="btnBuscar" layoutX="693.0" layoutY="332.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar" />
+            <Button fx:id="btnVoltarMenu" layoutX="707.0" layoutY="20.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
          </children>
       </Pane>
    </children>

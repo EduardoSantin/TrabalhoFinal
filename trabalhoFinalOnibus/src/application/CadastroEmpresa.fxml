@@ -62,6 +62,7 @@
             <Button fx:id="btnSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
             <Button fx:id="btnNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#Novo" text="Novo" />
             <Button fx:id="btnDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#Deletar" text="Deletar" />
+            <Button fx:id="btnVoltarMenu" layoutX="710.0" layoutY="14.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
          </children>
       </Pane>
    </children>
