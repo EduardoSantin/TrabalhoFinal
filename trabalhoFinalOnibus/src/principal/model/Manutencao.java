@@ -1,7 +1,6 @@
 package principal.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -22,6 +21,7 @@ public class Manutencao implements Serializable {
 	private Integer codigo;
 	private String descricao;
 	private String tipo;
-	private String dataCadastro;
 	private Veiculo veiculo;
+	private String placa;
+	private String dataCadastro;
 }

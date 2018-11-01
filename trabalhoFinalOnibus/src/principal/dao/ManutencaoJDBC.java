@@ -15,12 +15,13 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 	@Override
 	public void inserir(Manutencao dado) {
 		try {
-			String sql = "insert into manutencao(codigo, descricao, tipo, datacadastro) values( ?, ?, ?, now())";
+			String sql = "insert into manutencao(codigo, descricao, tipo, placa, datacadastro) values( ?, ?, ?, ?, now())";
 			PreparedStatement stmt = ConexaoUtil.getConn().prepareStatement(sql);
 			
 			stmt.setInt(1, dado.getCodigo());
 			stmt.setString(2, dado.getDescricao());
 			stmt.setString(3, dado.getTipo());
+			stmt.setString(4, dado.getVeiculo().toString());
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -33,10 +34,11 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 		try {
 			String sql = "update manutencao set descricao = ?" +  "where codigo = ?";
 			PreparedStatement stmt = ConexaoUtil.getConn().prepareStatement(sql);
+			
 			stmt.setInt(1, dado.getCodigo());
 			stmt.setString(2, dado.getDescricao());
 			stmt.setString(3, dado.getTipo());
-	
+			stmt.setString(4, dado.getVeiculo().toString());
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -68,6 +70,9 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 				manutencao.setCodigo(rs.getInt("codigo"));
 				manutencao.setDescricao(rs.getString("descricao"));
 				manutencao.setTipo(rs.getString("tipo"));
+				manutencao.setPlaca(rs.getString("placa"));
+				manutencao.setDataCadastro(rs.getString("dataCadastro"));
+
 			
 				manutencoes.add(manutencao);
 			} 
