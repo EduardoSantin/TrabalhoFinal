@@ -1,7 +1,5 @@
 package principal.model;
 
-import javax.swing.tree.VariableHeightLayoutCache;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -20,13 +18,13 @@ public class Funcionario {
 	private String nome;
 	private Integer cpf;
 	private Integer rg;
-	private String ctps;
 	private String dtNasc;
 	private String endereco;
-	private String bairro;
 	private Integer cep;
+	private String bairro;
 	private String cargo;
-	private Integer salario;
+	private Double salario;
+	private Integer cargarHoraria;
 	private String dtaAdmissao;
 	//Tem que arrumae aq a DATA Admissao
 

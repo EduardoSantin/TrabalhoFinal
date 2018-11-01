@@ -13,7 +13,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FuncionarioController">
    <children>
-      <Pane layoutX="-14.0" layoutY="2.0" prefHeight="700.0" prefWidth="1000.0">
+      <Pane layoutX="-14.0" layoutY="2.0" prefHeight="700.0" prefWidth="1200.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="210.0" layoutY="97.0" />
             <Label layoutX="79.0" layoutY="100.0" text="Código" />
@@ -33,43 +33,42 @@
             <Label layoutX="79.0" layoutY="140.0" text="Nome" />
             <Label layoutX="79.0" layoutY="180.0" text="CPF" />
             <Label layoutX="79.0" layoutY="220.0" text="RG" />
-            <Label layoutX="79.0" layoutY="300.0" text="Data Nascimento" />
-            <Label layoutX="79.0" layoutY="340.0" text="Endereço" />
+            <Label layoutX="66.0" layoutY="260.0" text="Data Nascimento" />
+            <Label layoutX="74.0" layoutY="295.0" text="Endereço" />
             <Label layoutX="447.0" layoutY="141.0" text="Bairro" />
-            <Label layoutX="79.0" layoutY="260.0" text="CTPS" />
             <Label layoutX="449.0" layoutY="100.0" text="CEP" />
             <TextField fx:id="tfNome" layoutX="210.0" layoutY="137.0" />
             <TextField fx:id="tfCPF" layoutX="210.0" layoutY="176.0" />
             <TextField fx:id="tfRg" layoutX="210.0" layoutY="216.0" />
-            <TextField fx:id="tfCtps" layoutX="210.0" layoutY="256.0" />
-            <TextField fx:id="tfEndereco" layoutX="210.0" layoutY="338.0" />
+            <TextField fx:id="tfEndereco" layoutX="210.0" layoutY="300.0" />
             <TextField fx:id="tfCep" layoutX="565.0" layoutY="96.0" />
             <TextField fx:id="tfBairro" layoutX="565.0" layoutY="137.0" />
-            <TableView fx:id="tblFuncionario" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaFuncionario" prefHeight="312.0" prefWidth="986.0">
+            <TableView fx:id="tblFuncionario" layoutX="25.0" layoutY="388.0" onMouseClicked="#selecionaFuncionario" prefHeight="312.0" prefWidth="1048.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="38.0" prefWidth="50.0" text="Código" />
-                <TableColumn fx:id="tbcnome" minWidth="88.0" prefWidth="126.0" text="Nome" />
-                  <TableColumn fx:id="tbcCpf" minWidth="88.0" prefWidth="75.0" text="CPF" />
-                  <TableColumn fx:id="tbcRg" minWidth="88.0" prefWidth="75.0" text="RG" />
-                  <TableColumn fx:id="tbcCtps" minWidth="88.0" prefWidth="75.0" text="CTPS" />
-                  <TableColumn fx:id="tbcDataNascimento" minWidth="88.0" prefWidth="121.0" text="Data Nascimento" />
-                  <TableColumn fx:id="tbcEndereco" minWidth="88.0" prefWidth="101.0" text="Endereço" />
-                  <TableColumn fx:id="tbcCep" minWidth="77.0" prefWidth="79.0" text="CEP" />
-                  <TableColumn fx:id="tbcBairo" minWidth="60.0" prefWidth="82.0" text="Bairro" />
-                  <TableColumn fx:id="tbcSalario" prefWidth="74.0" text="Cargo" />
-                  <TableColumn fx:id="tbcCargo" prefWidth="88.0" text="Salario" />
+                <TableColumn fx:id="tbcnome" minWidth="88.0" prefWidth="99.0" text="Nome" />
+                  <TableColumn fx:id="tbcCpf" minWidth="73.0" prefWidth="73.0" text="CPF" />
+                  <TableColumn fx:id="tbcRg" minWidth="88.0" prefWidth="96.0" text="RG" />
+                  <TableColumn fx:id="tbcDataNascimento" minWidth="88.0" prefWidth="105.0" text="Data Nascimento" />
+                  <TableColumn fx:id="tbcEndereco" minWidth="88.0" prefWidth="89.0" text="Endereço" />
+                  <TableColumn fx:id="tbcCep" minWidth="37.0" prefWidth="58.0" text="CEP" />
+                  <TableColumn fx:id="tbcBairo" minWidth="60.0" prefWidth="76.0" text="Bairro" />
+                  <TableColumn fx:id="tbcCargo" prefWidth="61.0" text="Cargo" />
+                  <TableColumn fx:id="tbcSalario" minWidth="0.0" prefWidth="95.0" text="Salario" />
+                  <TableColumn fx:id="tbcCargaHoraria" prefWidth="121.0" text="Carga Horaria" />
+                  <TableColumn fx:id="tbcDataAdmisao" prefWidth="137.0" text="Data admisao" />
               </columns>
             </TableView>
             <Button fx:id="btnSalvar" layoutX="393.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
             <Button fx:id="btnNovo" layoutX="478.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
             <Button fx:id="btnDeletar" layoutX="553.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
             <Label layoutX="445.0" layoutY="220.0" text="Salário" />
-            <Label layoutX="441.0" layoutY="260.0" text="Data Admissão" />
             <Label layoutX="447.0" layoutY="180.0" text="Cargo" />
             <TextField fx:id="tfCargo" layoutX="565.0" layoutY="176.0" />
             <TextField fx:id="tfSalario" layoutX="565.0" layoutY="216.0" />
-            <TextField fx:id="tfDataNascimento" layoutX="210.0" layoutY="296.0" />
-            <TextField fx:id="tfDataAdmissao" layoutX="565.0" layoutY="256.0" />
+            <TextField fx:id="tfDataNascimento" layoutX="210.0" layoutY="256.0" />
+            <TextField fx:id="tfCargaHoraria" layoutX="565.0" layoutY="256.0" />
+            <Label layoutX="455.0" layoutY="260.0" text="Carga Horaria" />
          </children>
       </Pane>
    </children>

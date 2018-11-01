@@ -16,26 +16,26 @@ public class MovimentosJDBC implements MovimentosDAO {
 	public void inserir(Movimentos dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into Movimentos(codigo, numeroNota, dataEmisao, kmInicial, kmFinal, qtdPassageiros, origen, destino, nomeMotorista) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into Movimentos(codigo, numeroNota, dataEmisao, placaVeiculo, kmInicial, kmFinal, qtdPassageiros, origen, destino, nomeMotorista) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setInt(2, dado.getNumeroNota());
 			statement.setString(3, dado.getDtaEmissao());
-			statement.setDouble(4,dado.getKmInicial());
-			statement.setDouble(5,dado.getKmFinal());
-			statement.setInt(6,dado.getQtdPassageiros());
-			statement.setString(7,dado.getOrigen());
-			statement.setString(8,dado.getDestino());
-			statement.setString(9, dado.getMotorista());
-			
-			
+			statement.setString(4, dado.getVeiculo().toString());
+			statement.setDouble(5, dado.getKmInicial());
+			statement.setDouble(6, dado.getKmFinal());
+			statement.setInt(7, dado.getQtdPassageiros());
+			statement.setString(8, dado.getOrigen());
+			statement.setString(9, dado.getDestino());
+			statement.setString(10, dado.getMotorista());
+
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
@@ -48,13 +48,12 @@ public class MovimentosJDBC implements MovimentosDAO {
 			statement.setInt(1, dado.getCodigo());
 			statement.setInt(2, dado.getNumeroNota());
 			statement.setString(3, dado.getDtaEmissao());
-			statement.setDouble(4,dado.getKmInicial());
-			statement.setDouble(5,dado.getKmFinal());
-			statement.setInt(6,dado.getQtdPassageiros());
-			statement.setString(7,dado.getOrigen());
-			statement.setString(8,dado.getDestino());
+			statement.setDouble(4, dado.getKmInicial());
+			statement.setDouble(5, dado.getKmFinal());
+			statement.setInt(6, dado.getQtdPassageiros());
+			statement.setString(7, dado.getOrigen());
+			statement.setString(8, dado.getDestino());
 			statement.setString(9, dado.getMotorista());
-			
 
 			statement.executeUpdate();
 
@@ -90,13 +89,14 @@ public class MovimentosJDBC implements MovimentosDAO {
 				movimento.setCodigo(rs.getInt("codigo"));
 				movimento.setNumeroNota(rs.getInt("numeroNota"));
 				movimento.setDtaEmissao(rs.getString("dataEmisao"));
+				movimento.setPlaca(rs.getString("placaVeiculo"));
 				movimento.setKmInicial(rs.getDouble("kmInicial"));
 				movimento.setKmFinal(rs.getDouble("kmFinal"));
 				movimento.setQtdPassageiros(rs.getInt("qtdPassageiros"));
 				movimento.setOrigen(rs.getString("origen"));
 				movimento.setDestino(rs.getString("destino"));
 				movimento.setMotorista(rs.getString("nomeMotorista"));
-				
+
 				movimentos.add(movimento);
 
 			}

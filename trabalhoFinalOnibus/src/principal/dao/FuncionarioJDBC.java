@@ -16,7 +16,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	public void inserir(Funcionario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into Funcionario(codigo, nome, cpf, rg, ctps, dataNascimento, endereco, bairro, cep, cargo, salario, dataadmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into Funcionario(codigo, nome, cpf, rg, dataNascimento, endereco, cep, bairro, cargo, salario, cargaHoraria, dataadmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
@@ -24,14 +24,13 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(2, dado.getNome());
 			statement.setInt(3, dado.getCpf());
 			statement.setInt(4, dado.getRg());
-			statement.setString(5, dado.getCtps());
-			statement.setString(6, dado.getDtNasc());
-			statement.setString(7, dado.getEndereco());
+			statement.setString(5, dado.getDtNasc());
+			statement.setString(6, dado.getEndereco());
+			statement.setInt(7, dado.getCep());
 			statement.setString(8, dado.getBairro());
-			statement.setInt(9, dado.getCep());
-			statement.setString(10, dado.getCargo());
-			statement.setFloat(11, dado.getSalario());
-			statement.setString(12, dado.getDtaAdmissao());
+			statement.setString(9, dado.getCargo());
+			statement.setDouble(10, dado.getSalario());
+			statement.setInt(11, dado.getCargarHoraria());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -50,14 +49,13 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(2, dado.getNome());
 			statement.setInt(3, dado.getCpf());
 			statement.setInt(4, dado.getRg());
-			statement.setString(5, dado.getCtps());
-			statement.setString(6, dado.getDtNasc());
-			statement.setString(7, dado.getEndereco());
+			statement.setString(5, dado.getDtNasc());
+			statement.setString(6, dado.getEndereco());
+			statement.setInt(7, dado.getCep());
 			statement.setString(8, dado.getBairro());
-			statement.setInt(9, dado.getCep());
-			statement.setString(10, dado.getCargo());
-			statement.setFloat(11, dado.getSalario());
-			statement.setString(12, dado.getDtaAdmissao());
+			statement.setString(9, dado.getCargo());
+			statement.setDouble(10, dado.getSalario());
+			statement.setInt(11, dado.getCargarHoraria());
 
 			statement.executeUpdate();
 
@@ -94,14 +92,15 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setNome(rs.getString("nome"));
 				funcionario.setCpf(rs.getInt("cpf"));
 				funcionario.setRg(rs.getInt("rg"));
-				funcionario.setCtps(rs.getString("ctps"));
 				funcionario.setDtNasc(rs.getString("dataNascimento"));
 				funcionario.setEndereco(rs.getString("endereco"));
-				funcionario.setBairro(rs.getString("bairro"));
 				funcionario.setCep(rs.getInt("cep"));
+				funcionario.setBairro(rs.getString("bairro"));
 				funcionario.setCargo(rs.getString("cargo"));
-				funcionario.setSalario(rs.getInt("salario"));
+				funcionario.setSalario(rs.getDouble("salario"));
+				funcionario.setCargarHoraria(rs.getInt("cargaHoraria"));
 				funcionario.setDtaAdmissao(rs.getString("dataadmisao"));
+
 				funcionarios.add(funcionario);
 
 			}

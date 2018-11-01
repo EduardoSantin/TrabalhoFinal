@@ -16,7 +16,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 	public void inserir(Veiculo dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into veiculo(codigo, renavan, marca, modelo, placa, motor, chassi, dataCadastro) values (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into veiculo(codigo, renavan, marca, modelo, placa, motor, chassi, dataCadastro) values (?, ?, ?, ?, ?, ?, ?, now())";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
@@ -27,7 +27,6 @@ public class VeiculoJDBC implements VeiculoDAO {
 			statement.setString(5, dado.getPlaca());
 			statement.setString(6, dado.getMotor());
 			statement.setInt(7, dado.getChassi());
-			statement.setString(8, dado.getDataCadastro());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -49,7 +48,6 @@ public class VeiculoJDBC implements VeiculoDAO {
 			statement.setString(5, dado.getPlaca());
 			statement.setString(6, dado.getMotor());
 			statement.setInt(7, dado.getChassi());
-			statement.setString(8, dado.getDataCadastro());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
