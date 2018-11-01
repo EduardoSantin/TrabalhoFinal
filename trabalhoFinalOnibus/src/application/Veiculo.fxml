@@ -44,21 +44,24 @@
             <TableView fx:id="tblVeiculo" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaVeiculo" prefHeight="212.0" prefWidth="786.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="36.000030517578125" prefWidth="47.000030517578125" text="Código" />
-                <TableColumn fx:id="tbcRenavan" minWidth="29.0" prefWidth="108.0" text="Renavan" />
-                  <TableColumn fx:id="tbcMarca" minWidth="27.0" prefWidth="103.0" text="Marca" />
-                  <TableColumn fx:id="tbcModelo" minWidth="54.0" prefWidth="93.0" text="Modelo" />
-                  <TableColumn fx:id="tbcPlaca" minWidth="70.0" prefWidth="97.0" text="Placa" />
-                  <TableColumn fx:id="tbcMotor" minWidth="14.0" prefWidth="113.0" text="Motor" />
-                  <TableColumn fx:id="tbcChassi" minWidth="0.0" prefWidth="128.0" text="Chassi" />
-                  <TableColumn fx:id="tbcDataCadastrada" prefWidth="97.0" text="Data Cadastro" />
+                <TableColumn fx:id="tbcRenavan" minWidth="29.0" prefWidth="67.0" text="Renavan" />
+                  <TableColumn fx:id="tbcMarca" minWidth="27.0" prefWidth="91.0" text="Marca" />
+                  <TableColumn fx:id="tbcModelo" minWidth="54.0" prefWidth="130.0" text="Modelo" />
+                  <TableColumn fx:id="tbcPlaca" minWidth="70.0" prefWidth="100.0" text="Placa" />
+                  <TableColumn fx:id="tbcMotor" minWidth="14.0" prefWidth="103.0" text="Motor" />
+                  <TableColumn fx:id="tbcChassi" minWidth="0.0" prefWidth="98.0" text="Chassi" />
+                  <TableColumn fx:id="tbcDataCadastrada" prefWidth="150.0" text="Data Cadastro" />
               </columns>
             </TableView>
             <Button fx:id="btSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
             <Button fx:id="btNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
             <Button fx:id="btDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
+<<<<<<< HEAD
          <Label layoutX="480.0" layoutY="100.0" text="Data Cadastro" />
          <TextField fx:id="tfDataCadastro" layoutX="565.0" layoutY="97.0" />
          <Button fx:id="btnVoltarMenu" layoutX="707.0" layoutY="20.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
+=======
+>>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
          </children>
       </Pane>
 </AnchorPane>

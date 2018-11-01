@@ -25,5 +25,6 @@ public class Movimentos {
 	private String destino;
 	private String motorista;
 	private Veiculo veiculo;
+	private String placa;
 
 }
