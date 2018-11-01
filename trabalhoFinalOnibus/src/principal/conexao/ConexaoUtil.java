@@ -1,8 +1,8 @@
 package principal.conexao;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ConexaoUtil {
 	private static Connection connection;

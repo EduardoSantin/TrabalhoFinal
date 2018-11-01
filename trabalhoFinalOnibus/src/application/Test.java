@@ -6,5 +6,4 @@ public class Test {
 	//feito classes de movimentos jdbc, model e controller
 	//feitos manutencao
 	//ajustes no salvar telas
-	//ajustes no salvar telas
 }
