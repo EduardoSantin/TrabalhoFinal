@@ -56,12 +56,9 @@
             <Button fx:id="btSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
             <Button fx:id="btNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
             <Button fx:id="btDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
-<<<<<<< HEAD
          <Label layoutX="480.0" layoutY="100.0" text="Data Cadastro" />
          <TextField fx:id="tfDataCadastro" layoutX="565.0" layoutY="97.0" />
          <Button fx:id="btnVoltarMenu" layoutX="707.0" layoutY="20.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
-=======
->>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
          </children>
       </Pane>
 </AnchorPane>

@@ -66,15 +66,13 @@
             <Label layoutX="447.0" layoutY="180.0" text="Cargo" />
             <TextField fx:id="tfCargo" layoutX="565.0" layoutY="176.0" />
             <TextField fx:id="tfSalario" layoutX="565.0" layoutY="216.0" />
-<<<<<<< HEAD
             <TextField fx:id="tfDataNascimento" layoutX="210.0" layoutY="296.0" />
             <TextField fx:id="tfDataAdmissao" layoutX="565.0" layoutY="256.0" />
             <Button fx:id="btnVoltarMenu" layoutX="870.0" layoutY="22.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
-=======
+
             <TextField fx:id="tfDataNascimento" layoutX="210.0" layoutY="256.0" />
             <TextField fx:id="tfCargaHoraria" layoutX="565.0" layoutY="256.0" />
             <Label layoutX="455.0" layoutY="260.0" text="Carga Horaria" />
->>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
          </children>
       </Pane>
    </children>

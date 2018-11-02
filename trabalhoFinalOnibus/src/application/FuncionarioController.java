@@ -89,16 +89,11 @@ public class FuncionarioController {
 	@FXML
 	private TableColumn<Funcionario, Float> tbcCargaHoraria;
 
-<<<<<<< HEAD
-    @FXML
-   	private Button btnVoltarMenu;
-    
-    @FXML
-    private TextField tfCargo;
-=======
+	@FXML
+	private Button btnVoltarMenu;
+
 	@FXML
 	private TableColumn<Funcionario, String> tbcDataAdmisao;
->>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
 
 	@FXML
 	private Button btnSalvar;
@@ -111,85 +106,25 @@ public class FuncionarioController {
 
 	private Funcionario funcionario;
 
-<<<<<<< HEAD
-    private Funcionario funcionario;
-    
-    private boolean editando;
-       
-    private FuncionarioDAO funcionarioDao = new FuncionarioJDBC();
-  
-    @FXML
-    private void initialize() {
-    	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-    	tbcnome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-    	tbcCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-    	tbcRg.setCellValueFactory(new PropertyValueFactory<>("rg"));
-    	tbcCtps.setCellValueFactory(new PropertyValueFactory<>("clps"));
-    	tbcDataNascimento.setCellValueFactory(new PropertyValueFactory<>("dtnasc"));
-    	tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
-    	tbcCep.setCellValueFactory(new PropertyValueFactory<>("cep"));
-    	tbcBairo.setCellValueFactory(new PropertyValueFactory<>("bairro"));
-    	tbcSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
-    	tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
-    	novoFuncionario();
-    }
-    
-    public void populaFuncionario() {
-    	funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
-    	funcionario.setNome(tfNome.getText());
-    	funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
-    	funcionario.setRg(Integer.valueOf(tfRg.getText()));
-    	funcionario.setCtps(tfCtps.getText());
-    	funcionario.setEndereco(tfEndereco.getText());
-    	funcionario.setCep(Integer.valueOf(tfCep.getText()));
-    	funcionario.setBairro(tfBairro.getText());
-    	funcionario.setSalario(Integer.valueOf(tfSalario.getText()));
-    	funcionario.setCargo(tfCargo.getText());
-    }
-    
-    public void populaTela(Funcionario funcionario) {
-    	tfCodigo.setText(funcionario.getCodigo().toString());
-    	tfNome.setText(funcionario.getNome());
-    	tfCPF.setText(funcionario.getCpf().toString());
-    	tfRg.setText(funcionario.getRg().toString());
-    	tfCtps.setText(funcionario.getCtps().toString());
-    	tfEndereco.setText(funcionario.getEndereco());
-    	tfCep.setText(funcionario.getCep().toString());
-    	tfBairro.setText(funcionario.getBairro());
-    	//tfSalario.setText(funcionario.getSalario());
-    	tfCargo.setText(funcionario.getCargo());
-    }
-    
-    @FXML
-    void deletar(ActionEvent event) {
-    	if(tblFuncionario.getSelectionModel().getSelectedItem() != null) {
-    		funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
-    		populaTela(funcionario);
-    	if ( new  AlertaFactory () . confirmaExclusao ()) {
-    	funcionarioDao.excluir(funcionario);
-    	novoFuncionario();
-    	}
-    	}
-    }
-=======
+
 	private boolean editando;
->>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
 
 	private FuncionarioDAO funcionarioDao = new FuncionarioJDBC();
 
-<<<<<<< HEAD
-    @FXML
-    void salvar(ActionEvent event) {
-    	populaFuncionario();
-    	if(editando) {
-    		funcionarioDao.alterar(funcionario);
-    	} else {
-    		funcionarioDao.inserir(funcionario);
-    	}
-    	novoFuncionario();
-    	tblFuncionario.refresh();
-    }
-=======
+
+	public void populaFuncionario() {
+		funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
+		funcionario.setNome(tfNome.getText());
+		funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
+		funcionario.setRg(Integer.valueOf(tfRg.getText()));
+		funcionario.setEndereco(tfEndereco.getText());
+		funcionario.setCep(Integer.valueOf(tfCep.getText()));
+		funcionario.setBairro(tfBairro.getText());
+		funcionario.setSalario(Double.valueOf(tfSalario.getText()));
+		funcionario.setCargo(tfCargo.getText());
+	}
+
+
 	@FXML
 	private void initialize() {
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -204,40 +139,23 @@ public class FuncionarioController {
 		tbcSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
 		tbcCargaHoraria.setCellValueFactory(new PropertyValueFactory<>("cargaHoraria"));
 		tbcDataAdmisao.setCellValueFactory(new PropertyValueFactory<>("dataAdmisao"));
->>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
+		novoFuncionario();
+	}
 
-<<<<<<< HEAD
-    @FXML
-    void selecionaFuncionario(MouseEvent event) {
-    	if(tblFuncionario.getSelectionModel().getSelectedItem() != null) {
-    		funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
-    		populaTela(funcionario);
-    		editando = true;
-    	}
-    }
-    
-    void novoFuncionario() {
-    	tfCodigo.clear();
-    	tfNome.clear();
-    	tfCPF.clear();
-    	tfRg.clear();
-    	tfCtps.clear();
-    	tfDataNascimento.clear();
-    	tfEndereco.clear();
-    	tfBairro.clear();
-    	tfCep.clear();
-    	tfCargo.clear();
-    	tfSalario.clear();
-    	tfDataAdmissao.clear();
-    	editando = false;
-    	funcionario = new Funcionario();
-    	tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
-    }
-    
-    @FXML
+	@FXML
+	void selecionaFuncionario(MouseEvent event) {
+		if (tblFuncionario.getSelectionModel().getSelectedItem() != null) {
+			funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
+			populaTela(funcionario);
+			editando = true;
+		}
+	}
+
+
+	@FXML
 	void Voltar(ActionEvent event) {
 		btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
-			
+
 			@Override
 			public void handle(ActionEvent event) {
 				Stage stage = new Stage();
@@ -247,33 +165,16 @@ public class FuncionarioController {
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
-				Scene scene = new Scene(root);	
+				Scene scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
 				btnVoltarMenu.getScene().getWindow().hide();
 			}
 		});
-		
 
-		
-=======
-		novoFuncionario();
+	
 	}
 
-	public void populaFuncionario() {
-		funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
-		funcionario.setNome(tfNome.getText());
-		funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
-		funcionario.setRg(Integer.valueOf(tfRg.getText()));
-		funcionario.setDtNasc(tfDataNascimento.getText());
-		funcionario.setEndereco(tfEndereco.getText());
-		funcionario.setCep(Integer.valueOf(tfCep.getText()));
-		funcionario.setBairro(tfBairro.getText());
-		funcionario.setCargo(tfCargo.getText());
-		funcionario.setSalario(Double.valueOf(tfSalario.getText()));
-		funcionario.setCargarHoraria(Integer.valueOf(tfCargaHoraria.getText()));
-
-	}
 
 	public void populaTela(Funcionario funcionario) {
 		tfCodigo.setText(funcionario.getCodigo().toString());
@@ -321,14 +222,6 @@ public class FuncionarioController {
 		tblFuncionario.refresh();
 	}
 
-	@FXML
-	void selecionaFuncionario(MouseEvent event) {
-		if (tblFuncionario.getSelectionModel().getSelectedItem() != null) {
-			funcionario = tblFuncionario.getSelectionModel().getSelectedItem();
-			populaTela(funcionario);
-			editando = true;
-		}
-	}
 
 	void novoFuncionario() {
 		tfCodigo.clear();
@@ -345,6 +238,5 @@ public class FuncionarioController {
 		editando = false;
 		funcionario = new Funcionario();
 		tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
->>>>>>> branch 'master' of https://github.com/EduardoSantin/TrabalhoFinal.git
 	}
 }
