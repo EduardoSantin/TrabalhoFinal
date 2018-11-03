@@ -16,7 +16,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	public void inserir(Funcionario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into Funcionario(codigo, nome, cpf, rg, dataNascimento, endereco, cep, bairro, cargo, salario, cargaHoraria, dataadmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())";
+			String sql = "insert into Funcionario(codigo, nome, cpf, rg, dataNascimento, endereco, cep, bairro, cargo, salario, cargaHoraria, dataAdmisao) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
@@ -30,7 +30,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(8, dado.getBairro());
 			statement.setString(9, dado.getCargo());
 			statement.setDouble(10, dado.getSalario());
-			statement.setInt(11, dado.getCargarHoraria());
+			statement.setInt(11, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -55,7 +55,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(8, dado.getBairro());
 			statement.setString(9, dado.getCargo());
 			statement.setDouble(10, dado.getSalario());
-			statement.setInt(11, dado.getCargarHoraria());
+			statement.setInt(11, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 
@@ -98,8 +98,8 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setBairro(rs.getString("bairro"));
 				funcionario.setCargo(rs.getString("cargo"));
 				funcionario.setSalario(rs.getDouble("salario"));
-				funcionario.setCargarHoraria(rs.getInt("cargaHoraria"));
-				funcionario.setDtaAdmissao(rs.getString("dataadmisao"));
+				funcionario.setCargaHoraria(rs.getInt("cargaHoraria"));
+				funcionario.setDtaAdmissao(rs.getString("dataAdmisao"));
 
 				funcionarios.add(funcionario);
 

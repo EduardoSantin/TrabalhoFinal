@@ -117,11 +117,13 @@ public class FuncionarioController {
 		funcionario.setNome(tfNome.getText());
 		funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
 		funcionario.setRg(Integer.valueOf(tfRg.getText()));
+		funcionario.setDtNasc(tfDataNascimento.getText());
 		funcionario.setEndereco(tfEndereco.getText());
 		funcionario.setCep(Integer.valueOf(tfCep.getText()));
 		funcionario.setBairro(tfBairro.getText());
 		funcionario.setSalario(Double.valueOf(tfSalario.getText()));
 		funcionario.setCargo(tfCargo.getText());
+		funcionario.setCargaHoraria(Integer.valueOf(tfCargaHoraria.getText()));
 	}
 
 
@@ -181,12 +183,13 @@ public class FuncionarioController {
 		tfNome.setText(funcionario.getNome());
 		tfCPF.setText(funcionario.getCpf().toString());
 		tfRg.setText(funcionario.getRg().toString());
+		tfDataNascimento.setText(funcionario.getDtNasc());
 		tfEndereco.setText(funcionario.getEndereco());
 		tfCep.setText(funcionario.getCep().toString());
 		tfBairro.setText(funcionario.getBairro());
 		tfCargo.setText(funcionario.getCargo());
 		tfSalario.setText(funcionario.getSalario().toString());
-		tfCargaHoraria.setText(funcionario.getCargarHoraria().toString());
+		tfCargaHoraria.setText(funcionario.getCargaHoraria().toString());
 	}
 
 	@FXML

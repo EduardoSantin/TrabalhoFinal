@@ -24,7 +24,7 @@ public class Funcionario {
 	private String bairro;
 	private String cargo;
 	private Double salario;
-	private Integer cargarHoraria;
+	private Integer cargaHoraria;
 	private String dtaAdmissao;
 	//Tem que arrumae aq a DATA Admissao
 
