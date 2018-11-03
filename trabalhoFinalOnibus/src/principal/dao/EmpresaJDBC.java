@@ -103,4 +103,10 @@ public class EmpresaJDBC implements EmpresaDAO {
 
 		return empresas;
 	}
+
+	@Override
+	public boolean checkLogin(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

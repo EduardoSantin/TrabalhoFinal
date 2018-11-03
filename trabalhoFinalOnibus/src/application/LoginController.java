@@ -3,6 +3,8 @@ package application;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.sun.glass.ui.Menu;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,6 +15,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import principal.dao.UsuarioDAO;
+import principal.dao.UsuarioJDBC;
 import principal.model.Usuario;
 
 public class LoginController {
@@ -21,7 +25,7 @@ public class LoginController {
 	private TextField tfCodigo;
 
 	@FXML
-	private TextField tfNome;
+	private TextField tfLogin;
 
 	@FXML
 	private TextField tfSenha;
@@ -34,14 +38,17 @@ public class LoginController {
 
 	private Usuario login;
 	
+	
 	@FXML
     private void initialize() {
+		UsuarioDAO usuarioDao = new UsuarioJDBC();
 		btnLogar.setOnAction(new EventHandler<ActionEvent>() {
+
 			
 			@Override
 			public void handle(ActionEvent event) {
-				
-				if(tfNome.getText().equals("Gerente")&& tfSenha.getText().equals("g123")) {
+				if(usuarioDao.checkLogin(tfLogin.getText(), tfSenha.getText())) {
+					
 					Stage stage = new Stage();
 					Parent root = null;
 					try {
@@ -52,33 +59,21 @@ public class LoginController {
 					Scene scene = new Scene(root);	
 					stage.setScene(scene);
 					stage.show();
-					stage.setTitle(tfNome.getText());
+					
 					btnLogar.getScene().getWindow().hide();
-					alertSucesso();
-					
-					
-				}else 
-					if(tfNome.getText().equals("Funcionario")&& tfSenha.getText().equals("f123")) {
-					Stage stage = new Stage();
-					Parent root = null;
-					try {
-						root = FXMLLoader.load(getClass().getResource("menu.fxml"));
-					} catch (Exception ex) {
-						Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null,ex);
-					}
-					Scene scene = new Scene(root);	
-					stage.setScene(scene);
-					stage.show();
-					stage.setTitle(tfNome.getText());
-					btnLogar.getScene().getWindow().hide();
-					alertSucesso();
-					
+					alertSucesso();	
 				}else {
-					alertERRO();	
+					alertERRO();
+					limpar();
 				}
-				
 			}
 		});
+		
+	}
+	// metodo para limpar os textField
+	void limpar() {
+		tfLogin.clear();
+		tfSenha.clear();
 	}
 	
 	public Usuario getLogin() {

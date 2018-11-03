@@ -110,4 +110,10 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 
 		return funcionarios;
 	}
+
+	@Override
+	public boolean checkLogin(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

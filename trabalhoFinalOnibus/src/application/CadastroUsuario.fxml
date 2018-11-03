@@ -8,12 +8,12 @@
 <AnchorPane minHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UsuarioController">
    <children>
       <Label layoutX="184.0" layoutY="68.0" text="Cadastro Login" />
-      <Label layoutX="87.0" layoutY="125.0" text="Código:" />
-      <Label layoutX="88.0" layoutY="179.0" text="Login:" />
-      <Label layoutX="87.0" layoutY="237.0" text="Senha:" />
-      <Button fx:id="btnSalvar" layoutX="198.0" layoutY="298.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
-      <TextField fx:id="tfCodigo" layoutX="136.0" layoutY="121.0" />
-      <TextField fx:id="tfLogin" layoutX="136.0" layoutY="175.0" />
-      <TextField fx:id="tfSalvar" layoutX="136.0" layoutY="233.0" />
+      <Label layoutX="148.0" layoutY="177.0" text="Login:" />
+      <Label layoutX="147.0" layoutY="241.0" text="Senha:" />
+      <Button fx:id="btnSalvar" layoutX="226.0" layoutY="321.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
+      <TextField fx:id="tfLogin" layoutX="148.0" layoutY="200.0" prefHeight="25.0" prefWidth="217.0" />
+      <TextField fx:id="tfSalvar" layoutX="148.0" layoutY="265.0" prefHeight="25.0" prefWidth="217.0" />
+      <TextField fx:id="tfCodigo" layoutX="146.0" layoutY="134.0" prefHeight="25.0" prefWidth="217.0" />
+      <Label layoutX="145.0" layoutY="109.0" text="Código" />
    </children>
 </AnchorPane>

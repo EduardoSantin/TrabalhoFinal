@@ -82,4 +82,10 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 		return manutencoes;
 	}
 
+	@Override
+	public boolean checkLogin(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

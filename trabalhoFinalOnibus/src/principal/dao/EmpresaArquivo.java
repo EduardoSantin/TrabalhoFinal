@@ -9,4 +9,10 @@ public class EmpresaArquivo extends CrudArquivo<Empresa> implements EmpresaDAO {
 		return new ManipuladorArquivo<>("empresa.ser");
 	}
 
+	@Override
+	public boolean checkLogin(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

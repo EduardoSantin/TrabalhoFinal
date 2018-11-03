@@ -9,13 +9,13 @@ import principal.dao.UsuarioJDBC;
 import principal.model.Usuario;
 
 public class UsuarioController {
-
+	
     @FXML
     private Button btnSalvar;
 
     @FXML
     private TextField tfCodigo;
-
+    
     @FXML
     private TextField tfLogin;
 
@@ -24,14 +24,14 @@ public class UsuarioController {
     
     private Usuario usuario;
     
-    private UsuarioDAO usuariodao = new UsuarioJDBC();
+    private UsuarioDAO usuarioDao = new UsuarioJDBC();
+    
     
     
     @FXML
     void Salvar(ActionEvent event) { 
     	populaUsuario();
-    	
-       	usuariodao.inserir(usuario);
+       	usuarioDao.inserir(usuario);
     	novoUsuario();
     }
     
@@ -39,10 +39,9 @@ public class UsuarioController {
     	usuario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	usuario.setLogin(tfLogin.getText());
     	usuario.setSenha(tfSenha.getText());
-    }
+  }
  
 	void novoUsuario() {
-	tfCodigo.clear();
 	tfLogin.clear();
 	tfSenha.clear();
 }

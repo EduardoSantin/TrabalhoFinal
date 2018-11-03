@@ -107,4 +107,10 @@ public class MovimentosJDBC implements MovimentosDAO {
 		return movimentos;
 	}
 
+	@Override
+	public boolean checkLogin(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

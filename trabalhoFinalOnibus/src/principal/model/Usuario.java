@@ -11,8 +11,8 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString(of={"login","senha"})
+@EqualsAndHashCode(of="codigo")
+@ToString
 	
 	public class Usuario {
 	
@@ -20,5 +20,5 @@ import lombok.ToString;
 	private String login;
 	private String senha;
 	
-
+	
 }

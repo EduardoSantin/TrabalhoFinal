@@ -11,4 +11,9 @@ public interface CrudDAO<T> {
 	void excluir(T dado);
 
 	List<T> listar();
+
+	boolean checkLogin(String login, String senha);
+	
+
+
 }
