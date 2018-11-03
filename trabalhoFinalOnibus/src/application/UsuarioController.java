@@ -10,6 +10,7 @@ import principal.model.Usuario;
 
 public class UsuarioController {
 	
+	
     @FXML
     private Button btnSalvar;
 
@@ -22,10 +23,12 @@ public class UsuarioController {
     @FXML
     private TextField tfSenha;
     
+    @FXML
+    private TextField tfTipo;
+    
     private Usuario usuario;
     
     private UsuarioDAO usuarioDao = new UsuarioJDBC();
-    
     
     
     @FXML
@@ -39,11 +42,13 @@ public class UsuarioController {
     	usuario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	usuario.setLogin(tfLogin.getText());
     	usuario.setSenha(tfSenha.getText());
+    	usuario.setTipo(Boolean.valueOf(tfTipo.getText()));
   }
  
 	void novoUsuario() {
 	tfLogin.clear();
 	tfSenha.clear();
+	tfTipo.clear();
 }
 
 }

@@ -4,16 +4,37 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UsuarioController">
+<AnchorPane minHeight="400.0" prefWidth="500.0" style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UsuarioController">
    <children>
-      <Label layoutX="184.0" layoutY="68.0" text="Cadastro Login" />
-      <Label layoutX="148.0" layoutY="177.0" text="Login:" />
-      <Label layoutX="147.0" layoutY="241.0" text="Senha:" />
-      <Button fx:id="btnSalvar" layoutX="226.0" layoutY="321.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
-      <TextField fx:id="tfLogin" layoutX="148.0" layoutY="200.0" prefHeight="25.0" prefWidth="217.0" />
-      <TextField fx:id="tfSalvar" layoutX="148.0" layoutY="265.0" prefHeight="25.0" prefWidth="217.0" />
-      <TextField fx:id="tfCodigo" layoutX="146.0" layoutY="134.0" prefHeight="25.0" prefWidth="217.0" />
-      <Label layoutX="145.0" layoutY="109.0" text="Código" />
+      <Label layoutX="153.0" layoutY="21.0" text="Cadastro Login">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></Label>
+      <Label layoutX="131.0" layoutY="135.0" text="Login:" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="131.0" layoutY="192.0" text="Senha:" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnSalvar" layoutX="201.0" layoutY="319.0" mnemonicParsing="false" onAction="#Salvar" prefHeight="25.0" prefWidth="73.0" text="Salvar">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <TextField fx:id="tfLogin" layoutX="129.0" layoutY="152.0" prefHeight="25.0" prefWidth="217.0" />
+      <TextField fx:id="tfSalvar" layoutX="129.0" layoutY="209.0" prefHeight="25.0" prefWidth="217.0" />
+      <TextField fx:id="tfCodigo" layoutX="129.0" layoutY="92.0" prefHeight="25.0" prefWidth="217.0" />
+      <Label layoutX="129.0" layoutY="75.0" text="Código" textFill="#fcfafa">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="134.0" layoutY="245.0" text="Tipo" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <TextField fx:id="tfTipo" layoutX="129.0" layoutY="262.0" prefHeight="25.0" prefWidth="217.0" />
    </children>
 </AnchorPane>

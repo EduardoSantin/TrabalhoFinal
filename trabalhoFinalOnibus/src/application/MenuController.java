@@ -4,12 +4,10 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import principal.model.Usuario;
 
 public class MenuController {
 
@@ -35,14 +33,10 @@ public class MenuController {
 	private BorderPane bpPrincipal;
 
 	@FXML
-	private Button btnEntrar;
-
-	@FXML
 	private MenuItem mniUsuario;
 
 	@FXML
-	private Label lbUser;
-
+	private Label lbUser;	
 
 	@FXML
 	void MenuEmpresa(ActionEvent event) {
@@ -120,7 +114,7 @@ public class MenuController {
 	@FXML
 	void MenuUsuario(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("CadastroUsuario.fxml"));
+		loader.setLocation(getClass().getResource("CadastroLogin.fxml"));
 		try {
 			AnchorPane menuView = (AnchorPane) loader.load();
 			bpPrincipal.setCenter(menuView);
@@ -129,5 +123,5 @@ public class MenuController {
 		}
 
 	}
-
+	
 }

@@ -19,6 +19,5 @@ import lombok.ToString;
 	private int codigo;
 	private String login;
 	private String senha;
-	
-	
+	private Boolean tipo;
 }

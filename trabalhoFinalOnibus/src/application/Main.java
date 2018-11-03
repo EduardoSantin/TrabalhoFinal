@@ -21,7 +21,7 @@ public class Main extends Application {
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {  
 		System.setProperty("tipoPersistencia", 
 				TipoPersistencia.BANCO.name());
 		if(args.length>0) {			

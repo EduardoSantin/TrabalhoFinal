@@ -11,15 +11,18 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FuncionarioController">
+<AnchorPane style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FuncionarioController">
    <children>
-      <Pane layoutX="-14.0" layoutY="2.0" prefHeight="700.0" prefWidth="1200.0">
+      <Pane layoutX="-7.0" layoutY="1.0" prefHeight="700.0" prefWidth="1200.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="210.0" layoutY="97.0" />
-            <Label layoutX="79.0" layoutY="100.0" text="Código" />
-            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Funcionário">
+            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#f2f0f0">
                <font>
-                  <Font size="37.0" />
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="202.0" layoutY="20.0" text="Cadastro De Funcionário">
+               <font>
+                  <Font name="System Bold Italic" size="37.0" />
                </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
@@ -30,20 +33,41 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="79.0" layoutY="140.0" text="Nome" />
-            <Label layoutX="79.0" layoutY="180.0" text="CPF" />
-            <Label layoutX="79.0" layoutY="220.0" text="RG" />
-            <Label layoutX="66.0" layoutY="260.0" text="Data Nascimento" />
-            <Label layoutX="74.0" layoutY="295.0" text="Endereço" />
-            <Label layoutX="447.0" layoutY="141.0" text="Bairro" />
-            <Label layoutX="449.0" layoutY="100.0" text="CEP" />
+            <Label layoutX="79.0" layoutY="140.0" text="Nome" textFill="#f8f6f6">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="79.0" layoutY="180.0" text="CPF" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="79.0" layoutY="220.0" text="RG" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="79.0" layoutY="260.0" text="Data Nascimento" textFill="#f8f7f7">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="79.0" layoutY="300.0" text="Endereço" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="450.0" layoutY="140.0" text="Bairro" textFill="#fffafa">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="449.0" layoutY="100.0" text="CEP" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
             <TextField fx:id="tfNome" layoutX="210.0" layoutY="137.0" />
             <TextField fx:id="tfCPF" layoutX="210.0" layoutY="176.0" />
             <TextField fx:id="tfRg" layoutX="210.0" layoutY="216.0" />
             <TextField fx:id="tfEndereco" layoutX="210.0" layoutY="300.0" />
             <TextField fx:id="tfCep" layoutX="565.0" layoutY="96.0" />
             <TextField fx:id="tfBairro" layoutX="565.0" layoutY="137.0" />
-            <TableView fx:id="tblFuncionario" layoutX="25.0" layoutY="388.0" onMouseClicked="#selecionaFuncionario" prefHeight="312.0" prefWidth="1048.0">
+            <TableView fx:id="tblFuncionario" layoutX="25.0" layoutY="388.0" onMouseClicked="#selecionaFuncionario" prefHeight="312.0" prefWidth="1048.0" style="-fx-background-color: #4682B4;">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="38.0" prefWidth="50.0" text="Código" />
                 <TableColumn fx:id="tbcnome" minWidth="88.0" prefWidth="99.0" text="Nome" />
@@ -54,25 +78,45 @@
                   <TableColumn fx:id="tbcCep" minWidth="37.0" prefWidth="58.0" text="CEP" />
                   <TableColumn fx:id="tbcBairo" minWidth="60.0" prefWidth="76.0" text="Bairro" />
                   <TableColumn fx:id="tbcCargo" prefWidth="61.0" text="Cargo" />
-                  <TableColumn fx:id="tbcSalario" minWidth="0.0" prefWidth="95.0" text="Salario" />
-                  <TableColumn fx:id="tbcCargaHoraria" prefWidth="121.0" text="Carga Horaria" />
-                  <TableColumn fx:id="tbcDataAdmisao" prefWidth="137.0" text="Data admisao" />
+                  <TableColumn fx:id="tbcSalario" minWidth="0.0" prefWidth="95.0" text="Salário" />
+                  <TableColumn fx:id="tbcCargaHoraria" prefWidth="121.0" text="Carga Horária" />
+                  <TableColumn fx:id="tbcDataAdmisao" prefWidth="137.0" text="Data admissão" />
               </columns>
             </TableView>
-            <Button fx:id="btnSalvar" layoutX="393.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-            <Button fx:id="btnNovo" layoutX="478.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
-            <Button fx:id="btnDeletar" layoutX="553.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" />
-            <Label layoutX="445.0" layoutY="220.0" text="Salário" />
-            <Label layoutX="447.0" layoutY="180.0" text="Cargo" />
+            <Button fx:id="btnSalvar" layoutX="393.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnNovo" layoutX="478.0" layoutY="345.0" mnemonicParsing="false" onAction="#novo" text="Novo">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnDeletar" layoutX="553.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Label layoutX="452.0" layoutY="220.0" text="Salário" textFill="#f2f0f0">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="451.0" layoutY="180.0" text="Cargo" textFill="#f5f2f2">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
             <TextField fx:id="tfCargo" layoutX="565.0" layoutY="176.0" />
             <TextField fx:id="tfSalario" layoutX="565.0" layoutY="216.0" />
-            <TextField fx:id="tfDataNascimento" layoutX="210.0" layoutY="296.0" />
             <TextField fx:id="tfDataAdmissao" layoutX="565.0" layoutY="256.0" />
-            <Button fx:id="btnVoltarMenu" layoutX="870.0" layoutY="22.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
+            <Button fx:id="btnVoltarMenu" layoutX="870.0" layoutY="22.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
 
             <TextField fx:id="tfDataNascimento" layoutX="210.0" layoutY="256.0" />
             <TextField fx:id="tfCargaHoraria" layoutX="565.0" layoutY="256.0" />
-            <Label layoutX="455.0" layoutY="260.0" text="Carga Horaria" />
+            <Label layoutX="451.0" layoutY="260.0" text="Carga Horaria" textFill="#f8f7f7">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
          </children>
       </Pane>
    </children>

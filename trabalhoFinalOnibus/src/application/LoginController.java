@@ -3,8 +3,6 @@ package application;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.sun.glass.ui.Menu;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -37,62 +35,63 @@ public class LoginController {
 	private Button btEsqueceu;
 
 	private Usuario login;
-	
-	
+
 	@FXML
-    private void initialize() {
+	private void initialize() {
 		UsuarioDAO usuarioDao = new UsuarioJDBC();
+
 		btnLogar.setOnAction(new EventHandler<ActionEvent>() {
 
-			
 			@Override
 			public void handle(ActionEvent event) {
-				if(usuarioDao.checkLogin(tfLogin.getText(), tfSenha.getText())) {
-					
+
+				if (usuarioDao.checkLogin(tfLogin.getText(), tfSenha.getText())) {
 					Stage stage = new Stage();
 					Parent root = null;
 					try {
 						root = FXMLLoader.load(getClass().getResource("menu.fxml"));
 					} catch (Exception ex) {
-						Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null,ex);
+						Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
 					}
-					Scene scene = new Scene(root);	
+					Scene scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
-					
+
 					btnLogar.getScene().getWindow().hide();
-					alertSucesso();	
+					alertSucesso();
 				}else {
 					alertERRO();
 					limpar();
 				}
 			}
 		});
-		
+
 	}
+
 	// metodo para limpar os textField
 	void limpar() {
 		tfLogin.clear();
 		tfSenha.clear();
 	}
-	
+
 	public Usuario getLogin() {
 		return login;
 	}
-	
-	//metodo alert que confirma o login com sucesso
+
+	// metodo alert que confirma o login com sucesso
 	public void alertSucesso() {
-		Alert alert  = new Alert(Alert.AlertType.CONFIRMATION);
+		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setTitle("LOGIN");
 		alert.setHeaderText("Logado com Sucesso");
-		alert.show();	
+		alert.show();
 	}
-	//metodo alert erro de login ou senha 
+
+	// metodo alert erro de login ou senha
 	public void alertERRO() {
-		Alert alert  = new Alert(Alert.AlertType.ERROR);
+		Alert alert = new Alert(Alert.AlertType.ERROR);
 		alert.setTitle("LOGIN");
 		alert.setHeaderText("ERRO! Login ou senha incorretos");
-		alert.show();	
+		alert.show();
 	}
-	
+
 }

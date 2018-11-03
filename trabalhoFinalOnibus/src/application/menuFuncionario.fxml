@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bpPrincipal" style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+<BorderPane fx:id="bpPrincipal" style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuFuncionarioController">
    <center>
       <Pane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,11 +25,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="Cadastro">
             <items>
-              <MenuItem fx:id="mmiEmpresa" mnemonicParsing="false" onAction="#MenuEmpresa" text="Cadastro de Empresa" />
                   <MenuItem fx:id="mmiVeiculo" mnemonicParsing="false" onAction="#MenuVeiculo" text="Cadastro de Veiculo" />
-                  <MenuItem fx:id="mmiFuncionario" mnemonicParsing="false" onAction="#MenuFuncionario" text="Cadastro de Funcionario" />
                   <MenuItem fx:id="mmiManutencao" mnemonicParsing="false" onAction="#MenuManutencao" text="Cadastro de Manutenção" />
-                  <MenuItem fx:id="mniUsuario" mnemonicParsing="false" onAction="#MenuUsuario" text="Cadastro De Usuario" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Movimentação">
