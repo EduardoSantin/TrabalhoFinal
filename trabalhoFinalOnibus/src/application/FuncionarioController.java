@@ -1,5 +1,6 @@
 package application;
 
+import javax.print.attribute.standard.DateTimeAtCompleted;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -84,16 +85,16 @@ public class FuncionarioController {
 	private TableColumn<Funcionario, String> tbcCargo;
 
 	@FXML
-	private TableColumn<Funcionario, Float> tbcSalario;
+	private TableColumn<Funcionario, Double> tbcSalario;
 
 	@FXML
-	private TableColumn<Funcionario, Float> tbcCargaHoraria;
+	private TableColumn<Funcionario, Double> tbcCargaHoraria;
 
 	@FXML
 	private Button btnVoltarMenu;
 
 	@FXML
-	private TableColumn<Funcionario, String> tbcDataAdmisao;
+	private TableColumn<Funcionario, DateTimeAtCompleted> tbcDataAdmisao;
 
 	@FXML
 	private Button btnSalvar;
@@ -111,22 +112,6 @@ public class FuncionarioController {
 
 	private FuncionarioDAO funcionarioDao = new FuncionarioJDBC();
 
-
-	public void populaFuncionario() {
-		funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
-		funcionario.setNome(tfNome.getText());
-		funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
-		funcionario.setRg(Integer.valueOf(tfRg.getText()));
-		funcionario.setDtNasc(tfDataNascimento.getText());
-		funcionario.setEndereco(tfEndereco.getText());
-		funcionario.setCep(Integer.valueOf(tfCep.getText()));
-		funcionario.setBairro(tfBairro.getText());
-		funcionario.setSalario(Double.valueOf(tfSalario.getText()));
-		funcionario.setCargo(tfCargo.getText());
-		funcionario.setCargaHoraria(Integer.valueOf(tfCargaHoraria.getText()));
-	}
-
-
 	@FXML
 	private void initialize() {
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -143,6 +128,22 @@ public class FuncionarioController {
 		tbcDataAdmisao.setCellValueFactory(new PropertyValueFactory<>("dataAdmisao"));
 		novoFuncionario();
 	}
+
+	public void populaFuncionario() {
+		funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
+		funcionario.setNome(tfNome.getText());
+		funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
+		funcionario.setRg(Integer.valueOf(tfRg.getText()));
+		funcionario.setDtNasc(tfDataNascimento.getText());
+		funcionario.setEndereco(tfEndereco.getText());
+		funcionario.setCep(Integer.valueOf(tfCep.getText()));
+		funcionario.setBairro(tfBairro.getText());
+		funcionario.setSalario(Double.valueOf(tfSalario.getText()));
+		funcionario.setCargo(tfCargo.getText());
+		funcionario.setCargaHoraria(Double.valueOf(tfCargaHoraria.getText()));
+	}
+
+
 
 	@FXML
 	void selecionaFuncionario(MouseEvent event) {
@@ -212,10 +213,8 @@ public class FuncionarioController {
 
 	@FXML
 	void salvar(ActionEvent event) {
-
 		populaFuncionario();
-
-		if (editando) {
+		if(editando) {
 			funcionarioDao.alterar(funcionario);
 		} else {
 			funcionarioDao.inserir(funcionario);

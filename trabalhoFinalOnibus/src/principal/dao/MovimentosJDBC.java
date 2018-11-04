@@ -41,20 +41,21 @@ public class MovimentosJDBC implements MovimentosDAO {
 	@Override
 	public void alterar(Movimentos dado) {
 		try {
-			String sql = "update Movimentos set movimentos = ?" + "where codigo= ?";
+			String sql = "UPDATE Movimentos SET numeroNota = ? , dataEmisao = ? , kmInicial = ? , kmFinal = ? , qtdPassageiros = ? , origem = ? , destino = ? , nomeMotorista = ?"
+					+ " WHERE codigo = ?";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setInt(1, dado.getCodigo());
-			statement.setInt(2, dado.getNumeroNota());
-			statement.setString(3, dado.getDtaEmissao());
-			statement.setDouble(4, dado.getKmInicial());
-			statement.setDouble(5, dado.getKmFinal());
-			statement.setInt(6, dado.getQtdPassageiros());
-			statement.setString(7, dado.getOrigen());
-			statement.setString(8, dado.getDestino());
-			statement.setString(9, dado.getMotorista());
-
+			statement.setInt(1, dado.getNumeroNota());
+			statement.setString(2, dado.getDtaEmissao());
+			statement.setDouble(3, dado.getKmInicial());
+			statement.setDouble(4, dado.getKmFinal());
+			statement.setInt(5, dado.getQtdPassageiros());
+			statement.setString(6, dado.getOrigen());
+			statement.setString(7, dado.getDestino());
+			statement.setString(8, dado.getMotorista());
+			statement.setInt(9, dado.getCodigo());
+			
 			statement.executeUpdate();
 
 		} catch (SQLException e) {

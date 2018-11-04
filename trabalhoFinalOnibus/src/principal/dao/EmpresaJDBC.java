@@ -40,19 +40,20 @@ public class EmpresaJDBC implements EmpresaDAO {
 	@Override
 	public void alterar(Empresa dado) {
 		try {
-			String sql = "update empresa set empresa = ?" + "where codigo= ?";
+			String sql = "UPDATE Empresa SET razaoSocial = ? , nomeFantasia = ? , cnpj = ? , endereco = ? , numero = ? , bairro = ? , cep = ? , uf = ?"
+					+ "WHERE codigo = ?";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setInt(1, dado.getCodigo());
-			statement.setString(2, dado.getRazaoSocial());
-			statement.setString(3, dado.getNomeFantasia());
-			statement.setInt(4, dado.getCnpj());
-			statement.setString(5, dado.getEndereco());
-			statement.setInt(6, dado.getNumero());
-			statement.setString(7, dado.getBairro());
-			statement.setInt(8, dado.getCep());
-			statement.setString(9, dado.getUf());
+			statement.setString(1, dado.getRazaoSocial());
+			statement.setString(2, dado.getNomeFantasia());
+			statement.setInt(3, dado.getCnpj());
+			statement.setString(4, dado.getEndereco());
+			statement.setInt(5, dado.getNumero());
+			statement.setString(6, dado.getBairro());
+			statement.setInt(7, dado.getCep());
+			statement.setString(8, dado.getUf());
+			statement.setInt(9, dado.getCodigo());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {

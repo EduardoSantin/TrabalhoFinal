@@ -30,7 +30,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setString(8, dado.getBairro());
 			statement.setString(9, dado.getCargo());
 			statement.setDouble(10, dado.getSalario());
-			statement.setInt(11, dado.getCargaHoraria());
+			statement.setDouble(11, dado.getCargaHoraria());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -41,21 +41,22 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 	@Override
 	public void alterar(Funcionario dado) {
 		try {
-			String sql = "update Funcionario set funcionario = ?" + "where codigo= ?";
+			String sql = "UPDATE Funcionario SET nome = ? , cpf = ? , rg = ? , dataNascimento = ? , endereco = ? , cep = ? , bairro = ? , cargo = ? , salario = ? , cargaHoraria = ?"
+					+ " where codigo = ?";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-
-			statement.setInt(1, dado.getCodigo());
-			statement.setString(2, dado.getNome());
-			statement.setInt(3, dado.getCpf());
-			statement.setInt(4, dado.getRg());
-			statement.setString(5, dado.getDtNasc());
-			statement.setString(6, dado.getEndereco());
-			statement.setInt(7, dado.getCep());
-			statement.setString(8, dado.getBairro());
-			statement.setString(9, dado.getCargo());
-			statement.setDouble(10, dado.getSalario());
-			statement.setInt(11, dado.getCargaHoraria());
+			
+			statement.setString(1, dado.getNome());
+			statement.setInt(2, dado.getCpf());
+			statement.setInt(3, dado.getRg());
+			statement.setString(4, dado.getDtNasc());
+			statement.setString(5, dado.getEndereco());
+			statement.setInt(6, dado.getCep());
+			statement.setString(7, dado.getBairro());
+			statement.setString(8, dado.getCargo());
+			statement.setDouble(9, dado.getSalario());
+			statement.setDouble(10, dado.getCargaHoraria());
+			statement.setInt(11, dado.getCodigo());
 
 			statement.executeUpdate();
 
@@ -98,7 +99,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 				funcionario.setBairro(rs.getString("bairro"));
 				funcionario.setCargo(rs.getString("cargo"));
 				funcionario.setSalario(rs.getDouble("salario"));
-				funcionario.setCargaHoraria(rs.getInt("cargaHoraria"));
+				funcionario.setCargaHoraria(rs.getDouble("cargaHoraria"));
 				funcionario.setDtaAdmissao(rs.getString("dataAdmisao"));
 
 				funcionarios.add(funcionario);

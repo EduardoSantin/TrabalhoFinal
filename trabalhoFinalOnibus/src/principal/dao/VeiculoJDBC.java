@@ -37,17 +37,18 @@ public class VeiculoJDBC implements VeiculoDAO {
 	@Override
 	public void alterar(Veiculo dado) {
 		try {
-			String sql = "update 'veiculo' set 'Codigo' = ?, 'renavan' = ?, 'marca' = ?, 'modelo' = ?, 'placa' = ?, 'Motor' = ?, 'chassi' = ?, 'dataCadastro' = ? where 'codigo' = ?;";
+			String sql = "UPDATE Veiculo SET renavan = ? , marca = ? , modelo = ? , placa = ? , chassi = ? , motor = ? "
+					+ "WHERE codigo = ?";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setInt(1, dado.getCodigo());
-			statement.setInt(2, dado.getRenavan());
-			statement.setString(3, dado.getMarca());
-			statement.setString(4, dado.getModelo());
-			statement.setString(5, dado.getPlaca());
+			statement.setInt(1, dado.getRenavan());
+			statement.setString(2, dado.getMarca());
+			statement.setString(3, dado.getModelo());
+			statement.setString(4, dado.getPlaca());
+			statement.setInt(5, dado.getChassi());
 			statement.setString(6, dado.getMotor());
-			statement.setInt(7, dado.getChassi());
+			statement.setInt(7, dado.getCodigo());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -56,7 +57,6 @@ public class VeiculoJDBC implements VeiculoDAO {
 
 	}
 
-	// "UPDATE `veterinaria`.`funcionario` SET `Nome` = ?,`CPF` = ?,`Data_Nascimento` = ?,`id_Cliente` = ?,`idFilial` = ? WHERE `idFuncionario` = ?;";
 	@Override
 	public void excluir(Veiculo dado) {
 		try {
