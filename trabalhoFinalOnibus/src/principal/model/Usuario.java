@@ -12,12 +12,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of="codigo")
-@ToString
+@ToString(of = {"codigo","login","senha"})
 	
 	public class Usuario {
 	
 	private int codigo;
 	private String login;
 	private String senha;
-	private Boolean tipo;
 }

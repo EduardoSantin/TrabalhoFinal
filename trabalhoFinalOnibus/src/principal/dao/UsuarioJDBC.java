@@ -15,14 +15,13 @@ public class UsuarioJDBC implements UsuarioDAO {
 	public void inserir(Usuario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into usuario(codigo, login, senha, tipo) values (?, ?, ?, ?)";
+			String sql = "insert into usuario(codigo, login, senha) values (?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
 			statement.setInt(1, dado.getCodigo());
 			statement.setString(2, dado.getLogin());
 			statement.setString(3, dado.getSenha());
-			statement.setBoolean(4,dado.getTipo());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -55,29 +54,6 @@ public class UsuarioJDBC implements UsuarioDAO {
 
 
 	@Override
-	public List<Usuario> listar() {
-		List<Usuario> usuarios = new ArrayList<>();
-
-		try {
-			Statement statement = ConexaoUtil.getConn().createStatement();
-			ResultSet rs = statement.executeQuery("select * from usuarios");
-
-			while (rs.next()) {
-				Usuario usuario = new Usuario();
-				usuario.setCodigo(rs.getInt("codigo"));
-				usuario.setLogin(rs.getString("login"));
-				usuario.setSenha(rs.getString("senha"));
-				usuario.setTipo(rs.getBoolean("tipo"));	
-				usuarios.add(usuario);
-
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return usuarios;
-	}	
-	@Override
 	public void alterar(Usuario dado) {
 		// TODO Auto-generated method stub
 		
@@ -87,6 +63,12 @@ public class UsuarioJDBC implements UsuarioDAO {
 	public void excluir(Usuario dado) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Usuario> listar() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

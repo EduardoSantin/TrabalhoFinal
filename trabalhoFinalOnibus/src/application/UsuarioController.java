@@ -23,10 +23,9 @@ public class UsuarioController {
     @FXML
     private TextField tfSenha;
     
-    @FXML
-    private TextField tfTipo;
-    
     private Usuario usuario;
+    
+    private boolean editando;
     
     private UsuarioDAO usuarioDao = new UsuarioJDBC();
     
@@ -42,13 +41,16 @@ public class UsuarioController {
     	usuario.setCodigo(Integer.valueOf(tfCodigo.getText()));
     	usuario.setLogin(tfLogin.getText());
     	usuario.setSenha(tfSenha.getText());
-    	usuario.setTipo(Boolean.valueOf(tfTipo.getText()));
+    	
+    	novoUsuario();
+
   }
  
 	void novoUsuario() {
-	tfLogin.clear();
-	tfSenha.clear();
-	tfTipo.clear();
+		usuario = new Usuario();
+		tfLogin.clear();
+		tfSenha.clear();
+		editando = false;
 }
 
 }

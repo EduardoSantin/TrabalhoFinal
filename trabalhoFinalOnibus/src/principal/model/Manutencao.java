@@ -1,7 +1,5 @@
 package principal.model;
 
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,9 +13,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode(of="codigo")
 @ToString(of= {"codigo", "descricao", "tipo", "dataCadastro"})
-public class Manutencao implements Serializable {
+public class Manutencao {
 	
-	private static final long serialVersionUID = 1L;
 	private Integer codigo;
 	private String descricao;
 	private String tipo;

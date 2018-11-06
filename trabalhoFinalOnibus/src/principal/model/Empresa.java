@@ -1,7 +1,5 @@
 package principal.model;
 
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,10 +12,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode(of="codigo")
 @ToString(of={"codigo","razaoSocial","nomeFantasia", "cnpj", "endereco", "numero", "bairro", "cep","uf"})
-public class Empresa implements Serializable{
-
-	
-	private static final long serialVersionUID = 1L;
+public class Empresa{
 
 	private Integer codigo;
 	private String razaoSocial;
