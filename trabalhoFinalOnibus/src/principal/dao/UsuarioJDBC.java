@@ -18,8 +18,8 @@ public class UsuarioJDBC implements UsuarioDAO {
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setString(2, dado.getLogin());
-			statement.setString(3, dado.getSenha());
+			statement.setString(1, dado.getLogin());
+			statement.setString(2, dado.getSenha());
 			statement.executeUpdate();
 			JOptionPane.showMessageDialog(null, "Usuario inserido!");
 		} catch (SQLException e) {

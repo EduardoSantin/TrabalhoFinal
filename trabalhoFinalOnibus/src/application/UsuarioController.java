@@ -17,7 +17,7 @@ public class UsuarioController {
 	private TextField tfLogin;
 
 	@FXML
-	private TextField tfSenha;
+	private TextField tfsenha;
 
 	private Usuario usuario;
 
@@ -33,20 +33,20 @@ public class UsuarioController {
 	public void populaUsuario() {
 		usuario = new Usuario();
 		usuario.setLogin(tfLogin.getText());
-		usuario.setSenha(tfSenha.getText());
+ 		usuario.setSenha(tfsenha.getText());
 
-		novoUsuario();
+	//	novoUsuario();
 
 	}
 
 	public void populaTela(Usuario usuario) {
 		tfLogin.setText(usuario.getLogin());
-		tfSenha.setText(usuario.getSenha());
+		tfsenha.setText(usuario.getSenha());
 	}
 
 	void novoUsuario() {
 		tfLogin.clear();
-		tfSenha.clear();
+		tfsenha.clear();
 		usuario = new Usuario();
 	}
 
