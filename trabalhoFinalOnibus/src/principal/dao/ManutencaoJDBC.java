@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import principal.conexao.ConexaoUtil;
 import principal.model.Manutencao;
 
@@ -41,6 +43,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 			stmt.setInt(3, dado.getCodigo());
 			
 			stmt.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Manutenção inserida!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import principal.conexao.ConexaoUtil;
 import principal.model.Empresa;
 
@@ -30,6 +32,8 @@ public class EmpresaJDBC implements EmpresaDAO {
 			statement.setInt(8, dado.getCep());
 			statement.setString(9, dado.getUf());
 			statement.executeUpdate();
+			
+			JOptionPane.showMessageDialog(null, "Empresa inserida!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();

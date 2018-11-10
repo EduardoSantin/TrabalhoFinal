@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import principal.conexao.ConexaoUtil;
 import principal.model.Funcionario;
 
@@ -33,6 +35,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setDouble(11, dado.getCargaHoraria());
 
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Funcionário inserido!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

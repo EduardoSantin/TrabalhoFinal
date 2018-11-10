@@ -108,7 +108,7 @@ public class ManutencaoController {
 		if (tblManutencao.getSelectionModel().getSelectedItem() != null) {
 			manutencao = tblManutencao.getSelectionModel().getSelectedItem();
 			populaTela(manutencao);
-			populaManutencao();		
+			populaManutencao();
 			editando = true;
 		}
 	}

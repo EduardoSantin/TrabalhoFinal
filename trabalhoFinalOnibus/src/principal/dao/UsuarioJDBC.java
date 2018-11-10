@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import principal.conexao.ConexaoUtil;
 import principal.model.Usuario;
 
@@ -23,6 +26,7 @@ public class UsuarioJDBC implements UsuarioDAO {
 			statement.setString(2, dado.getLogin());
 			statement.setString(3, dado.getSenha());
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Usuario inserido!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
