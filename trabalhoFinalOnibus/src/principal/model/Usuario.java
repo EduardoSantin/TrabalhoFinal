@@ -1,7 +1,6 @@
 package principal.model;
 
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,12 +10,13 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of="codigo")
-@ToString(of = {"codigo","login","senha"})
+//@EqualsAndHashCode(of="codigo")
+@ToString(of = {"login","senha"})
 	
 	public class Usuario {
 	
-	private int codigo;
+	//private int codigo;
 	private String login;
-	private String senha;
+	private String senha;	
+	
 }

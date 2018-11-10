@@ -14,12 +14,11 @@
    <children>
       <Pane layoutX="-21.0" layoutY="2.0" prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
             <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="272.0" layoutY="20.0" text="Salvar Viagem" textFill="#030303">
+            <Label layoutX="272.0" layoutY="20.0" text="Salvar Viagem" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="37.0" />
                </font>
@@ -52,12 +51,7 @@
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <TextField fx:id="tfNumeroNota" layoutX="243.0" layoutY="137.0" />
-            <TextField fx:id="tfKmInicial" layoutX="243.0" layoutY="256.0" />
-            <TextField fx:id="tfQtdPassageiros" layoutX="243.0" layoutY="336.0" />
-            <TextField fx:id="tfOrigem" layoutX="553.0" layoutY="97.0" />
-            <TextField fx:id="tfNomeMotorista" layoutX="553.0" layoutY="176.0" />
-            <TableView fx:id="tblMovimentos" layoutX="12.0" layoutY="388.0" onMouseClicked="#SelecionaMovimento" prefHeight="212.0" prefWidth="822.0" style="-fx-background-color: #4682B4;">
+            <TableView fx:id="tblMovimentos" layoutX="64.0" layoutY="379.0" onMouseClicked="#SelecionaMovimento" prefHeight="212.0" prefWidth="822.0" style="-fx-background-color: #4682B4;">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="43.0" prefWidth="49.0" text="Código" />
                 <TableColumn fx:id="tbcNota" minWidth="59.0" prefWidth="61.0" text="N° Nota" />
@@ -83,22 +77,28 @@
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <ComboBox fx:id="cbxPlacaVeiculo" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
             <Label layoutX="75.0" layoutY="300.0" text="KM Final" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <TextField fx:id="tfKmFinal" layoutX="243.0" layoutY="296.0" />
             <Label layoutX="456.0" layoutY="140.0" text="Destino" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <TextField fx:id="tfDestino" layoutX="553.0" layoutY="137.0" />
-            <TextField fx:id="tfDataEmissao" layoutX="243.0" layoutY="176.0" />
             <Button fx:id="btnVoltarMenu" layoutX="689.0" layoutY="20.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
+            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
+            <TextField fx:id="tfNumeroNota" layoutX="243.0" layoutY="137.0" />
+            <TextField fx:id="tfDataEmissao" layoutX="243.0" layoutY="176.0" />
+            <ComboBox fx:id="cbxPlacaVeiculo" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
+            <TextField fx:id="tfKmInicial" layoutX="243.0" layoutY="256.0" />
+            <TextField fx:id="tfKmFinal" layoutX="243.0" layoutY="296.0" />
+            <TextField fx:id="tfQtdPassageiros" layoutX="243.0" layoutY="335.0" />
+            <TextField fx:id="tfOrigem" layoutX="553.0" layoutY="96.0" />
+            <TextField fx:id="tfDestino" layoutX="553.0" layoutY="137.0" />
+            <TextField fx:id="tfNomeMotorista" layoutX="553.0" layoutY="176.0" />
          </children>
       </Pane>
    </children>
