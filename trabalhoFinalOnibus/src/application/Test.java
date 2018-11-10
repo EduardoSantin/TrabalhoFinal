@@ -10,5 +10,7 @@ public class Test {
 	// e mostrando se logou como gerente ou funcionario
 
 	//ajustes no salvar telas
+	
+	// ajuste no empresa
 
 }

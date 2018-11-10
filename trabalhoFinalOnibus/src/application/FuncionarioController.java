@@ -191,6 +191,7 @@ public class FuncionarioController {
 		tfCargo.setText(funcionario.getCargo());
 		tfSalario.setText(funcionario.getSalario().toString());
 		tfCargaHoraria.setText(funcionario.getCargaHoraria().toString());
+		
 	}
 
 	@FXML

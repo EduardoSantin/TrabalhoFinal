@@ -9,48 +9,45 @@ import principal.dao.UsuarioJDBC;
 import principal.model.Usuario;
 
 public class UsuarioController {
-	
-	
-    @FXML
-    private Button btnSalvar;
 
-    @FXML
-    private TextField tfCodigo;
-    
-    @FXML
-    private TextField tfLogin;
+	@FXML
+	private Button btnSalvar;
 
-    @FXML
-    private TextField tfSenha;
-    
-    private Usuario usuario;
-    
-    private boolean editando;
-    
-    private UsuarioDAO usuarioDao = new UsuarioJDBC();
-    
-    
-    @FXML
-    void Salvar(ActionEvent event) { 
-    	populaUsuario();
-       	usuarioDao.inserir(usuario);
-    	novoUsuario();
-    }
-    
-    public void populaUsuario() {
-    	usuario.setCodigo(Integer.valueOf(tfCodigo.getText()));
-    	usuario.setLogin(tfLogin.getText());
-    	usuario.setSenha(tfSenha.getText());
-    	
-    	novoUsuario();
+	@FXML
+	private TextField tfLogin;
 
-  }
- 
-	void novoUsuario() {
+	@FXML
+	private TextField tfSenha;
+
+	private Usuario usuario;
+
+	private UsuarioDAO usuarioDao = new UsuarioJDBC();
+
+	@FXML
+	void Salvar(ActionEvent event) {
+		populaUsuario();
+		usuarioDao.inserir(usuario);
+		novoUsuario();
+	}
+
+	public void populaUsuario() {
 		usuario = new Usuario();
+		usuario.setLogin(tfLogin.getText());
+		usuario.setSenha(tfSenha.getText());
+
+		novoUsuario();
+
+	}
+
+	public void populaTela(Usuario usuario) {
+		tfLogin.setText(usuario.getLogin());
+		tfSenha.setText(usuario.getSenha());
+	}
+
+	void novoUsuario() {
 		tfLogin.clear();
 		tfSenha.clear();
-		editando = false;
-}
+		usuario = new Usuario();
+	}
 
 }

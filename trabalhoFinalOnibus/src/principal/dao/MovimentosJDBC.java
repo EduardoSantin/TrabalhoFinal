@@ -41,7 +41,7 @@ public class MovimentosJDBC implements MovimentosDAO {
 	@Override
 	public void alterar(Movimentos dado) {
 		try {
-			String sql = "UPDATE Movimentos SET numeroNota = ? , dataEmisao = ? , kmInicial = ? , kmFinal = ? , qtdPassageiros = ? , origem = ? , destino = ? , nomeMotorista = ?"
+			String sql = "UPDATE Movimentos SET numeroNota = ? , dataEmisao = ? , kmInicial = ? , kmFinal = ? , qtdPassageiros = ? , origen = ? , destino = ? , nomeMotorista = ?"
 					+ " WHERE codigo = ?";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);

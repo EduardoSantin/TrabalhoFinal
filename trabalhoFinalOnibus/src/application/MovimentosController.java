@@ -140,13 +140,13 @@ public class MovimentosController {
 		tfCodigo.setText(movimento.getCodigo().toString());
 		tfNumeroNota.setText(movimento.getNumeroNota().toString());
 		tfDataEmissao.setText(movimento.getDtaEmissao());
+		cbxPlacaVeiculo.getSelectionModel().select(movimento.getVeiculo());
 		tfKmInicial.setText(movimento.getKmInicial().toString());
 		tfKmFinal.setText(movimento.getKmFinal().toString());
 		tfQtdPassageiros.setText(movimento.getQtdPassageiros().toString());
 		tfOrigem.setText(movimento.getOrigen());
 		tfDestino.setText(movimento.getDestino());
 		tfNomeMotorista.setText(movimento.getMotorista());
-		cbxPlacaVeiculo.getSelectionModel().select(movimento.getVeiculo());
 
 	}
 	

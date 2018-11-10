@@ -26,8 +26,9 @@
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="BLACK" offset="1.0" />
+                        <Stop color="#757575" />
+                        <Stop color="#757575" offset="0.007662835249042145" />
+                     <Stop color="WHITE" offset="1.0" />
                      </stops>
                   </LinearGradient>
                </textFill>

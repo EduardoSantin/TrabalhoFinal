@@ -3,12 +3,8 @@ package principal.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JOptionPane;
-
 import principal.conexao.ConexaoUtil;
 import principal.model.Usuario;
 
@@ -18,11 +14,10 @@ public class UsuarioJDBC implements UsuarioDAO {
 	public void inserir(Usuario dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into usuario(codigo, login, senha) values (?, ?, ?)";
+			String sql = "insert into usuario(login, senha) values (?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setInt(1, dado.getCodigo());
 			statement.setString(2, dado.getLogin());
 			statement.setString(3, dado.getSenha());
 			statement.executeUpdate();

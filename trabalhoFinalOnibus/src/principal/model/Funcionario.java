@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode(of="codigo")
 @ToString(of = {"codigo", "nome", "cpf", "rg", "dtNasc", "endereco", "cep", "bairro",
-		"cargo", "salario", "cargaHoraria", "dtaAdmisao"})
+		"cargo", "salario", "cargaHoraria", "dataAdmisao"})
 public class Funcionario {
 	
 	private Integer codigo;
@@ -23,7 +23,7 @@ public class Funcionario {
 	private String cargo;
 	private Double salario;
 	private Double cargaHoraria;
-	private String dtaAdmisao;
+	private String dataAdmisao;
 	//Tem que arrumae aq a DATA Admissao
 	
 	public Integer getCodigo() {
@@ -93,10 +93,10 @@ public class Funcionario {
 		this.cargaHoraria = cargaHoraria;
 	}
 	public String getDtaAdmissao() {
-		return dtaAdmisao;
+		return dataAdmisao;
 	}
 	public void setDtaAdmissao(String dtaAdmisao) {
-		this.dtaAdmisao = dtaAdmisao;
+		this.dataAdmisao = dtaAdmisao;
 	}
 
 	
