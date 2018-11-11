@@ -206,6 +206,7 @@ public class MovimentosController {
 		tfNomeMotorista.clear();
 		tfDataEmissao.clear();
 		editando = false;
+		cbxPlacaVeiculo.getSelectionModel().clearSelection();
 		movimento = new Movimentos();
 		tblMovimentos.setItems(FXCollections.observableArrayList(movimentoDao.listar()));
 	}

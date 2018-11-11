@@ -67,14 +67,14 @@
                 <TableColumn fx:id="tbcnome" minWidth="88.0" prefWidth="99.0" text="Nome" />
                   <TableColumn fx:id="tbcCpf" minWidth="73.0" prefWidth="73.0" text="CPF" />
                   <TableColumn fx:id="tbcRg" minWidth="88.0" prefWidth="96.0" text="RG" />
-                  <TableColumn fx:id="tbcDataNascimento" minWidth="88.0" prefWidth="105.0" text="Data Nascimento" />
                   <TableColumn fx:id="tbcEndereco" minWidth="88.0" prefWidth="89.0" text="Endereço" />
                   <TableColumn fx:id="tbcCep" minWidth="37.0" prefWidth="58.0" text="CEP" />
                   <TableColumn fx:id="tbcBairo" minWidth="60.0" prefWidth="76.0" text="Bairro" />
                   <TableColumn fx:id="tbcCargo" prefWidth="61.0" text="Cargo" />
                   <TableColumn fx:id="tbcSalario" minWidth="0.0" prefWidth="95.0" text="Salário" />
-                  <TableColumn fx:id="tbcCargaHoraria" prefWidth="121.0" text="Carga Horária" />
-                  <TableColumn fx:id="tbcDataAdmisao" prefWidth="137.0" text="Data admissão" />
+                  <TableColumn fx:id="tbcCargaHoraria" prefWidth="97.0" text="Carga Horária" />
+                  <TableColumn fx:id="tbcDataNascimento" prefWidth="123.0" text="Data Nascimento" />
+                  <TableColumn fx:id="tbcDataAdmissao" prefWidth="130.0" text="Data Admissão" />
               </columns>
             </TableView>
             <Button fx:id="btnSalvar" layoutX="393.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar">

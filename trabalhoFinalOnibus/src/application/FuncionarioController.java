@@ -1,6 +1,5 @@
 package application;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -94,7 +93,7 @@ public class FuncionarioController {
 	private Button btnVoltarMenu;
 
 	@FXML
-	private TableColumn<Funcionario, DateTimeAtCompleted> tbcDataAdmisao;
+	private TableColumn<Funcionario, String> tbcDataAdmissao;
 
 	@FXML
 	private Button btnSalvar;
@@ -125,7 +124,7 @@ public class FuncionarioController {
 		tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
 		tbcSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
 		tbcCargaHoraria.setCellValueFactory(new PropertyValueFactory<>("cargaHoraria"));
-		tbcDataAdmisao.setCellValueFactory(new PropertyValueFactory<>("dataAdmisao"));
+		tbcDataAdmissao.setCellValueFactory(new PropertyValueFactory<>("dataAdmisao"));
 		novoFuncionario();
 	}
 
@@ -184,13 +183,13 @@ public class FuncionarioController {
 		tfNome.setText(funcionario.getNome());
 		tfCPF.setText(funcionario.getCpf().toString());
 		tfRg.setText(funcionario.getRg().toString());
-		tfDataNascimento.setText(funcionario.getDtNasc());
 		tfEndereco.setText(funcionario.getEndereco());
 		tfCep.setText(funcionario.getCep().toString());
 		tfBairro.setText(funcionario.getBairro());
 		tfCargo.setText(funcionario.getCargo());
 		tfSalario.setText(funcionario.getSalario().toString());
 		tfCargaHoraria.setText(funcionario.getCargaHoraria().toString());
+		tfDataNascimento.setText(funcionario.getDtNasc());
 		
 	}
 

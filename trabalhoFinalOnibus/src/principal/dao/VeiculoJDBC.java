@@ -69,6 +69,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
+			
 			JOptionPane.showMessageDialog(null, "Veículo deletado!");
 
 		} catch (SQLException e) {

@@ -42,7 +42,7 @@ public class VeiculoController {
 	private TextField tfChassi;
 	
 	@FXML 
-	TextField tfDataCadastro;
+	private TextField tfDataCadastro;
 
 	@FXML
 	private TableView<Veiculo> tblVeiculo;
@@ -149,7 +149,7 @@ public class VeiculoController {
 	@FXML
 	void salvar(ActionEvent event) {
 		populaVeiculo();
-		if(editando = true) {
+		if(editando) {
 			veiculodao.alterar(veiculo);
 		}else {
 			veiculodao.inserir(veiculo);
