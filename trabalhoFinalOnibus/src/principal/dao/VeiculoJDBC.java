@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import principal.conexao.ConexaoUtil;
 import principal.model.Veiculo;
 
@@ -28,6 +30,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 			statement.setString(6, dado.getMotor());
 			statement.setInt(7, dado.getChassi());
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Veículo inserido!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -50,6 +53,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 			statement.setString(6, dado.getMotor());
 			statement.setInt(7, dado.getCodigo());
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Dado alterado!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,6 +69,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Veículo deletado!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();

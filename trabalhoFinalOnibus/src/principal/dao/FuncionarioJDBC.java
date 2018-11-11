@@ -62,6 +62,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setInt(11, dado.getCodigo());
 
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Dado alterado!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,6 +77,9 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
+
+			JOptionPane.showMessageDialog(null, "Funcionário deletado!");
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -26,6 +26,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 			stmt.setString(4, dado.getVeiculo().toString());
 			
 			stmt.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Manutenção inserida!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -43,7 +44,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 			stmt.setInt(3, dado.getCodigo());
 			
 			stmt.executeUpdate();
-			JOptionPane.showMessageDialog(null, "Manutenção inserida!");
+			JOptionPane.showMessageDialog(null, "Dado alterado!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -57,6 +58,7 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 			PreparedStatement stmt = ConexaoUtil.getConn().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigo());
 			stmt.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Manutenção deletado!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}		

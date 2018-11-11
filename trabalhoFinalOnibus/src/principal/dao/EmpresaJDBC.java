@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JOptionPane;
-
 import principal.conexao.ConexaoUtil;
 import principal.model.Empresa;
 
@@ -36,7 +34,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 			JOptionPane.showMessageDialog(null, "Empresa inserida!");
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e);
 		}
 
 	}
@@ -60,6 +58,8 @@ public class EmpresaJDBC implements EmpresaDAO {
 			statement.setInt(9, dado.getCodigo());
 			statement.executeUpdate();
 
+			JOptionPane.showMessageDialog(null, "Dado alterado!");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -74,9 +74,12 @@ public class EmpresaJDBC implements EmpresaDAO {
 			PreparedStatement statement =ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Empresa deletado!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
+			
 		}
 	}
 

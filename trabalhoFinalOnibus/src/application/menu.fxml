@@ -32,9 +32,9 @@
                   <MenuItem fx:id="mniUsuario" mnemonicParsing="false" onAction="#MenuUsuario" text="Cadastro De Usuario" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Movimentação">
+          <Menu mnemonicParsing="false" text="Viagem">
             <items>
-              <MenuItem fx:id="mmiControleFinanceiro" mnemonicParsing="false" onAction="#MenuControleFinanceiro" text="Controle Financeiro" />
+              <MenuItem fx:id="mmiControleFinanceiro" mnemonicParsing="false" onAction="#MenuControleFinanceiro" text="Salvar Viagem" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Manutenção">
