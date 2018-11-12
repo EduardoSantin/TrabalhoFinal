@@ -1,5 +1,7 @@
 package application;
 
+import java.net.URL;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,6 +16,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import principal.conexao.ConexaoUtil;
 import principal.dao.VeiculoDAO;
 import principal.dao.VeiculoJDBC;
 import principal.model.Veiculo;
@@ -40,8 +47,8 @@ public class VeiculoController {
 
 	@FXML
 	private TextField tfChassi;
-	
-	@FXML 
+
+	@FXML
 	private TextField tfDataCadastro;
 
 	@FXML
@@ -76,9 +83,9 @@ public class VeiculoController {
 
 	@FXML
 	private Button btNovo;
-	
+
 	@FXML
-   	private Button btnVoltarMenu;
+	private Button btnVoltarMenu;
 
 	@FXML
 	private Button btDeletar;
@@ -149,16 +156,15 @@ public class VeiculoController {
 	@FXML
 	void salvar(ActionEvent event) {
 		populaVeiculo();
-		if(editando) {
+		if (editando) {
 			veiculodao.alterar(veiculo);
-		}else {
+		} else {
 			veiculodao.inserir(veiculo);
 		}
-		
+
 		novoVeiculo();
 		tblVeiculo.refresh();
 	}
-
 
 	void novoVeiculo() {
 		tfCodigo.clear();
@@ -174,13 +180,13 @@ public class VeiculoController {
 
 	@Override
 	public String toString() {
-		return  " tfPlaca ";
+		return " tfPlaca ";
 	}
-	
+
 	@FXML
 	void Voltar(ActionEvent event) {
 		btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
-			
+
 			@Override
 			public void handle(ActionEvent event) {
 				Stage stage = new Stage();
@@ -190,15 +196,27 @@ public class VeiculoController {
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
-				Scene scene = new Scene(root);	
+				Scene scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
 				btnVoltarMenu.getScene().getWindow().hide();
 			}
 		});
-		
-
-		
 	}
-	
+
+	@FXML
+	void exibirRelatorio(ActionEvent event) {
+		URL url = getClass().getResource("/relatorios/Veiculos.jasper");
+		try {
+			JasperPrint jasperPrint = JasperFillManager
+					 .fillReport(
+							 url.getPath(),
+							 null,
+							 ConexaoUtil.getConn());
+			JasperViewer.viewReport(jasperPrint);
+		} catch (JRException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
