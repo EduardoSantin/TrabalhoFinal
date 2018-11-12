@@ -12,7 +12,7 @@
 
 <AnchorPane style="-fx-background-color: #cdc9c9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManutencaoController">
    <children>
-      <Pane layoutX="-14.0" layoutY="6.0" prefHeight="600.0" prefWidth="800.0">
+      <Pane layoutX="-58.0" layoutY="14.0" prefHeight="600.0" prefWidth="800.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
             <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#111010">
@@ -38,7 +38,7 @@
                </font></Label>
             <TextField fx:id="tfDescricao" layoutX="243.0" layoutY="137.0" />
             <TextField fx:id="tfTipo" layoutX="243.0" layoutY="176.0" />
-            <TableView fx:id="tblManutencao" layoutX="62.0" layoutY="388.0" onMouseClicked="#selecionaManutencao" prefHeight="212.0" prefWidth="657.0">
+            <TableView fx:id="tblManutencao" layoutX="77.0" layoutY="373.0" onMouseClicked="#selecionaManutencao" prefHeight="212.0" prefWidth="657.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="105.0" prefWidth="105.0" text="Código" />
                 <TableColumn fx:id="tbcDescricao" minWidth="133.0" prefWidth="181.0" text="Descricão" />
@@ -47,27 +47,28 @@
                   <TableColumn fx:id="tbcDataCadastro" minWidth="60.0" prefWidth="133.0" text="Data Cadastro" />
               </columns>
             </TableView>
-            <Button fx:id="btnSalvar" layoutX="567.0" layoutY="263.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="58.0" text="Salvar">
+            <Button fx:id="btnSalvar" layoutX="362.0" layoutY="318.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="58.0" text="Salvar">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <Button fx:id="btnNovo" layoutX="567.0" layoutY="185.0" mnemonicParsing="false" onAction="#novo" prefHeight="25.0" prefWidth="58.0" text="Novo">
+            <Button fx:id="btnNovo" layoutX="445.0" layoutY="318.0" mnemonicParsing="false" onAction="#novo" prefHeight="25.0" prefWidth="58.0" text="Novo">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <Button fx:id="btnDeletar" layoutX="567.0" layoutY="105.0" mnemonicParsing="false" onAction="#deletar" text="Deletar">
+            <Button fx:id="btnDeletar" layoutX="527.0" layoutY="318.0" mnemonicParsing="false" onAction="#deletar" text="Deletar">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
             <ComboBox fx:id="cmbPlaca" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
-            <Button fx:id="btnBuscar" layoutX="693.0" layoutY="332.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Button>
             <Button fx:id="btnVoltarMenu" layoutX="694.0" layoutY="20.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
+            <Button layoutX="642.0" layoutY="315.0" mnemonicParsing="false" onAction="#exibirRelatorio" prefHeight="32.0" prefWidth="104.0" text="Exibir Relatório" textFill="#111010">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

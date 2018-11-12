@@ -1,5 +1,7 @@
 package application;
 
+import java.net.URL;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,6 +17,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import principal.conexao.ConexaoUtil;
 import principal.dao.ManutencaoDAO;
 import principal.dao.ManutencaoJDBC;
 import principal.dao.VeiculoDAO;
@@ -41,9 +48,9 @@ public class ManutencaoController {
 
 	@FXML
 	private TableColumn<Manutencao, String> tbcTipo;
-	
-    @FXML
-    private TableColumn<Manutencao, String> tbcPlaca;
+
+	@FXML
+	private TableColumn<Manutencao, String> tbcPlaca;
 
 	@FXML
 	private TableColumn<Manutencao, String> tbcDataCadastro;
@@ -71,8 +78,8 @@ public class ManutencaoController {
 	private boolean editando;
 
 	@FXML
-   	private Button btnVoltarMenu;
-	
+	private Button btnVoltarMenu;
+
 	private ManutencaoDAO manutencaoDao = new ManutencaoJDBC();
 
 	private VeiculoDAO veiculoDao = new VeiculoJDBC();
@@ -161,7 +168,7 @@ public class ManutencaoController {
 	@FXML
 	void Voltar(ActionEvent event) {
 		btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
-			
+
 			@Override
 			public void handle(ActionEvent event) {
 				Stage stage = new Stage();
@@ -171,14 +178,23 @@ public class ManutencaoController {
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
-				Scene scene = new Scene(root);	
+				Scene scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
 				btnVoltarMenu.getScene().getWindow().hide();
 			}
 		});
-		
-
-		
 	}
+
+	@FXML
+	void exibirRelatorio(ActionEvent event) {
+		URL url = getClass().getResource("/relatorios/manutencao.jasper");
+		try {
+			JasperPrint jasperPrint = JasperFillManager.fillReport(url.getPath(), null, ConexaoUtil.getConn());
+			JasperViewer.viewReport(jasperPrint);
+		} catch (JRException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
