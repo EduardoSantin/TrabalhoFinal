@@ -1,21 +1,24 @@
 package application;
 
 import java.io.IOException;
+
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class MenuController {
 
 	@FXML
 	private MenuItem mmiEmpresa;
-
-	@FXML
-	private MenuItem mmiDespesas;
 
 	@FXML
 	private MenuItem mmiManutencao;
@@ -37,6 +40,30 @@ public class MenuController {
 
 	@FXML
 	private Label lbUser;	
+	
+	@FXML
+	private Button btnSair;
+	
+	@FXML
+	void Sair(ActionEvent event){
+		btnSair.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				Stage stage = new Stage();
+				Parent root = null;
+				try {
+					root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+				btnSair.getScene().getWindow().hide();
+			}
+		});
+	}
 
 	@FXML
 	void MenuEmpresa(ActionEvent event) {
@@ -91,18 +118,6 @@ public class MenuController {
 	void MenuControleFinanceiro(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("Movimentos.fxml"));
-		try {
-			AnchorPane menuView = (AnchorPane) loader.load();
-			bpPrincipal.setCenter(menuView);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-	}
-
-	@FXML
-	void MenuDespesas(ActionEvent event) {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("CadastroManutencao.fxml"));
 		try {
 			AnchorPane menuView = (AnchorPane) loader.load();
 			bpPrincipal.setCenter(menuView);

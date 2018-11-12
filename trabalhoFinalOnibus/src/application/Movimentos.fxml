@@ -10,48 +10,48 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MovimentosController">
+<AnchorPane style="-fx-background-color: #cdc9c9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MovimentosController">
    <children>
       <Pane layoutX="-21.0" layoutY="2.0" prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="WHITE">
+            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#0a0a0a">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="272.0" layoutY="20.0" text="Salvar Viagem" textFill="WHITE">
+            <Label layoutX="272.0" layoutY="20.0" text="Salvar Viagem" textFill="#1b1a1a">
                <font>
                   <Font name="System Bold Italic" size="37.0" />
                </font>
             </Label>
-            <Label layoutX="77.0" layoutY="140.0" text="Número Nota" textFill="WHITE">
+            <Label layoutX="77.0" layoutY="140.0" text="Número Nota" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="75.0" layoutY="180.0" text="Data Emissão" textFill="WHITE">
+            <Label layoutX="75.0" layoutY="180.0" text="Data Emissão" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="75.0" layoutY="220.0" text="Placa Veículo" textFill="WHITE">
+            <Label layoutX="75.0" layoutY="220.0" text="Placa Veículo" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="76.0" layoutY="339.0" text="Quantidade Passageiros" textFill="WHITE">
+            <Label layoutX="76.0" layoutY="339.0" text="Quantidade Passageiros" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="455.0" layoutY="180.0" text="Nome Motorista" textFill="WHITE">
+            <Label layoutX="455.0" layoutY="180.0" text="Nome Motorista" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="75.0" layoutY="260.0" text="KM  Inicial " textFill="WHITE">
+            <Label layoutX="75.0" layoutY="260.0" text="KM  Inicial " textFill="#0d0d0d">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="455.0" layoutY="101.0" text="Origem" textFill="WHITE">
+            <Label layoutX="455.0" layoutY="101.0" text="Origem" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <TableView fx:id="tblMovimentos" layoutX="64.0" layoutY="379.0" onMouseClicked="#SelecionaMovimento" prefHeight="212.0" prefWidth="822.0" style="-fx-background-color: #4682B4;">
+            <TableView fx:id="tblMovimentos" layoutX="64.0" layoutY="379.0" onMouseClicked="#SelecionaMovimento" prefHeight="212.0" prefWidth="822.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="43.0" prefWidth="49.0" text="Código" />
                 <TableColumn fx:id="tbcNota" minWidth="59.0" prefWidth="61.0" text="N° Nota" />
@@ -77,11 +77,11 @@
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <Label layoutX="75.0" layoutY="300.0" text="KM Final" textFill="WHITE">
+            <Label layoutX="75.0" layoutY="300.0" text="KM Final" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="456.0" layoutY="140.0" text="Destino" textFill="WHITE">
+            <Label layoutX="456.0" layoutY="140.0" text="Destino" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>

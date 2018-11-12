@@ -10,24 +10,24 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
-   <top>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000080;">
+<BorderPane fx:id="bpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cdc9c9;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="159.0" layoutY="163.0" text="Login:" textFill="WHITE">
+            <Label layoutX="159.0" layoutY="163.0" text="Login:" textFill="#0a0a0a">
                <font>
                   <Font name="Serif Regular" size="21.0" />
                </font></Label>
-            <Label layoutX="157.0" layoutY="223.0" text="Senha:" textFill="#fffbfb">
+            <Label layoutX="157.0" layoutY="223.0" text="Senha:" textFill="#111010">
                <font>
                   <Font name="Serif Regular" size="21.0" />
                </font></Label>
-            <Button fx:id="btnLogar" layoutX="296.0" layoutY="290.0" mnemonicParsing="false" text="Logar">
+            <Button fx:id="btnLogar" layoutX="269.0" layoutY="291.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="63.0" text="Logar">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font></Button>
-            <TextField fx:id="tfLogin" layoutX="245.0" layoutY="162.0" promptText="User" />
-            <PasswordField fx:id="tfSenha" layoutX="245.0" layoutY="222.0" promptText="Password" />
+            <TextField fx:id="tfLogin" layoutX="226.0" layoutY="163.0" promptText="User" />
+            <PasswordField fx:id="tfSenha" layoutX="226.0" layoutY="223.0" promptText="Password" />
             <ImageView fitHeight="133.0" fitWidth="145.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/LoginCadeado.jpg" />
@@ -35,5 +35,5 @@
             </ImageView>
          </children>
       </AnchorPane>
-   </top>
+   </center>
 </BorderPane>

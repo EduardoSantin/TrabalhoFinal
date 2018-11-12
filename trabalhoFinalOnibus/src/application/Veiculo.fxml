@@ -7,53 +7,42 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VeiculoController">
+<AnchorPane style="-fx-background-color: #cdc9c9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VeiculoController">
       <Pane layoutX="-7.0" layoutY="3.0" prefHeight="600.0" prefWidth="800.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <Label layoutX="136.0" layoutY="100.0" text="Código" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="100.0" text="Código" textFill="#0a0a0a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Veiculo">
+            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Veiculo" textFill="#0d0c0c">
                <font>
                   <Font name="System Bold Italic" size="37.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#757575" />
-                        <Stop color="#757575" offset="0.007662835249042145" />
-                     <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Label>
-            <Label layoutX="136.0" layoutY="141.0" text="Renavan" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="141.0" text="Renavan" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="137.0" layoutY="180.0" text="Marca" textFill="WHITE">
+            <Label layoutX="137.0" layoutY="180.0" text="Marca" textFill="#141414">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="135.0" layoutY="220.0" text="Modelo" textFill="WHITE">
+            <Label layoutX="135.0" layoutY="220.0" text="Modelo" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="136.0" layoutY="300.0" text="Motor" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="300.0" text="Motor" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="136.0" layoutY="340.0" text="Chassis" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="340.0" text="Chassis" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="137.0" layoutY="260.0" text="Placa" textFill="WHITE">
+            <Label layoutX="137.0" layoutY="260.0" text="Placa" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
@@ -63,7 +52,7 @@
             <TextField fx:id="tfPlaca" layoutX="243.0" layoutY="256.0" />
             <TextField fx:id="tfMotor" layoutX="243.0" layoutY="296.0" />
             <TextField fx:id="tfChassi" layoutX="243.0" layoutY="336.0" />
-            <TableView fx:id="tblVeiculo" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaVeiculo" prefHeight="212.0" prefWidth="786.0" style="-fx-background-color: #4682B4;">
+            <TableView fx:id="tblVeiculo" layoutX="12.0" layoutY="388.0" onMouseClicked="#selecionaVeiculo" prefHeight="212.0" prefWidth="786.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="36.000030517578125" prefWidth="47.000030517578125" text="Código" />
                 <TableColumn fx:id="tbcRenavan" minWidth="29.0" prefWidth="67.0" text="Renavan" />
@@ -91,7 +80,10 @@
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Button>
-         <Button layoutX="664.0" layoutY="164.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatorio" />
+         <Button layoutX="664.0" layoutY="164.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatorio" textFill="#141313">
+            <font>
+               <Font name="System Bold Italic" size="12.0" />
+            </font></Button>
          </children>
       </Pane>
 </AnchorPane>

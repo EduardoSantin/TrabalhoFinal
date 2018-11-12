@@ -9,49 +9,49 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: #000080;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmpresaController">
+<AnchorPane style="-fx-background-color: #cdc9c9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmpresaController">
    <children>
       <Pane fx:id="apEmpresa" layoutX="-14.0" layoutY="6.0" onMouseClicked="#selecionaEmpresa" prefHeight="600.0" prefWidth="800.0">
          <children>
             <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#f2f2f2">
+            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#0a0a0a">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Empresa" textFill="#fffcfc">
+            <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Empresa" textFill="#111010">
                <font>
                   <Font name="AR JULIAN" size="37.0" />
                </font>
             </Label>
-            <Label layoutX="79.0" layoutY="140.0" text="Razão Social" textFill="WHITE">
+            <Label layoutX="79.0" layoutY="140.0" text="Razão Social" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="180.0" text="Nome Fantasia" textFill="WHITE">
+            <Label layoutX="79.0" layoutY="180.0" text="Nome Fantasia" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="220.0" text="CNPJ" textFill="#fcfcfc">
+            <Label layoutX="79.0" layoutY="220.0" text="CNPJ" textFill="#1b1a1a">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="300.0" text="Número" textFill="#fcfafa">
+            <Label layoutX="79.0" layoutY="300.0" text="Número" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="340.0" text="Bairro" textFill="#f8f4f4">
+            <Label layoutX="79.0" layoutY="340.0" text="Bairro" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="515.0" layoutY="140.0" text="UF" textFill="#fcfcfc">
+            <Label layoutX="515.0" layoutY="140.0" text="UF" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="260.0" text="Endereço" textFill="#fcf9f9">
+            <Label layoutX="79.0" layoutY="260.0" text="Endereço" textFill="#171717">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="515.0" layoutY="101.0" text="CEP" textFill="#fffefe">
+            <Label layoutX="515.0" layoutY="101.0" text="CEP" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
@@ -63,7 +63,7 @@
             <TextField fx:id="tfBairro" layoutX="243.0" layoutY="336.0" />
             <TextField fx:id="tfCep" layoutX="587.0" layoutY="97.0" />
             <TextField fx:id="tfUf" layoutX="587.0" layoutY="136.0" />
-            <TableView fx:id="tblEmpresa" layoutX="14.0" layoutY="388.0" onMouseClicked="#selecionaEmpresa" prefHeight="212.0" prefWidth="786.0" style="-fx-background-color: #4682B4;">
+            <TableView fx:id="tblEmpresa" layoutX="14.0" layoutY="388.0" onMouseClicked="#selecionaEmpresa" prefHeight="212.0" prefWidth="786.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="88.0" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="tbcRazaoSocial" minWidth="88.0" prefWidth="75.0" text="Razão Social" />
