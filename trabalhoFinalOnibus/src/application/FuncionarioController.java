@@ -1,5 +1,7 @@
 package application;
 
+import java.net.URL;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,6 +16,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import principal.conexao.ConexaoUtil;
 import principal.dao.FuncionarioDAO;
 import principal.dao.FuncionarioJDBC;
 import principal.model.Funcionario;
@@ -106,7 +113,6 @@ public class FuncionarioController {
 
 	private Funcionario funcionario;
 
-
 	private boolean editando;
 
 	private FuncionarioDAO funcionarioDao = new FuncionarioJDBC();
@@ -142,8 +148,6 @@ public class FuncionarioController {
 		funcionario.setCargaHoraria(Double.valueOf(tfCargaHoraria.getText()));
 	}
 
-
-
 	@FXML
 	void selecionaFuncionario(MouseEvent event) {
 		if (tblFuncionario.getSelectionModel().getSelectedItem() != null) {
@@ -152,7 +156,6 @@ public class FuncionarioController {
 			editando = true;
 		}
 	}
-
 
 	@FXML
 	void Voltar(ActionEvent event) {
@@ -174,9 +177,7 @@ public class FuncionarioController {
 			}
 		});
 
-	
 	}
-
 
 	public void populaTela(Funcionario funcionario) {
 		tfCodigo.setText(funcionario.getCodigo().toString());
@@ -190,7 +191,7 @@ public class FuncionarioController {
 		tfSalario.setText(funcionario.getSalario().toString());
 		tfCargaHoraria.setText(funcionario.getCargaHoraria().toString());
 		tfDataNascimento.setText(funcionario.getDtNasc());
-		
+
 	}
 
 	@FXML
@@ -214,7 +215,7 @@ public class FuncionarioController {
 	@FXML
 	void salvar(ActionEvent event) {
 		populaFuncionario();
-		if(editando) {
+		if (editando) {
 			funcionarioDao.alterar(funcionario);
 		} else {
 			funcionarioDao.inserir(funcionario);
@@ -223,7 +224,6 @@ public class FuncionarioController {
 		novoFuncionario();
 		tblFuncionario.refresh();
 	}
-
 
 	void novoFuncionario() {
 		tfCodigo.clear();
@@ -241,4 +241,16 @@ public class FuncionarioController {
 		funcionario = new Funcionario();
 		tblFuncionario.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
 	}
+
+	@FXML
+	void exibirRelatorio(ActionEvent event) {
+		URL url = getClass().getResource("/relatorios/funcionario.jasper");
+		try {
+			JasperPrint jasperPrint = JasperFillManager.fillReport(url.getPath(), null, ConexaoUtil.getConn());
+			JasperViewer.viewReport(jasperPrint);
+		} catch (JRException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

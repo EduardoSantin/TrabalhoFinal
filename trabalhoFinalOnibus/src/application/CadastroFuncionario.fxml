@@ -105,6 +105,11 @@
             <TextField fx:id="tfCargo" layoutX="565.0" layoutY="176.0" />
             <TextField fx:id="tfSalario" layoutX="565.0" layoutY="216.0" />
             <TextField fx:id="tfCargaHoraria" layoutX="565.0" layoutY="256.0" />
+            <Button layoutX="714.0" layoutY="345.0" mnemonicParsing="false" onAction="#exibirRelatorio" prefHeight="25.0" prefWidth="104.0" text="Exibir Relatório" textFill="#0d0d0d">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>
