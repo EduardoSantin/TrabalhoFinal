@@ -1,5 +1,7 @@
 package application;
 
+import java.net.URL;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,6 +17,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import principal.conexao.ConexaoUtil;
 import principal.dao.MovimentosDAO;
 import principal.dao.MovimentosJDBC;
 import principal.dao.VeiculoDAO;
@@ -24,104 +31,104 @@ import principal.model.Veiculo;
 
 public class MovimentosController {
 
-    @FXML
-    private TextField tfCodigo;
+	@FXML
+	private TextField tfCodigo;
 
-    @FXML
-    private TextField tfNumeroNota;
+	@FXML
+	private TextField tfNumeroNota;
 
-    @FXML
-    private TextField tfKmInicial;
+	@FXML
+	private TextField tfKmInicial;
 
-    @FXML
-    private TextField tfQtdPassageiros;
+	@FXML
+	private TextField tfQtdPassageiros;
 
-    @FXML
-    private TextField tfOrigem;
+	@FXML
+	private TextField tfOrigem;
 
-    @FXML
-    private TextField tfNomeMotorista;
-    
-    @FXML
-    private TableView<Movimentos> tblMovimentos;
+	@FXML
+	private TextField tfNomeMotorista;
 
-    @FXML
-    private TableColumn<Movimentos, Integer> tbcCodigo;
+	@FXML
+	private TableView<Movimentos> tblMovimentos;
 
-    @FXML
-    private TableColumn<Movimentos, Integer> tbcNota;
+	@FXML
+	private TableColumn<Movimentos, Integer> tbcCodigo;
 
-    @FXML
-    private TableColumn<Movimentos, String> tbcDataEmissao;
+	@FXML
+	private TableColumn<Movimentos, Integer> tbcNota;
 
-    @FXML
-    private TableColumn<Movimentos, String> tbcPlaca;
+	@FXML
+	private TableColumn<Movimentos, String> tbcDataEmissao;
 
-    @FXML
-    private TableColumn<Movimentos, Double> tbcKmInicial;
+	@FXML
+	private TableColumn<Movimentos, String> tbcPlaca;
 
-    @FXML
-    private TableColumn<Movimentos, Double> tbcKmFinal;
+	@FXML
+	private TableColumn<Movimentos, Double> tbcKmInicial;
 
-    @FXML
-    private TableColumn<Movimentos, Integer> tbcQtdPassageiros;
+	@FXML
+	private TableColumn<Movimentos, Double> tbcKmFinal;
 
-    @FXML
-    private TableColumn<Movimentos, String> tbcOrigem;
+	@FXML
+	private TableColumn<Movimentos, Integer> tbcQtdPassageiros;
 
-    @FXML
-    private TableColumn<Movimentos, String> tbcDestino;
+	@FXML
+	private TableColumn<Movimentos, String> tbcOrigem;
 
-    @FXML
-    private TableColumn<Movimentos, String> tbcMotorista;
+	@FXML
+	private TableColumn<Movimentos, String> tbcDestino;
 
-    @FXML
-    private Button btnSalvar;
+	@FXML
+	private TableColumn<Movimentos, String> tbcMotorista;
 
-    @FXML
-    private Button btnNovo;
-    
-    @FXML
-   	private Button btnVoltarMenu;
+	@FXML
+	private Button btnSalvar;
 
-    @FXML
-    private Button btnDeletar;
+	@FXML
+	private Button btnNovo;
 
-    @FXML
-    private TextField tfDataEmissao;
+	@FXML
+	private Button btnVoltarMenu;
 
-    @FXML
-    private ComboBox<Veiculo> cbxPlacaVeiculo;
+	@FXML
+	private Button btnDeletar;
 
-    @FXML
-    private TextField tfKmFinal;
+	@FXML
+	private TextField tfDataEmissao;
 
-    @FXML
-    private TextField tfDestino;
-    
-    private Movimentos movimento;
-    
-    private boolean editando;
-    
-    private MovimentosDAO movimentoDao = new MovimentosJDBC();
-    
-    private VeiculoDAO veiculoDao = new VeiculoJDBC();
-    
-    @FXML
-    private void initialize() {
-    	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-    	tbcNota.setCellValueFactory(new PropertyValueFactory<>("numeroNota"));
-    	tbcDataEmissao.setCellValueFactory(new PropertyValueFactory<>("dataEmisao"));
-    	tbcPlaca.setCellValueFactory(new PropertyValueFactory<>("placaVeiculo"));
-    	tbcKmInicial.setCellValueFactory(new PropertyValueFactory<>("kmInicial"));
-    	tbcKmFinal.setCellValueFactory(new PropertyValueFactory<>("kmFinal"));
-    	tbcQtdPassageiros.setCellValueFactory(new PropertyValueFactory<>("qtdPassageiros"));
-    	tbcOrigem.setCellValueFactory(new PropertyValueFactory<>("origen"));
-    	tbcDestino.setCellValueFactory(new PropertyValueFactory<>("destino"));
-    	tbcMotorista.setCellValueFactory(new PropertyValueFactory<>("nomeMotorista"));
-    	populaCombo();
-    	novoMovimento();
-    }
+	@FXML
+	private ComboBox<Veiculo> cbxPlacaVeiculo;
+
+	@FXML
+	private TextField tfKmFinal;
+
+	@FXML
+	private TextField tfDestino;
+
+	private Movimentos movimento;
+
+	private boolean editando;
+
+	private MovimentosDAO movimentoDao = new MovimentosJDBC();
+
+	private VeiculoDAO veiculoDao = new VeiculoJDBC();
+
+	@FXML
+	private void initialize() {
+		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+		tbcNota.setCellValueFactory(new PropertyValueFactory<>("numeroNota"));
+		tbcDataEmissao.setCellValueFactory(new PropertyValueFactory<>("dataEmisao"));
+		tbcPlaca.setCellValueFactory(new PropertyValueFactory<>("placaVeiculo"));
+		tbcKmInicial.setCellValueFactory(new PropertyValueFactory<>("kmInicial"));
+		tbcKmFinal.setCellValueFactory(new PropertyValueFactory<>("kmFinal"));
+		tbcQtdPassageiros.setCellValueFactory(new PropertyValueFactory<>("qtdPassageiros"));
+		tbcOrigem.setCellValueFactory(new PropertyValueFactory<>("origen"));
+		tbcDestino.setCellValueFactory(new PropertyValueFactory<>("destino"));
+		tbcMotorista.setCellValueFactory(new PropertyValueFactory<>("nomeMotorista"));
+		populaCombo();
+		novoMovimento();
+	}
 
 	private void populaMoviemntos() {
 		movimento.setCodigo(Integer.valueOf(tfCodigo.getText()));
@@ -135,7 +142,7 @@ public class MovimentosController {
 		movimento.setDestino(tfDestino.getText());
 		movimento.setMotorista(tfNomeMotorista.getText());
 	}
-	
+
 	private void populaTela(Movimentos movimento) {
 		tfCodigo.setText(movimento.getCodigo().toString());
 		tfNumeroNota.setText(movimento.getNumeroNota().toString());
@@ -149,52 +156,54 @@ public class MovimentosController {
 		tfNomeMotorista.setText(movimento.getMotorista());
 
 	}
-	
-	private void populaCombo(){
+
+	private void populaCombo() {
 		cbxPlacaVeiculo.getItems().clear();
-		for(Veiculo veiculo: veiculoDao.listar()){
+		for (Veiculo veiculo : veiculoDao.listar()) {
 			cbxPlacaVeiculo.getItems().add(veiculo);
 		}
 	}
+
 	@FXML
-    void Salvar(ActionEvent event) {
+	void Salvar(ActionEvent event) {
 		populaMoviemntos();
-    	if(editando) {
-    		movimentoDao.alterar(movimento);
-    	} else {
-    		movimentoDao.inserir(movimento);
-    	}
-    	novoMovimento();
-    	tblMovimentos.refresh();
+		if (editando) {
+			movimentoDao.alterar(movimento);
+		} else {
+			movimentoDao.inserir(movimento);
+		}
+		novoMovimento();
+		tblMovimentos.refresh();
 
-    }
-	 @FXML
-	    void Deletar(ActionEvent event) {
-	    	if(tblMovimentos.getSelectionModel().getSelectedItem() != null) {
-	    		movimento = tblMovimentos.getSelectionModel().getSelectedItem();
-	    		populaTela(movimento);
-		   	if ( new  AlertaFactory () . confirmaExclusao ()) {
-		   	movimentoDao.excluir(movimento);
-		   	novoMovimento();
-	    	}
-	    	}
-	    }
-    
-		@FXML
-	    void Novo(ActionEvent event) {
-	    	novoMovimento();
-	    	
-	    }
+	}
 
-		@FXML
-	    void SelecionaMovimento(MouseEvent event) {
-	    	if(tblMovimentos.getSelectionModel().getSelectedItem() != null) {
-	    		movimento = tblMovimentos.getSelectionModel().getSelectedItem();
-	    		populaTela(movimento);
-	    		editando = true;
-	    	}
-	    }
-	
+	@FXML
+	void Deletar(ActionEvent event) {
+		if (tblMovimentos.getSelectionModel().getSelectedItem() != null) {
+			movimento = tblMovimentos.getSelectionModel().getSelectedItem();
+			populaTela(movimento);
+			if (new AlertaFactory().confirmaExclusao()) {
+				movimentoDao.excluir(movimento);
+				novoMovimento();
+			}
+		}
+	}
+
+	@FXML
+	void Novo(ActionEvent event) {
+		novoMovimento();
+
+	}
+
+	@FXML
+	void SelecionaMovimento(MouseEvent event) {
+		if (tblMovimentos.getSelectionModel().getSelectedItem() != null) {
+			movimento = tblMovimentos.getSelectionModel().getSelectedItem();
+			populaTela(movimento);
+			editando = true;
+		}
+	}
+
 	private void novoMovimento() {
 		tfCodigo.clear();
 		tfNumeroNota.clear();
@@ -210,30 +219,37 @@ public class MovimentosController {
 		movimento = new Movimentos();
 		tblMovimentos.setItems(FXCollections.observableArrayList(movimentoDao.listar()));
 	}
-	
-	  @FXML
-		void Voltar(ActionEvent event) {
-			btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
-				
-				@Override
-				public void handle(ActionEvent event) {
-					Stage stage = new Stage();
-					Parent root = null;
-					try {
-						root = FXMLLoader.load(getClass().getResource("menu.fxml"));
-					} catch (Exception e1) {
-						e1.printStackTrace();
-					}
-					Scene scene = new Scene(root);	
-					stage.setScene(scene);
-					stage.show();
-					btnVoltarMenu.getScene().getWindow().hide();
-				}
-			});
-			
 
-			
+	@FXML
+	void Voltar(ActionEvent event) {
+		btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				Stage stage = new Stage();
+				Parent root = null;
+				try {
+					root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+				btnVoltarMenu.getScene().getWindow().hide();
+			}
+		});
+	}
+
+	@FXML
+	void exibirRelatorio(ActionEvent event) {
+		URL url = getClass().getResource("/relatorios/viagens.jasper");
+		try {
+			JasperPrint jasperPrint = JasperFillManager.fillReport(url.getPath(), null, ConexaoUtil.getConn());
+			JasperViewer.viewReport(jasperPrint);
+		} catch (JRException e) {
+			e.printStackTrace();
 		}
-	
+	}
 
 }

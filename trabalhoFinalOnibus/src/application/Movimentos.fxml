@@ -99,6 +99,11 @@
             <TextField fx:id="tfOrigem" layoutX="553.0" layoutY="96.0" />
             <TextField fx:id="tfDestino" layoutX="553.0" layoutY="137.0" />
             <TextField fx:id="tfNomeMotorista" layoutX="553.0" layoutY="176.0" />
+            <Button layoutX="790.0" layoutY="344.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatório" textFill="#111010">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>
