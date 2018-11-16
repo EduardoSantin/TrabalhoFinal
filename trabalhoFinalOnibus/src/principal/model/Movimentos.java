@@ -27,4 +27,5 @@ public class Movimentos {
 	private Veiculo veiculo;
 	private String placa;
 
+	
 }

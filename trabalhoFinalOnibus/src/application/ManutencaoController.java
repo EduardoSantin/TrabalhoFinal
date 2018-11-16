@@ -162,10 +162,6 @@ public class ManutencaoController {
 	}
 
 	@FXML
-	void Buscar(ActionEvent event) {
-	}
-
-	@FXML
 	void Voltar(ActionEvent event) {
 		btnVoltarMenu.setOnAction(new EventHandler<ActionEvent>() {
 

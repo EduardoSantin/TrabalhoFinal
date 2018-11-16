@@ -36,7 +36,7 @@ public class MovimentosJDBC implements MovimentosDAO {
 			statement.executeUpdate();
 			JOptionPane.showMessageDialog(null, "Viagem inserida!");
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, e);
+			e.printStackTrace();
 		}
 
 	}
@@ -85,11 +85,9 @@ public class MovimentosJDBC implements MovimentosDAO {
 	@Override
 	public List<Movimentos> listar() {
 		List<Movimentos> movimentos = new ArrayList<>();
-
 		try {
 			Statement statement = ConexaoUtil.getConn().createStatement();
 			ResultSet rs = statement.executeQuery("select * from movimentos");
-
 			while (rs.next()) {
 				Movimentos movimento = new Movimentos();
 				movimento.setCodigo(rs.getInt("codigo"));

@@ -50,9 +50,6 @@ public class MovimentosController {
 	private TextField tfNomeMotorista;
 
 	@FXML
-	private TableView<Movimentos> tblMovimentos;
-
-	@FXML
 	private TableColumn<Movimentos, Integer> tbcCodigo;
 
 	@FXML
@@ -82,6 +79,9 @@ public class MovimentosController {
 	@FXML
 	private TableColumn<Movimentos, String> tbcMotorista;
 
+	@FXML
+	private TableView<Movimentos> tblMovimentos;
+	
 	@FXML
 	private Button btnSalvar;
 
@@ -158,7 +158,7 @@ public class MovimentosController {
 	}
 
 	private void populaCombo() {
-		cbxPlacaVeiculo.getItems().clear();
+		//cbxPlacaVeiculo.getItems().clear();
 		for (Veiculo veiculo : veiculoDao.listar()) {
 			cbxPlacaVeiculo.getItems().add(veiculo);
 		}
@@ -179,14 +179,8 @@ public class MovimentosController {
 
 	@FXML
 	void Deletar(ActionEvent event) {
-		if (tblMovimentos.getSelectionModel().getSelectedItem() != null) {
-			movimento = tblMovimentos.getSelectionModel().getSelectedItem();
-			populaTela(movimento);
-			if (new AlertaFactory().confirmaExclusao()) {
-				movimentoDao.excluir(movimento);
-				novoMovimento();
-			}
-		}
+		movimentoDao.excluir(movimento);
+		novoMovimento();
 	}
 
 	@FXML
@@ -196,7 +190,7 @@ public class MovimentosController {
 	}
 
 	@FXML
-	void SelecionaMovimento(MouseEvent event) {
+	void selecionaMovimento(MouseEvent event) {
 		if (tblMovimentos.getSelectionModel().getSelectedItem() != null) {
 			movimento = tblMovimentos.getSelectionModel().getSelectedItem();
 			populaTela(movimento);
@@ -214,9 +208,9 @@ public class MovimentosController {
 		tfDestino.clear();
 		tfNomeMotorista.clear();
 		tfDataEmissao.clear();
+		movimento = new Movimentos();
 		editando = false;
 		cbxPlacaVeiculo.getSelectionModel().clearSelection();
-		movimento = new Movimentos();
 		tblMovimentos.setItems(FXCollections.observableArrayList(movimentoDao.listar()));
 	}
 
