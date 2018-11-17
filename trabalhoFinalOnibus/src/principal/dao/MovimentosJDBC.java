@@ -100,6 +100,7 @@ public class MovimentosJDBC implements MovimentosDAO {
 				movimento.setOrigen(rs.getString("origen"));
 				movimento.setDestino(rs.getString("destino"));
 				movimento.setMotorista(String.valueOf(rs.getString("nomeMotorista")));
+				movimento.setKmTotal(rs.getDouble("kmTotal"));
 
 				movimentos.add(movimento);
 
@@ -110,11 +111,23 @@ public class MovimentosJDBC implements MovimentosDAO {
 
 		return movimentos;
 	}
-
+	
 	@Override
 	public boolean checkLogin(String login, String senha) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void calcula(Movimentos dado) {
+		try {
+			String sql = "call atualizarKmTotal()";
+			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
+			statement.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

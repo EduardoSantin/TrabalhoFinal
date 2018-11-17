@@ -70,4 +70,10 @@ public class UsuarioJDBC implements UsuarioDAO {
 		return null;
 	}
 
+	@Override
+	public void calcula(Usuario dado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

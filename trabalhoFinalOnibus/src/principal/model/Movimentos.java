@@ -26,6 +26,8 @@ public class Movimentos {
 	private String motorista;
 	private Veiculo veiculo;
 	private String placa;
-
+	private Double kmTotal;
+	
+	
 	
 }

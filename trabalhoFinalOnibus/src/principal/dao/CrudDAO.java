@@ -14,6 +14,6 @@ public interface CrudDAO<T> {
 
 	boolean checkLogin(String login, String senha);
 	
-
+	void calcula(T dado);
 
 }

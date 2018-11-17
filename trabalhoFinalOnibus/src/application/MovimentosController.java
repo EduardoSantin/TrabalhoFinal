@@ -80,6 +80,9 @@ public class MovimentosController {
 	private TableColumn<Movimentos, String> tbcMotorista;
 
 	@FXML
+	private TableColumn<Movimentos, String> tbckmTotal;
+	
+	@FXML
 	private TableView<Movimentos> tblMovimentos;
 
 	@FXML
@@ -126,6 +129,7 @@ public class MovimentosController {
 		tbcOrigem.setCellValueFactory(new PropertyValueFactory<>("origen"));
 		tbcDestino.setCellValueFactory(new PropertyValueFactory<>("destino"));
 		tbcMotorista.setCellValueFactory(new PropertyValueFactory<>("nomeMotorista"));
+		tbckmTotal.setCellValueFactory(new PropertyValueFactory<>("kmTotal"));
 		populaCombo();
 		novoMovimento();
 	}
@@ -246,4 +250,10 @@ public class MovimentosController {
 		}
 	}
 
+	@FXML
+	void atualizar(ActionEvent event) {
+		movimentoDao.calcula(movimento);
+		novoMovimento();
+		tblMovimentos.refresh();
+	}
 }

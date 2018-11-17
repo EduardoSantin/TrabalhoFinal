@@ -93,4 +93,10 @@ public class ManutencaoJDBC implements ManutencaoDAO{
 		return false;
 	}
 
+	@Override
+	public void calcula(Manutencao dado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

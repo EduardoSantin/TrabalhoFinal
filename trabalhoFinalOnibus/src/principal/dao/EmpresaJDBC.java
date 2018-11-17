@@ -117,4 +117,10 @@ public class EmpresaJDBC implements EmpresaDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void calcula(Empresa dado) {
+		// TODO Auto-generated method stub
+		
+	}
 }

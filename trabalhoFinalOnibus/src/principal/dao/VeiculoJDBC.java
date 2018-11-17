@@ -110,4 +110,10 @@ public class VeiculoJDBC implements VeiculoDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void calcula(Veiculo dado) {
+		// TODO Auto-generated method stub
+		
+	}
 }

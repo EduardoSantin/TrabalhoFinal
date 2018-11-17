@@ -15,4 +15,10 @@ public class EmpresaArquivo extends CrudArquivo<Empresa> implements EmpresaDAO {
 		return false;
 	}
 
+	@Override
+	public void calcula(Empresa dado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

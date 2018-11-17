@@ -76,9 +76,6 @@ public class FuncionarioController {
 	private TableColumn<Funcionario, Integer> tbcRg;
 
 	@FXML
-	private TableColumn<Funcionario, String> tbcDataNascimento;
-
-	@FXML
 	private TableColumn<Funcionario, String> tbcEndereco;
 
 	@FXML
@@ -98,9 +95,6 @@ public class FuncionarioController {
 
 	@FXML
 	private Button btnVoltarMenu;
-
-	@FXML
-	private TableColumn<Funcionario, String> tbcDataAdmissao;
 
 	@FXML
 	private Button btnSalvar;
@@ -123,14 +117,12 @@ public class FuncionarioController {
 		tbcnome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tbcCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		tbcRg.setCellValueFactory(new PropertyValueFactory<>("rg"));
-		tbcDataNascimento.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
 		tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
 		tbcCep.setCellValueFactory(new PropertyValueFactory<>("cep"));
 		tbcBairo.setCellValueFactory(new PropertyValueFactory<>("bairro"));
 		tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
 		tbcSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
 		tbcCargaHoraria.setCellValueFactory(new PropertyValueFactory<>("cargaHoraria"));
-		tbcDataAdmissao.setCellValueFactory(new PropertyValueFactory<>("dataAdmisao"));
 		novoFuncionario();
 	}
 

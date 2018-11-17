@@ -124,4 +124,10 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void calcula(Funcionario dado) {
+		// TODO Auto-generated method stub
+		
+	}
 }
