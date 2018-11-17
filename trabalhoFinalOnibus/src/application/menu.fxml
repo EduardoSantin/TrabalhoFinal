@@ -19,6 +19,16 @@
                </font>
             </Label>
             <Button fx:id="btnSair" layoutX="641.0" layoutY="46.0" mnemonicParsing="false" onAction="#Sair" prefHeight="25.0" prefWidth="54.0" text="Sair" />
+            <Label layoutX="326.0" layoutY="554.0" text="Desenolvedores:">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="428.0" layoutY="554.0" text="Eduardo Santin, Josiel Bueno, Lucas Berlanda">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>
