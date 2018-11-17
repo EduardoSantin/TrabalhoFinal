@@ -99,7 +99,7 @@ public class MovimentosJDBC implements MovimentosDAO {
 				movimento.setQtdPassageiros(rs.getInt("qtdPassageiros"));
 				movimento.setOrigen(rs.getString("origen"));
 				movimento.setDestino(rs.getString("destino"));
-				movimento.setMotorista(rs.getString("nomeMotorista"));
+				movimento.setMotorista(String.valueOf(rs.getString("nomeMotorista")));
 
 				movimentos.add(movimento);
 

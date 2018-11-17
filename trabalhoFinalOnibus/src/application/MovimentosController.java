@@ -81,7 +81,7 @@ public class MovimentosController {
 
 	@FXML
 	private TableView<Movimentos> tblMovimentos;
-	
+
 	@FXML
 	private Button btnSalvar;
 
@@ -158,7 +158,7 @@ public class MovimentosController {
 	}
 
 	private void populaCombo() {
-		//cbxPlacaVeiculo.getItems().clear();
+		// cbxPlacaVeiculo.getItems().clear();
 		for (Veiculo veiculo : veiculoDao.listar()) {
 			cbxPlacaVeiculo.getItems().add(veiculo);
 		}
