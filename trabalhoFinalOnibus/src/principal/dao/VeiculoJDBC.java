@@ -39,7 +39,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 
 	@Override
 	public void alterar(Veiculo dado) {
-		try {
+		/*try {
 			String sql = "UPDATE Veiculo SET renavan = ? , marca = ? , modelo = ? , placa = ? , chassi = ? , motor = ? "
 					+ "WHERE codigo = ?";
 
@@ -57,7 +57,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 	}
 

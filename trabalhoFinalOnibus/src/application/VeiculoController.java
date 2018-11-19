@@ -82,17 +82,12 @@ public class VeiculoController {
 	private Button btSalvar;
 
 	@FXML
-	private Button btNovo;
-
-	@FXML
 	private Button btnVoltarMenu;
 
 	@FXML
 	private Button btDeletar;
 
 	private Veiculo veiculo;
-
-	private boolean editando;
 
 	private VeiculoDAO veiculodao = new VeiculoJDBC();
 
@@ -155,19 +150,13 @@ public class VeiculoController {
 		if (tblVeiculo.getSelectionModel().getSelectedItem() != null) {
 			veiculo = tblVeiculo.getSelectionModel().getSelectedItem();
 			populaTela(veiculo);
-			editando = true;
 		}
 	}
 
 	@FXML
 	void salvar(ActionEvent event) {
 		populaVeiculo();
-		if (editando) {
-			veiculodao.alterar(veiculo);
-		} else {
-			veiculodao.inserir(veiculo);
-		}
-
+		veiculodao.inserir(veiculo);
 		novoVeiculo();
 		tblVeiculo.refresh();
 	}
@@ -180,7 +169,6 @@ public class VeiculoController {
 		tfPlaca.clear();
 		tfMotor.clear();
 		tfChassi.clear();
-		editando = false;
 		tblVeiculo.setItems(FXCollections.observableArrayList(veiculodao.listar()));
 	}
 
