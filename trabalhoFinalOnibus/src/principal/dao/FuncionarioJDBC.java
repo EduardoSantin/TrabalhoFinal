@@ -78,7 +78,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 
-			JOptionPane.showMessageDialog(null, "Funcionário deletado!");
+			//JOptionPane.showMessageDialog(null, "Funcionário deletado!");
 
 
 		} catch (SQLException e) {

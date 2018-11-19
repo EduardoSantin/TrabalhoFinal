@@ -147,8 +147,14 @@ public class ManutencaoController {
 
 	@FXML
 	void deletar(ActionEvent event) {
-		manutencaoDao.excluir(manutencao);
-		NovoManutencao();
+		if(tblManutencao.getSelectionModel().getSelectedItem() != null) {
+			manutencao = tblManutencao.getSelectionModel().getSelectedItem();
+			populaTela(manutencao);
+			if(new AlertaFactory().confirmaExclusao()) {
+				manutencaoDao.excluir(manutencao);
+				NovoManutencao();				
+			}
+		}
 	}
 
 	void NovoManutencao() {

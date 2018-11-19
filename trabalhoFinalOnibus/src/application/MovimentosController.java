@@ -183,8 +183,15 @@ public class MovimentosController {
 
 	@FXML
 	void Deletar(ActionEvent event) {
-		movimentoDao.excluir(movimento);
-		novoMovimento();
+		if(tblMovimentos.getSelectionModel().getSelectedItem() != null) {
+			movimento = tblMovimentos.getSelectionModel().getSelectedItem();
+			populaTela(movimento);
+			if(new AlertaFactory().confirmaExclusao()) {
+				movimentoDao.excluir(movimento);
+				novoMovimento();
+				
+			}
+		}
 	}
 
 	@FXML

@@ -63,7 +63,7 @@
             <TextField fx:id="tfBairro" layoutX="243.0" layoutY="336.0" />
             <TextField fx:id="tfCep" layoutX="587.0" layoutY="97.0" />
             <TextField fx:id="tfUf" layoutX="587.0" layoutY="136.0" />
-            <TableView fx:id="tblEmpresa" layoutX="14.0" layoutY="388.0" onMouseClicked="#selecionaEmpresa" prefHeight="212.0" prefWidth="786.0">
+            <TableView fx:id="tblEmpresa" layoutX="30.0" layoutY="388.0" onMouseClicked="#selecionaEmpresa" prefHeight="72.0" prefWidth="786.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="88.0" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="tbcRazaoSocial" minWidth="88.0" prefWidth="75.0" text="Razão Social" />

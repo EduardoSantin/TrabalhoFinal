@@ -74,7 +74,7 @@ public class EmpresaJDBC implements EmpresaDAO {
 			PreparedStatement statement =ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
-			JOptionPane.showMessageDialog(null, "Empresa deletado!");
+			//JOptionPane.showMessageDialog(null, "Empresa deletado!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -135,8 +135,14 @@ public class VeiculoController {
 
 	@FXML
 	void deletar(ActionEvent event) {
-		veiculodao.excluir(veiculo);
-		novoVeiculo();
+		if(tblVeiculo.getSelectionModel().getSelectedItem() != null) {
+			veiculo = tblVeiculo.getSelectionModel().getSelectedItem();
+			populaTela(veiculo);
+			if(new AlertaFactory().confirmaExclusao()) {
+				veiculodao.excluir(veiculo);
+				novoVeiculo();				
+			}
+		}
 	}
 
 	@FXML
