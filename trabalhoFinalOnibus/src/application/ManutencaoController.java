@@ -32,9 +32,6 @@ import principal.model.Veiculo;
 public class ManutencaoController {
 
 	@FXML
-	private TextField tfCodigo;
-
-	@FXML
 	private TextField tfDescricao;
 
 	@FXML
@@ -96,7 +93,6 @@ public class ManutencaoController {
 	}
 
 	public void populaManutencao() {
-		manutencao.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		manutencao.setDescricao(tfDescricao.getText());
 		manutencao.setTipo(tfTipo.getText());
 		manutencao.setVeiculo(cmbPlaca.getValue());
@@ -104,7 +100,6 @@ public class ManutencaoController {
 	}
 
 	public void populaTela(Manutencao manutencao) {
-		tfCodigo.setText(manutencao.getCodigo().toString());
 		tfDescricao.setText(manutencao.getDescricao());
 		tfTipo.setText(manutencao.getTipo());
 		cmbPlaca.getSelectionModel().select(manutencao.getVeiculo());
@@ -158,7 +153,6 @@ public class ManutencaoController {
 	}
 
 	void NovoManutencao() {
-		tfCodigo.clear();
 		tfDescricao.clear();
 		tfTipo.clear();
 		manutencao = new Manutencao();

@@ -18,20 +18,19 @@ public class MovimentosJDBC implements MovimentosDAO {
 	public void inserir(Movimentos dado) {
 		try {
 			// Executa esse comando no BD
-			String sql = "insert into Movimentos(codigo, numeroNota, dataEmisao, placaVeiculo, kmInicial, kmFinal, qtdPassageiros, origen, destino, nomeMotorista) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into Movimentos(numeroNota, dataEmisao, placaVeiculo, kmInicial, kmFinal, qtdPassageiros, origen, destino, nomeMotorista) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setInt(1, dado.getCodigo());
-			statement.setInt(2, dado.getNumeroNota());
-			statement.setString(3, dado.getDtaEmissao());
-			statement.setString(4, dado.getVeiculo().toString());
-			statement.setDouble(5, dado.getKmInicial());
-			statement.setDouble(6, dado.getKmFinal());
-			statement.setInt(7, dado.getQtdPassageiros());
-			statement.setString(8, dado.getOrigen());
-			statement.setString(9, dado.getDestino());
-			statement.setString(10, dado.getMotorista());
+			statement.setInt(1, dado.getNumeroNota());
+			statement.setString(2, dado.getDtaEmissao());
+			statement.setString(3, dado.getVeiculo().toString());
+			statement.setDouble(4, dado.getKmInicial());
+			statement.setDouble(5, dado.getKmFinal());
+			statement.setInt(6, dado.getQtdPassageiros());
+			statement.setString(7, dado.getOrigen());
+			statement.setString(8, dado.getDestino());
+			statement.setString(9, dado.getMotorista());
 
 			statement.executeUpdate();
 			JOptionPane.showMessageDialog(null, "Viagem inserida!");

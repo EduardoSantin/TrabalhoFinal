@@ -28,9 +28,6 @@ public class EmpresaController {
 	private Pane apEmpresa;
 
 	@FXML
-	private TextField tfCodigo;
-
-	@FXML
 	private TextField tfEndereco;
 
 	@FXML
@@ -130,7 +127,6 @@ public class EmpresaController {
 	}
 
 	public void populaEmpresa() {
-		empresa.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		empresa.setRazaoSocial(tfRazaoSocial.getText());
 		empresa.setNomeFantasia(tfNomeFantasia.getText());
 		empresa.setCnpj(Integer.valueOf(tfCnpj.getText()));
@@ -143,7 +139,6 @@ public class EmpresaController {
 	}
 
 	public void populaTela(Empresa empresa) {
-		tfCodigo.setText(empresa.getCodigo().toString());
 		tfRazaoSocial.setText(empresa.getRazaoSocial());
 		tfNomeFantasia.setText(empresa.getNomeFantasia());
 		tfCnpj.setText(empresa.getCnpj().toString());
@@ -182,7 +177,6 @@ public class EmpresaController {
 	}
 
 	void novoEmpresa() {
-		tfCodigo.clear();
 		tfRazaoSocial.clear();
 		tfNomeFantasia.clear();
 		tfCnpj.clear();

@@ -28,9 +28,6 @@ import principal.model.Veiculo;
 public class VeiculoController {
 
 	@FXML
-	private TextField tfCodigo;
-
-	@FXML
 	private TextField tfRenavan;
 
 	@FXML
@@ -107,7 +104,6 @@ public class VeiculoController {
 
 	public void populaVeiculo() {
 		veiculo = new Veiculo();
-		veiculo.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		veiculo.setRenavan(Integer.valueOf(tfRenavan.getText()));
 		veiculo.setMarca(tfMarca.getText());
 		veiculo.setModelo(tfModelo.getText());
@@ -119,7 +115,6 @@ public class VeiculoController {
 	}
 
 	public void populaTela(Veiculo veiculo) {
-		tfCodigo.setText(veiculo.getCodigo().toString());
 		tfRenavan.setText(veiculo.getRenavan().toString());
 		tfMarca.setText(veiculo.getMarca());
 		tfModelo.setText(veiculo.getModelo());
@@ -162,7 +157,6 @@ public class VeiculoController {
 	}
 
 	void novoVeiculo() {
-		tfCodigo.clear();
 		tfRenavan.clear();
 		tfMarca.clear();
 		tfModelo.clear();

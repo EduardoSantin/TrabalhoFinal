@@ -14,30 +14,25 @@
    <children>
       <Pane layoutX="-58.0" layoutY="14.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#111010">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Label>
             <Label layoutX="272.0" layoutY="20.0" text="Manutenção" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="37.0" />
                </font>
             </Label>
-            <Label layoutX="79.0" layoutY="140.0" text="Descrição" textFill="#171717">
+            <Label layoutX="150.0" layoutY="112.0" text="Descrição" textFill="#171717">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="180.0" text="Tipo" textFill="#0d0d0d">
+            <Label layoutX="177.0" layoutY="180.0" text="Tipo" textFill="#0d0d0d">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="79.0" layoutY="220.0" text="Placa" textFill="#111010">
+            <Label layoutX="173.0" layoutY="220.0" text="Placa" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <TextField fx:id="tfDescricao" layoutX="243.0" layoutY="137.0" />
-            <TextField fx:id="tfTipo" layoutX="243.0" layoutY="176.0" />
+            <TextField fx:id="tfDescricao" layoutX="225.0" layoutY="108.0" prefHeight="54.0" prefWidth="274.0" />
+            <TextField fx:id="tfTipo" layoutX="225.0" layoutY="176.0" />
             <TableView fx:id="tblManutencao" layoutX="77.0" layoutY="373.0" onMouseClicked="#selecionaManutencao" prefHeight="212.0" prefWidth="657.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="105.0" prefWidth="105.0" text="Código" />
@@ -59,7 +54,7 @@
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <ComboBox fx:id="cmbPlaca" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
+            <ComboBox fx:id="cmbPlaca" layoutX="224.0" layoutY="216.0" prefWidth="150.0" />
             <Button fx:id="btnVoltarMenu" layoutX="694.0" layoutY="20.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
                <font>
                   <Font name="System Bold Italic" size="12.0" />

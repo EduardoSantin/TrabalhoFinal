@@ -28,9 +28,6 @@ import principal.model.Funcionario;
 public class FuncionarioController {
 
 	@FXML
-	private TextField tfCodigo;
-
-	@FXML
 	private TextField tfNome;
 
 	@FXML
@@ -127,7 +124,6 @@ public class FuncionarioController {
 	}
 
 	public void populaFuncionario() {
-		funcionario.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		funcionario.setNome(tfNome.getText());
 		funcionario.setCpf(Integer.valueOf(tfCPF.getText()));
 		funcionario.setRg(Integer.valueOf(tfRg.getText()));
@@ -172,7 +168,6 @@ public class FuncionarioController {
 	}
 
 	public void populaTela(Funcionario funcionario) {
-		tfCodigo.setText(funcionario.getCodigo().toString());
 		tfNome.setText(funcionario.getNome());
 		tfCPF.setText(funcionario.getCpf().toString());
 		tfRg.setText(funcionario.getRg().toString());
@@ -218,7 +213,6 @@ public class FuncionarioController {
 	}
 
 	void novoFuncionario() {
-		tfCodigo.clear();
 		tfNome.clear();
 		tfCPF.clear();
 		tfRg.clear();

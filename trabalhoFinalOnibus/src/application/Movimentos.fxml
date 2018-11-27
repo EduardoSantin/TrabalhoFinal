@@ -14,60 +14,56 @@
    <children>
       <Pane layoutX="-21.0" layoutY="2.0" prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <Label layoutX="79.0" layoutY="100.0" text="Código" textFill="#0a0a0a">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Label>
             <Label layoutX="272.0" layoutY="20.0" text="Salvar Viagem" textFill="#1b1a1a">
                <font>
                   <Font name="System Bold Italic" size="37.0" />
                </font>
             </Label>
-            <Label layoutX="77.0" layoutY="140.0" text="Número Nota" textFill="#141414">
+            <Label layoutX="105.0" layoutY="93.0" text="Número Nota" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="75.0" layoutY="180.0" text="Data Emissão" textFill="#141414">
+            <Label layoutX="106.0" layoutY="129.0" text="Data Emissão" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="75.0" layoutY="220.0" text="Placa Veículo" textFill="#141414">
+            <Label layoutX="106.0" layoutY="172.0" text="Placa Veículo" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="76.0" layoutY="339.0" text="Quantidade Passageiros" textFill="#111010">
+            <Label layoutX="47.0" layoutY="282.0" text="Quantidade Passageiros" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="455.0" layoutY="180.0" text="Nome Motorista" textFill="#141414">
+            <Label layoutX="384.0" layoutY="207.0" text="Motorista" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="75.0" layoutY="260.0" text="KM  Inicial " textFill="#0d0d0d">
+            <Label layoutX="125.0" layoutY="207.0" text="KM  Inicial " textFill="#0d0d0d">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="455.0" layoutY="101.0" text="Origem" textFill="#141414">
+            <Label layoutX="399.0" layoutY="129.0" text="Origem" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Button fx:id="btnSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#Salvar" prefHeight="25.0" prefWidth="58.0" text="Salvar" textFill="#171717">
+            <Button fx:id="btnSalvar" layoutX="411.0" layoutY="287.0" mnemonicParsing="false" onAction="#Salvar" prefHeight="25.0" prefWidth="58.0" text="Salvar" textFill="#171717">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <Button fx:id="btnNovo" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#Novo" prefHeight="25.0" prefWidth="58.0" text="Novo" textFill="#0a0a0a">
+            <Button fx:id="btnNovo" layoutX="552.0" layoutY="287.0" mnemonicParsing="false" onAction="#Novo" prefHeight="25.0" prefWidth="58.0" text="Novo" textFill="#0a0a0a">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <Button fx:id="btnDeletar" layoutX="661.0" layoutY="345.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="25.0" prefWidth="58.0" text="Deletar" textFill="#0d0d0d">
+            <Button fx:id="btnDeletar" layoutX="479.0" layoutY="289.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="25.0" prefWidth="58.0" text="Deletar" textFill="#0d0d0d">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <Label layoutX="75.0" layoutY="300.0" text="KM Final" textFill="#141414">
+            <Label layoutX="132.0" layoutY="241.0" text="KM Final" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="456.0" layoutY="140.0" text="Destino" textFill="#141414">
+            <Label layoutX="626.0" layoutY="129.0" text="Destino" textFill="#141414">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>
@@ -75,22 +71,21 @@
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
-            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <TextField fx:id="tfNumeroNota" layoutX="243.0" layoutY="137.0" />
-            <TextField fx:id="tfDataEmissao" layoutX="243.0" layoutY="176.0" />
-            <ComboBox fx:id="cbxPlacaVeiculo" layoutX="242.0" layoutY="216.0" prefWidth="150.0" />
-            <TextField fx:id="tfKmInicial" layoutX="243.0" layoutY="256.0" />
-            <TextField fx:id="tfKmFinal" layoutX="243.0" layoutY="296.0" />
-            <TextField fx:id="tfQtdPassageiros" layoutX="243.0" layoutY="335.0" />
-            <TextField fx:id="tfOrigem" layoutX="553.0" layoutY="96.0" />
-            <TextField fx:id="tfDestino" layoutX="553.0" layoutY="137.0" />
-            <TextField fx:id="tfNomeMotorista" layoutX="553.0" layoutY="176.0" />
-            <Button layoutX="779.0" layoutY="344.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatório" textFill="#111010">
+            <TextField fx:id="tfNumeroNota" layoutX="212.0" layoutY="89.0" />
+            <TextField fx:id="tfDataEmissao" layoutX="212.0" layoutY="125.0" />
+            <ComboBox fx:id="cbxPlacaVeiculo" layoutX="211.0" layoutY="164.0" prefWidth="150.0" />
+            <TextField fx:id="tfKmInicial" layoutX="212.0" layoutY="202.0" />
+            <TextField fx:id="tfKmFinal" layoutX="212.0" layoutY="237.0" />
+            <TextField fx:id="tfQtdPassageiros" layoutX="212.0" layoutY="276.0" />
+            <TextField fx:id="tfOrigem" layoutX="451.0" layoutY="125.0" />
+            <TextField fx:id="tfDestino" layoutX="677.0" layoutY="125.0" />
+            <TextField fx:id="tfNomeMotorista" layoutX="451.0" layoutY="202.0" />
+            <Button layoutX="648.0" layoutY="332.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatório" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <TableView fx:id="tblMovimentos" layoutX="73.0" layoutY="386.0" onMouseClicked="#selecionaMovimento" prefHeight="200.0" prefWidth="846.0">
+            <TableView fx:id="tblMovimentos" layoutX="46.0" layoutY="370.0" onMouseClicked="#selecionaMovimento" prefHeight="200.0" prefWidth="846.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" prefWidth="48.0" text="Código" />
                 <TableColumn fx:id="tbcNota" prefWidth="102.0" text="Numero da Nota" />
@@ -105,7 +100,7 @@
                   <TableColumn fx:id="tbckmTotal" text="Km Total" />
               </columns>
             </TableView>
-            <Button layoutX="894.0" layoutY="344.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar Total" textFill="#171717">
+            <Button layoutX="790.0" layoutY="332.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar Total" textFill="#171717">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>

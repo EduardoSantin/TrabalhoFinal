@@ -32,9 +32,6 @@ import principal.model.Veiculo;
 public class MovimentosController {
 
 	@FXML
-	private TextField tfCodigo;
-
-	@FXML
 	private TextField tfNumeroNota;
 
 	@FXML
@@ -135,7 +132,6 @@ public class MovimentosController {
 	}
 
 	private void populaMoviemntos() {
-		movimento.setCodigo(Integer.valueOf(tfCodigo.getText()));
 		movimento.setNumeroNota(Integer.valueOf(tfNumeroNota.getText()));
 		movimento.setDtaEmissao(tfDataEmissao.getText());
 		movimento.setVeiculo(cbxPlacaVeiculo.getValue());
@@ -148,7 +144,6 @@ public class MovimentosController {
 	}
 
 	private void populaTela(Movimentos movimento) {
-		tfCodigo.setText(movimento.getCodigo().toString());
 		tfNumeroNota.setText(movimento.getNumeroNota().toString());
 		tfDataEmissao.setText(movimento.getDtaEmissao());
 		cbxPlacaVeiculo.getSelectionModel().select(movimento.getVeiculo());
@@ -210,7 +205,6 @@ public class MovimentosController {
 	}
 
 	private void novoMovimento() {
-		tfCodigo.clear();
 		tfNumeroNota.clear();
 		tfKmInicial.clear();
 		tfKmFinal.clear();

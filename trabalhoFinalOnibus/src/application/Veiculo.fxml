@@ -12,46 +12,41 @@
 <AnchorPane style="-fx-background-color: #cdc9c9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VeiculoController">
       <Pane layoutX="-7.0" layoutY="3.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TextField fx:id="tfCodigo" layoutX="243.0" layoutY="97.0" />
-            <Label layoutX="136.0" layoutY="100.0" text="Código" textFill="#0a0a0a">
-            <font>
-               <Font name="System Bold Italic" size="12.0" />
-            </font></Label>
             <Label layoutX="272.0" layoutY="20.0" text="Cadastro De Veiculo" textFill="#0d0c0c">
                <font>
                   <Font name="System Bold Italic" size="37.0" />
                </font>
             </Label>
-            <Label layoutX="136.0" layoutY="141.0" text="Renavan" textFill="#1b1a1a">
+            <Label layoutX="157.0" layoutY="106.0" text="Renavan" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="137.0" layoutY="180.0" text="Marca" textFill="#141414">
+            <Label layoutX="163.0" layoutY="143.0" text="Marca" textFill="#141414">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="135.0" layoutY="220.0" text="Modelo" textFill="#1b1a1a">
+            <Label layoutX="160.0" layoutY="181.0" text="Modelo" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="136.0" layoutY="300.0" text="Motor" textFill="#1b1a1a">
+            <Label layoutX="169.0" layoutY="260.0" text="Motor" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="136.0" layoutY="340.0" text="Chassis" textFill="#1b1a1a">
+            <Label layoutX="165.0" layoutY="300.0" text="Chassis" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <Label layoutX="137.0" layoutY="260.0" text="Placa" textFill="#1b1a1a">
+            <Label layoutX="170.0" layoutY="220.0" text="Placa" textFill="#1b1a1a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Label>
-            <TextField fx:id="tfRenavan" layoutX="243.0" layoutY="137.0" />
-            <TextField fx:id="tfMarca" layoutX="243.0" layoutY="176.0" />
-            <TextField fx:id="tfModelo" layoutX="243.0" layoutY="216.0" />
-            <TextField fx:id="tfPlaca" layoutX="243.0" layoutY="256.0" />
-            <TextField fx:id="tfMotor" layoutX="243.0" layoutY="296.0" />
-            <TextField fx:id="tfChassi" layoutX="243.0" layoutY="336.0" />
+            <TextField fx:id="tfRenavan" layoutX="222.0" layoutY="102.0" />
+            <TextField fx:id="tfMarca" layoutX="222.0" layoutY="139.0" />
+            <TextField fx:id="tfModelo" layoutX="222.0" layoutY="177.0" />
+            <TextField fx:id="tfPlaca" layoutX="221.0" layoutY="216.0" />
+            <TextField fx:id="tfMotor" layoutX="222.0" layoutY="256.0" />
+            <TextField fx:id="tfChassi" layoutX="222.0" layoutY="296.0" />
             <TableView fx:id="tblVeiculo" layoutX="12.0" layoutY="388.0" prefHeight="212.0" prefWidth="786.0">
               <columns>
                 <TableColumn fx:id="tbcCodigo" minWidth="36.000030517578125" prefWidth="47.000030517578125" text="Código" />
@@ -64,11 +59,11 @@
                   <TableColumn fx:id="tbcDataCadastrada" prefWidth="150.0" text="Data Cadastro" />
               </columns>
             </TableView>
-            <Button fx:id="btSalvar" layoutX="470.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" textFill="#0d0d0d">
+            <Button fx:id="btSalvar" layoutX="374.0" layoutY="333.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" textFill="#0d0d0d">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Button>
-            <Button fx:id="btDeletar" layoutX="565.0" layoutY="345.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" textFill="#0a0a0a">
+            <Button fx:id="btDeletar" layoutX="447.0" layoutY="333.0" mnemonicParsing="false" onAction="#deletar" text="Deletar" textFill="#0a0a0a">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Button>
@@ -76,7 +71,7 @@
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Button>
-         <Button layoutX="664.0" layoutY="164.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatorio" textFill="#141313">
+         <Button layoutX="582.0" layoutY="284.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatorio" textFill="#141313">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font></Button>
