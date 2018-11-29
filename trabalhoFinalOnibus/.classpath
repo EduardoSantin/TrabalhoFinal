@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="C:/Users/Lucas Berlanda/Desktop/jasperreports-6.7.0/dist/jasperreports-6.7.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lucas Berlanda/Desktop/jasperreports-6.7.0/dist/jasperreports-fonts-6.7.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lucas Berlanda/Desktop/jasperreports-6.7.0/dist/jasperreports-javaflow-6.7.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
