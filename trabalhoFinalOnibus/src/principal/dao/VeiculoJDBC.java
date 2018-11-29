@@ -82,7 +82,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 
 		try {
 			Statement statement = ConexaoUtil.getConn().createStatement();
-			ResultSet rs = statement.executeQuery("select * from veiculo");
+			ResultSet rs = statement.executeQuery("select * from veiculo order by marca");
 
 			while (rs.next()) {
 				Veiculo veiculo = new Veiculo();
