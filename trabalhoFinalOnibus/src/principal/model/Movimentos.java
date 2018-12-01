@@ -9,7 +9,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@AllArgsConstructor 
 @NoArgsConstructor
 @EqualsAndHashCode(of="codigo")
 @ToString

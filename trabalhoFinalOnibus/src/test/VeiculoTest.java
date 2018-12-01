@@ -9,7 +9,7 @@ import principal.model.Veiculo;
 public class VeiculoTest {
 
 	private void assertArrayEquals(int i, Integer codigo) {
-	}
+	} 
 	private void assertStringEquals(String i, String j) {}
 	
 	@Test
@@ -24,7 +24,7 @@ public class VeiculoTest {
 		v.setChassi(856562);
 		v.setMotor("escania");
 		
-		veiculodao.inserir(v);
+		veiculodao.inserir(v); 
 		
 		veiculodao.listar();
 		assertArrayEquals(1234, v.getRenavan());
