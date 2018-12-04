@@ -29,12 +29,37 @@ public class VeiculoTest {
 		assertArrayEquals(1234, v.getRenavan());
 		assertStringEquals("scania", v.getMarca());
 		assertStringEquals("bomba", v.getModelo());
-		assertStringEquals("bomba", v.getModelo());
 		assertStringEquals("MMM-1313", v.getPlaca());
 		assertArrayEquals(856562, v.getChassi());
 		assertStringEquals("escania", v.getMotor());
 	}
 	
+	@Test
+	public void testaExcluiVeiculo() throws Exception{
+		VeiculoDAO veiculodao = new VeiculoJDBC();
+		Veiculo v = new Veiculo();
+		
+		v.setCodigo(9191);
+		v.setRenavan(1234);
+		v.setMarca("scania");
+		v.setModelo("bomba");
+		v.setPlaca("MMM_1313");
+		v.setChassi(856562);
+		v.setMotor("escania");
+		
+		veiculodao.inserir(v);
+		
+		assertArrayEquals(9191, v.getCodigo());
+		assertArrayEquals(1234, v.getRenavan());
+		assertStringEquals("scania", v.getMarca());
+		assertStringEquals("bomba", v.getModelo());
+		assertStringEquals("MMM-1313", v.getPlaca());
+		assertArrayEquals(856562, v.getChassi());
+		assertStringEquals("escania", v.getMotor());
+		
+		veiculodao.excluir(v);
 	
+		
+	}
 }
 
