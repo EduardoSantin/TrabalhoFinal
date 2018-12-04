@@ -24,7 +24,26 @@ public class UsuarioTest {
 		
 		assertStringEquals("root", u.getLogin());
 		assertStringEquals("root", u.getSenha());
-		
 	}
+	
+	@Test
+	public void testaDeleta() throws Exception{
+		UsuarioDAO usuariodao = new UsuarioJDBC();
+		Usuario u = new Usuario();
+		
+		u.setLogin("eu");
+		u.setSenha("nois");
+		
+		usuariodao.inserir(u);
+		
+		assertTrue("eu", u.getLogin());	
+		assertFalse("eu", u.getLogin());
+		
+	
+	}
+	
+	private void assertFalse(String string, String login) {}
+
+	private void assertTrue(String string, String login) {}
 
 }
