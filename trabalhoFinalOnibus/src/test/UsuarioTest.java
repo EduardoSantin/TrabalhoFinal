@@ -9,7 +9,6 @@ import principal.model.Usuario;
 public class UsuarioTest {
 
 	private void assertStringEquals(String i, String j) {
-
 	}
 
 	@Test

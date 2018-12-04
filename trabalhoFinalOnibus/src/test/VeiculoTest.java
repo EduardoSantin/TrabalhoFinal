@@ -8,8 +8,7 @@ import principal.model.Veiculo;
 
 public class VeiculoTest {
 
-	private void assertArrayEquals(int i, Integer codigo) {
-	} 
+	private void assertArrayEquals(int i, Integer codigo) {} 
 	private void assertStringEquals(String i, String j) {}
 	
 	@Test

@@ -168,8 +168,11 @@ public class MovimentosController {
 		populaMoviemntos();
 		if (editando) {
 			movimentoDao.alterar(movimento);
+			movimentoDao.calcula(movimento);
+
 		} else {
 			movimentoDao.inserir(movimento);
+			movimentoDao.calcula(movimento);
 		}
 		novoMovimento();
 		tblMovimentos.refresh();
@@ -249,12 +252,5 @@ public class MovimentosController {
 		} catch (JRException e) {
 			e.printStackTrace();
 		}
-	}
-
-	@FXML
-	void atualizar(ActionEvent event) {
-		movimentoDao.calcula(movimento);
-		novoMovimento();
-		tblMovimentos.refresh();
 	}
 }

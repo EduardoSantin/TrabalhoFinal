@@ -80,7 +80,7 @@
             <TextField fx:id="tfOrigem" layoutX="451.0" layoutY="125.0" />
             <TextField fx:id="tfDestino" layoutX="677.0" layoutY="125.0" />
             <TextField fx:id="tfNomeMotorista" layoutX="451.0" layoutY="202.0" />
-            <Button layoutX="648.0" layoutY="332.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatório" textFill="#111010">
+            <Button layoutX="788.0" layoutY="324.0" mnemonicParsing="false" onAction="#exibirRelatorio" text="Exibir Relatório" textFill="#111010">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -100,11 +100,6 @@
                   <TableColumn fx:id="tbckmTotal" text="Km Total" />
               </columns>
             </TableView>
-            <Button layoutX="790.0" layoutY="332.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar Total" textFill="#171717">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Button>
          </children>
       </Pane>
    </children>
