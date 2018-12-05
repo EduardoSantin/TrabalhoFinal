@@ -69,7 +69,7 @@ public class VeiculoJDBC implements VeiculoDAO {
 			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 			
-			//JOptionPane.showMessageDialog(null, "Veículo deletado!");
+			JOptionPane.showMessageDialog(null, "Veículo deletado!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();

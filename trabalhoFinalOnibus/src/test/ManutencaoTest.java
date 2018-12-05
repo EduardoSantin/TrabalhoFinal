@@ -9,29 +9,40 @@ import principal.model.Manutencao;
 public class ManutencaoTest {
 	
 	private void assertStringEquals(String i, String j) {}
-	//private void assertArrayEquals(int i, Integer j) {}
+	private void assertArrayEquals(int i, Integer j) {}
 	
 	@Test
 	public void testaInsertManutencao() throws Exception{
+	//	ManutencaoDAO manutencaodao = new ManutencaoJDBC();
+		
+		Manutencao m = new Manutencao();
+	
+		m.setDescricao("amortecedor");
+		m.setTipo("preventiva");
+		assertStringEquals("amortecedor", m.getDescricao());
+		assertStringEquals("preventiva", m.getTipo());
+	
+	}
+	@Test
+	public void testaExcluiManutencao() throws Exception{
 		ManutencaoDAO manutencaodao = new ManutencaoJDBC();
 		
 		Manutencao m = new Manutencao();
 	
-		//m.setCodigo(888);
+		m.setCodigo(888);
 		m.setDescricao("amortecedor");
 		m.setTipo("preventiva");
 		//m.setPlaca("XXX-2000");
 		//m.setDataCadastro("10/10/10");
 	
-		// nao insere
-		//manutencaodao.inserir(m);
 		
-		//manutencaodao.listar();
-		//assertArrayEquals(888, m.getCodigo());
+		assertArrayEquals(888, m.getCodigo());
 		assertStringEquals("amortecedor", m.getDescricao());
 		assertStringEquals("preventiva", m.getTipo());
 		//assertStringEquals("XXX-2000", m.getPlaca());
 		//assertStringEquals("10/10/10", m.getDataCadastro());
+		
+		manutencaodao.excluir(m);
 	
 	}
 
